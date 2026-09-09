@@ -1,6 +1,6 @@
 # Creeps
 
-Публичный репозиторий: [avvolkova13/creeps](https://github.com/avvolkova13/creeps). Подготовлена статическая сборка и автоматическая публикация на GitHub Pages: [настройка, команды и статус](DEPLOYMENT.md). Первый push и удалённая проверка пока ожидают авторизации.
+Публичный репозиторий: [avvolkova13/creeps](https://github.com/avvolkova13/creeps). Подготовлена статическая сборка и автоматическая публикация на GitHub Pages: [настройка, команды и статус](DEPLOYMENT.md). Сайт опубликован: [Creeps](https://avvolkova13.github.io/creeps/). Проверки и деплой GitHub Actions прошли.
 
 Этап 4: интерфейс главной, каталога и товара на Next.js App Router, TypeScript и CSS. Товарные данные загружены из публичных страниц SkinSwap/SkinBaron; коммерческие интеграции пока недоступны. Название сайта и внутренней валюты — Creeps. Техническое имя пакета — `digital-goods-market`. Продуктовые требования находятся в [PROJECT.md](PROJECT.md), визуал — в [DESIGN_DIRECTION.md](DESIGN_DIRECTION.md).
 
