@@ -1,9 +1,25 @@
-import { mkdirSync, writeFileSync, rmSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
+import { mkdirSync, writeFileSync, rmSync, renameSync } from 'node:fs';
 import snapshot from '../src/data/catalog-snapshot.json' with { type: 'json' };
 
-// Pages has no server runtime. Publish a gateway to the real app, never dead API links.
+// Without a server URL, publish the explicitly requested presentation build.
 const destination = process.env.CREEPS_APP_URL;
-if (!destination) throw new Error('CREEPS_APP_URL is required: deploy the Node server first, then set its HTTPS URL in GitHub repository variables. GitHub Pages cannot execute Steam authentication or payments.');
+if (!destination) {
+  const repository = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? 'creeps';
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? (repository.endsWith('.github.io') ? '' : `/${repository}`);
+  if (basePath && !/^\/[\w.-]+$/.test(basePath)) throw new Error('Invalid Pages base path');
+  rmSync('out', { recursive: true, force: true });
+  const build = spawnSync(process.execPath, ['node_modules/next/dist/bin/next', 'build'], {
+    stdio: 'inherit', env: { ...process.env, STATIC_EXPORT: '1', NEXT_PUBLIC_BASE_PATH: basePath, NEXT_PUBLIC_SHOWCASE_PREVIEW: '1' },
+  });
+  if (build.status !== 0) process.exit(build.status ?? 1);
+  renameSync('.next-preview', 'out');
+  const routes = ['', 'account', 'catalog', ...snapshot.products.map(p => `catalog/${p.id}`)];
+  writeFileSync('out/.nojekyll', '');
+  writeFileSync('out/pages-build.json', JSON.stringify({ basePath, mode: 'visual-preview', revision: process.env.GITHUB_SHA ?? 'local', routes }));
+  console.log(`Pages presentation prepared: ${routes.length} routes`);
+  process.exit(0);
+}
 const target = new URL(destination);
 if (target.protocol !== 'https:' || target.username || target.password || target.search || target.hash || target.pathname !== '/' || target.hostname.endsWith('.github.io')) throw new Error('CREEPS_APP_URL must be the HTTPS origin of the Node application, not a Pages address.');
 const repository = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? 'creeps';

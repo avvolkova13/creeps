@@ -1,5 +1,7 @@
 "use client";
 
+import Link from 'next/link';
+import { isShowcasePreview } from '@/config/runtime';
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import type { Product } from '@/lib/catalog';
 import { publicAsset } from '@/lib/public-asset';
@@ -18,6 +20,10 @@ export class RequestError extends Error {
   constructor(message: string, public code?: string) { super(message); }
 }
 export async function shopRequest<T>(path: string, method = 'GET', body?: unknown): Promise<T> {
+  if (isShowcasePreview) {
+    const { previewRequest } = await import('@/lib/preview-session');
+    return await previewRequest(path, method, body) as T;
+  }
   let response: Response;
   try {
     response = await fetch(publicAsset(`/api${path}`), {
@@ -75,6 +81,7 @@ export function useShop() {
   return context;
 }
 export function SteamLogin({ cart = false }: { cart?: boolean }) {
+  if (isShowcasePreview) return <Link className="button-primary" href={cart ? '/account#cart' : '/account'}>Войти через Steam <span aria-hidden="true">↗</span></Link>;
   // Authentication happens on Steam; no password is collected by Creeps.
   return <a className="button-primary" href={publicAsset(`/api/auth/steam${cart ? '?next=cart' : ''}`)}>Войти через Steam <span aria-hidden="true">↗</span></a>;
 }

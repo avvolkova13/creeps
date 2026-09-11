@@ -1,5 +1,6 @@
 "use client";
 
+import { isShowcasePreview } from '@/config/runtime';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { projectConfig } from "@/config/project";
@@ -23,6 +24,7 @@ export function SiteHeader() {
           {user ? <Link className="button-primary" href="/account">Личный кабинет</Link> : <SteamLogin />}
         </div>
       </header>
+      {isShowcasePreview && <p className="page-width preview-label">Версия для показа · без реальных оплат</p>}
 
     </>
   );

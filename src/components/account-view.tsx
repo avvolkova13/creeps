@@ -1,5 +1,6 @@
 "use client";
 
+import { isShowcasePreview } from '@/config/runtime';
 import Link from 'next/link';
 import { useEffect, useState, type ReactNode } from 'react';
 import { ProductPrice } from './product-view';
@@ -51,7 +52,7 @@ function CartView() {
         <button className="button-secondary" onClick={() => remove(item.id)} disabled={busy} aria-label={`Удалить ${item.name}`}>Удалить</button>
       </li>)}</ul>
       <div className="cart-summary"><div><span className="eyebrow">Итого · справочно</span><ProductPrice amount={shop.cart.totalCreeps} rublesAmount={shop.cart.totalRubles} /></div>
-        {shop.user ? <button className="button-primary" onClick={checkout} disabled={busy}>{busy ? 'Проверяем…' : 'Оформить заказ'}</button> : <SteamLogin cart />}
+        {shop.user || isShowcasePreview ? <button className="button-primary" onClick={checkout} disabled={busy}>{busy ? 'Проверяем…' : 'Оформить заказ'}</button> : <SteamLogin cart />}
       </div>
       <p className="field-hint">Банковская карта · СБП</p>
     </>}
@@ -94,6 +95,10 @@ export function AccountView() {
     <h1>Личный кабинет</h1>
     {authMessage && <p className="panel" role="status">{authMessage}</p>}
     {shop.loading ? <p className="panel" role="status">Загружаем кабинет…</p> : shop.error ? <div className="panel account-empty"><p role="alert">{shop.error}</p><button className="button-secondary" onClick={() => void shop.refresh()}>Повторить</button></div> : <>
+      {isShowcasePreview && <>
+        <section className="panel account-section" aria-labelledby="preview-profile"><h2 id="preview-profile">Мой Steam</h2><p className="field-hint">Предпросмотр кабинета. Вход через Steam не выполнялся.</p><p>Steam ID: —</p><label htmlFor="preview-trade">Trade-URL для получения скинов</label><input id="preview-trade" type="url" placeholder="https://steamcommunity.com/tradeoffer/new/?partner=…&token=…" readOnly aria-describedby="preview-trade-hint" /><p className="field-hint" id="preview-trade-hint">Редактирование доступно после входа в рабочем магазине.</p></section>
+        <section className="panel account-section"><h2>Баланс Creeps</h2><ProductPrice amount={0} /><Link className="button-primary" href="/#balance">Пополнить баланс</Link></section>
+      </>}
       {shop.user ? <>
         <section className="panel account-section" aria-labelledby="profile-title">
           <div className="section-kicker"><h2 id="profile-title">Мой Steam</h2><button className="button-secondary" onClick={async () => { setLogoutError(''); try { await shop.logout(); } catch (error) { setLogoutError((error as Error).message); } }}>Выйти</button></div>
@@ -102,8 +107,9 @@ export function AccountView() {
           <TradeForm account={shop.user} key={shop.user.steamId} />
         </section>
         <section className="panel account-section" aria-labelledby="account-balance"><h2 id="account-balance">Баланс Creeps</h2><ProductPrice amount={shop.user.balanceCreeps} /><Link className="button-primary" href="/#balance">Пополнить баланс</Link></section>
-      </> : <section className="panel account-empty"><p>Войдите через Steam, чтобы сохранить trade-URL и открыть баланс и историю покупок.</p><SteamLogin /></section>}
+      </> : isShowcasePreview ? null : <section className="panel account-empty"><p>Войдите через Steam, чтобы сохранить trade-URL и открыть баланс и историю покупок.</p><SteamLogin /></section>}
       <CartView />
+      {isShowcasePreview && <div className="account-history"><section className="panel account-section"><h2>История операций</h2><p className="field-hint">Операций пока нет.</p></section><section className="panel account-section"><h2>История покупок</h2><p className="field-hint">Покупок пока нет.</p></section></div>}
       {shop.user && <div className="account-history">
         <HistorySection key={`operations:${shop.user.steamId}:${shop.user.operations[0]?.id ?? ''}`} title="История операций" kind="operations" initialItems={shop.user.operations} initialCursor={shop.user.operationCursor} emptyText="Операций пока нет." render={operation => <><span>{operation.kind === 'credit' ? 'Пополнение' : 'Списание'} · {new Date(operation.createdAt).toLocaleDateString('ru-RU')}</span><ProductPrice amount={Math.abs(operation.amountCreeps)} sign={operation.kind === 'debit' ? '−' : '+'} /></>} />
         <HistorySection key={`orders:${shop.user.steamId}:${shop.user.orders[0]?.id ?? ''}`} title="История покупок" kind="orders" initialItems={shop.user.orders} initialCursor={shop.user.orderCursor} emptyText="Покупок пока нет." render={order => <><p>Заказ {order.id} · {({ pending: 'В ожидании', delivered: 'Выдано', cancelled: 'Отменён' } as Record<string, string>)[order.status] ?? order.status}</p>{order.items.map(item => <div key={item.id}><p>{item.name}</p><ProductPrice amount={item.priceCreeps} /></div>)}</>} />

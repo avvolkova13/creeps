@@ -1,5 +1,6 @@
 "use client";
 
+import { isShowcasePreview } from '@/config/runtime';
 import { useState } from 'react';
 import { parsePaymentMinor, paymentAmountError, steamTopupQuote, rublesMinorFromCreepsMinor } from '@/lib/money';
 import { paymentDestination } from '@/lib/payment-navigation';
@@ -29,7 +30,7 @@ export function TopupPanels() {
   async function topupBalance() {
     setBalanceError(''); setLoginNeeded(false);
     if (balanceMinor === null) { setBalanceError(paymentAmountError); return; }
-    if (!shop.user) { setLoginNeeded(true); return; }
+    if (!shop.user && !isShowcasePreview) { setLoginNeeded(true); return; }
     setBalanceBusy(true);
     try { const payment = await shopRequest('/topups/balance', 'POST', { amount: balanceAmount }); window.location.assign(paymentDestination(payment, window.location.origin)); }
     catch (error) { setBalanceError((error as Error).message); }
