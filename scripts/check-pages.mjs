@@ -6,7 +6,7 @@ if (manifest.mode === 'visual-preview') {
   assert.equal(manifest.routes.length, snapshot.products.length + 3);
   for (const route of manifest.routes) {
     const html = readFileSync(`out/${route}/index.html`, 'utf8');
-    assert.ok(html.includes('Версия для показа'), route);
+    assert.ok(!/Версия для показа|Предпросмотр кабинета|без реальных оплат|заглушка|демонстрационн/i.test(html), route);
     assert.ok(html.includes('<h1'), route);
     assert.ok(!/href="[^" ]*\/api\//.test(html), route);
     for (const match of html.replace(/<link\b[^>]*rel="preconnect"[^>]*>/g, '').matchAll(/(?:src|href)="([^"?#]+)(?:[?#][^"]*)?"/g)) {

@@ -73,6 +73,7 @@ legend { margin-bottom: 12px; padding: 0; }
 .paper-atmosphere::after { content: ""; position: absolute; inset: 0; opacity: .62; background: url("../../public/textures/grain.svg") repeat; background-size: 192px 192px; }
 .skip-link { position: fixed; top: -100px; left: 24px; z-index: 10; background: var(--solid-surface); padding: 16px; }
 .skip-link:focus { top: 16px; }
+.skip-link:not(:focus) { clip-path: inset(50%); }
 .site-header { display: flex; align-items: center; gap: 32px; margin-top: 24px; padding: 20px 24px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--surface); }
 .site-name { display: block; margin-right: auto; font-size: 13px; line-height: 1.1; font-weight: 600; letter-spacing: -.015em; white-space: nowrap; }
 .site-name > span { display: block; font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: -.055em; }
@@ -431,5 +432,3 @@ dialog::backdrop { background: rgba(12, 20, 36, .72); backdrop-filter: blur(4px)
 .steam-payment-summary dd { margin: 0; font-variant-numeric: tabular-nums; text-align: right; }
 .steam-payment-total { border-top: 1px solid var(--line); padding-top: 12px; font-weight: 700; }
 @media (max-width: 400px) { .steam-payment-summary > div { flex-wrap: wrap; gap: 4px 12px; } }
-
-.preview-label { margin-top: 10px; font-size: 12px; color: var(--muted); }

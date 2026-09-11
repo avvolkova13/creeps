@@ -16,15 +16,6 @@ export function ProductPrice({ amount, rublesAmount, sign = "" }: { amount: numb
   return <div className="product-price"><strong><span className="price-value">{sign}{value}</span>{" "}<span className="price-unit">Creeps</span></strong><span>≈ {sign}{formatEstimatedAmount(rublesAmount ?? quote.rubles, "RUB", 2)}</span></div>;
 }
 
-function ProductSource({ product }: { product: Product }) {
-  const source = product.source;
-  if (!source) return null;
-  const original = new Intl.NumberFormat("ru-RU", { style: "currency", currency: source.currency }).format(source.price);
-  const rate = new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 4 }).format(source.rublesPerUnit);
-  const date = new Intl.DateTimeFormat("ru-RU", { dateStyle: "short", timeZone: "UTC" }).format(new Date(source.capturedAt));
-  return <details className="product-source"><summary>Источник и расчёт цены · {source.name}</summary><p><a href={source.url} target="_blank" rel="noreferrer">{source.kind === "offer" ? "Предложение" : "Витрина"} {source.name} ↗</a> · {date}</p><p>Цена источника: {original}. Справочный курс: 1 {source.currency} ≈ {rate} ₽, по данным <a href={source.exchangeRateUrl} target="_blank" rel="noreferrer">SkinSwap</a>. 1 Creeps = 1,7 ₽. Цена и наличие могут измениться.</p>{source.descriptionUrl && <p><a href={source.descriptionUrl} target="_blank" rel="noreferrer">Описание скина в источнике ↗</a></p>}</details>;
-}
-
 function formatFloat(product: Product) {
   if (product.float === null) return "Не указан";
   return `${product.source?.floatPrecision === "rounded" ? "≈ " : ""}${product.float.toFixed(product.source?.floatPrecision === "rounded" ? 3 : 8)}`;
@@ -46,9 +37,8 @@ export function ProductDetails({ product, category }: { product: Product; catego
       <p className="eyebrow">{category?.name ?? "Категория не указана"}</p>
       <h1>{product.name}</h1>
       <p className="product-description">{product.description || "Описание не предоставлено."}</p>
-      <dl className="specifications"><div><dt>Состояние</dt><dd>{product.condition ?? "Не указано"}</dd></div><div><dt>Float</dt><dd>{formatFloat(product)}</dd></div></dl>
+      <dl className="specifications"><div><dt>Состояние</dt><dd>{product.condition ?? "Не указано"}</dd></div>{product.float !== null && <div><dt>Float</dt><dd>{formatFloat(product)}</dd></div>}</dl>
       <ProductPrice amount={product.priceCreeps} />
-      <ProductSource product={product} />
       <AddToCart productId={product.id} />
       <div className="payment-methods"><span className="eyebrow">Способы оплаты</span><p>{projectConfig.paymentMethods.map((method) => method.label).join(" · ")}</p></div>
     </div>
@@ -62,7 +52,6 @@ export function ProductGrid({ products, categories }: { products: readonly Produ
         <p className="eyebrow">{categories.find((category) => category.id === product.categoryId)?.name ?? "Категория не указана"}</p>
         <h3><Link className="product-card-link" href={`/catalog/${encodeURIComponent(product.id)}`}>{product.name}</Link></h3>
         {product.condition && <p className="field-hint">{product.condition}</p>}
-        {product.source && <p className="product-origin">{product.source.name} · справочная цена</p>}
         <ProductPrice amount={product.priceCreeps} />
         <AddToCart productId={product.id} />
       </div>

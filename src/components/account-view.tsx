@@ -21,7 +21,7 @@ function TradeForm({ account }: { account: Account }) {
     finally { setBusy(false); }
   }}>
     <label htmlFor="trade-url">Trade-URL для получения скинов</label>
-    <input id="trade-url" type="url" value={url} onChange={event => { setUrl(event.target.value); setMessage(''); }} required maxLength={512} placeholder="https://steamcommunity.com/tradeoffer/new/?partner=…&token=…" autoComplete="off" spellCheck={false} aria-describedby="trade-hint" />
+    <input id="trade-url" type="url" value={url} onChange={event => { setUrl(event.target.value); setMessage(''); }} required maxLength={512} placeholder="Вставьте ссылку для обмена из Steam" autoComplete="off" spellCheck={false} aria-describedby="trade-hint" />
     <p className="field-hint" id="trade-hint">Ссылка должна принадлежать вашему Steam-аккаунту. <a className="text-link" href="https://steamcommunity.com/my/tradeoffers/privacy" target="_blank" rel="noreferrer">Найти свою ссылку в Steam</a></p>
     <button className="button-primary" disabled={busy}>{busy ? 'Сохраняем…' : 'Сохранить trade-URL'}</button>
     {message && <p role="status">{message}</p>}{error && <p className="field-error" role="alert">{error}</p>}
@@ -42,7 +42,7 @@ function CartView() {
     finally { setBusy(false); }
   }
   return <section className="panel account-section" id="cart" aria-labelledby="cart-title">
-    <div className="section-kicker"><h2 id="cart-title">Корзина</h2><span>{shop.cart.items.length} товаров</span></div>
+    <div className="section-kicker"><h2 id="cart-title">Корзина</h2><span>Товаров: {shop.cart.items.length}</span></div>
     {!shop.cart.items.length ? <div className="account-empty"><p>В корзине пока пусто.</p><Link className="button-secondary" href="/catalog">Выбрать скины</Link></div> : <>
       <ul className="cart-items">{shop.cart.items.map(item => <li key={item.id}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -51,7 +51,7 @@ function CartView() {
         <ProductPrice amount={item.priceCreeps} />
         <button className="button-secondary" onClick={() => remove(item.id)} disabled={busy} aria-label={`Удалить ${item.name}`}>Удалить</button>
       </li>)}</ul>
-      <div className="cart-summary"><div><span className="eyebrow">Итого · справочно</span><ProductPrice amount={shop.cart.totalCreeps} rublesAmount={shop.cart.totalRubles} /></div>
+      <div className="cart-summary"><div><span className="eyebrow">Итого</span><ProductPrice amount={shop.cart.totalCreeps} rublesAmount={shop.cart.totalRubles} /></div>
         {shop.user || isShowcasePreview ? <button className="button-primary" onClick={checkout} disabled={busy}>{busy ? 'Проверяем…' : 'Оформить заказ'}</button> : <SteamLogin cart />}
       </div>
       <p className="field-hint">Банковская карта · СБП</p>
@@ -96,7 +96,7 @@ export function AccountView() {
     {authMessage && <p className="panel" role="status">{authMessage}</p>}
     {shop.loading ? <p className="panel" role="status">Загружаем кабинет…</p> : shop.error ? <div className="panel account-empty"><p role="alert">{shop.error}</p><button className="button-secondary" onClick={() => void shop.refresh()}>Повторить</button></div> : <>
       {isShowcasePreview && <>
-        <section className="panel account-section" aria-labelledby="preview-profile"><h2 id="preview-profile">Мой Steam</h2><p className="field-hint">Предпросмотр кабинета. Вход через Steam не выполнялся.</p><p>Steam ID: —</p><label htmlFor="preview-trade">Trade-URL для получения скинов</label><input id="preview-trade" type="url" placeholder="https://steamcommunity.com/tradeoffer/new/?partner=…&token=…" readOnly aria-describedby="preview-trade-hint" /><p className="field-hint" id="preview-trade-hint">Редактирование доступно после входа в рабочем магазине.</p></section>
+        <section className="panel account-section" aria-labelledby="preview-profile"><h2 id="preview-profile">Мой Steam</h2><p>Steam ID: не указан</p><label htmlFor="preview-trade">Trade-URL для получения скинов</label><input id="preview-trade" type="url" placeholder="Вставьте ссылку для обмена из Steam" readOnly aria-describedby="preview-trade-hint" /><p className="field-hint" id="preview-trade-hint">Войдите через Steam, чтобы сохранить ссылку для обмена.</p></section>
         <section className="panel account-section"><h2>Баланс Creeps</h2><ProductPrice amount={0} /><Link className="button-primary" href="/#balance">Пополнить баланс</Link></section>
       </>}
       {shop.user ? <>
