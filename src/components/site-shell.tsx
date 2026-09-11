@@ -37,7 +37,7 @@ export function SiteFooter() {
         <nav aria-label="Навигация в подвале"><span className="eyebrow">Магазин</span><Link href="/catalog">Каталог</Link><Link href="/cart">Корзина</Link><Link href="/#faq">Вопросы и ответы</Link></nav>
         <nav aria-label="Юридические документы"><span className="eyebrow">Документы</span>{Object.entries(legalDocuments).map(([id, doc]) => <Link key={id} href={`/legal/${id}`}>{doc.title}</Link>)}</nav>
       </div>
-      <div className="footer-bottom"><p>© 2026 Creeps<span>Steam и названия игр — товарные знаки их правообладателей.</span></p><p className="footer-rate">1 Creeps = 1,7 ₽<span>Рубли у цен — справочно</span></p></div>
+      <div className="footer-bottom"><p>© 2026 Creeps<span>Steam и названия игр — товарные знаки их правообладателей.</span></p><p className="footer-rate">Цены в рублях рассчитаны по курсу 1 Creeps = 1,7 ₽</p></div>
     </footer>
   );
 }
