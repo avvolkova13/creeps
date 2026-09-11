@@ -14,7 +14,7 @@ if (!destination) {
   });
   if (build.status !== 0) process.exit(build.status ?? 1);
   renameSync('.next-preview', 'out');
-  const routes = ['', 'account', 'catalog', ...snapshot.products.map(p => `catalog/${p.id}`)];
+  const routes = ['', 'account', 'cart', 'login', 'catalog', ...snapshot.products.map(p => `catalog/${p.id}`)];
   writeFileSync('out/.nojekyll', '');
   writeFileSync('out/pages-build.json', JSON.stringify({ basePath, mode: 'visual-preview', revision: process.env.GITHUB_SHA ?? 'local', routes }));
   console.log(`Pages presentation prepared: ${routes.length} routes`);
@@ -25,7 +25,7 @@ if (target.protocol !== 'https:' || target.username || target.password || target
 const repository = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? 'creeps';
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? (repository.endsWith('.github.io') ? '' : `/${repository}`);
 if (basePath && !/^\/[\w.-]+$/.test(basePath)) throw new Error('Invalid Pages base path');
-const routes = ['', 'account', 'catalog', ...snapshot.products.map(p => `catalog/${p.id}`)];
+const routes = ['', 'account', 'cart', 'login', 'catalog', ...snapshot.products.map(p => `catalog/${p.id}`)];
 rmSync('out', { recursive: true, force: true });
 function html(route) {
   const url = new URL(route, target).href;

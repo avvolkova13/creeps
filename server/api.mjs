@@ -68,7 +68,7 @@ export function createApi({ store, origin, basePath = '', products, fetcher = fe
         if (request.headers['sec-fetch-site'] === 'cross-site') throw new ApiError(403, 'Начните вход на сайте Creeps.');
         const current = session(request, response, true);
         const state = token(); const browser = token();
-        const next = url.searchParams.get('next') === 'cart' ? '/account#cart' : '/account';
+        const next = url.searchParams.get('next') === 'cart' ? '/cart' : '/account';
         store.db.prepare('INSERT INTO auth_states VALUES (?,?,?,?,?)').run(hash(state), hash(browser), current.id, next, now + 600000);
         const cookies = response.getHeader('Set-Cookie');
         response.setHeader('Set-Cookie', [...(cookies ? [cookies] : []), cookie(browserName, browser, 600)]);

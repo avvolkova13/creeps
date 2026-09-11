@@ -19,7 +19,7 @@ export function SiteHeader() {
           <Link href="/#steam">Пополнить Steam</Link>
         </nav>
         <div className="header-actions">
-          <Link className="button-secondary cart-button" href="/account#cart"><span aria-live="polite" aria-atomic="true">Корзина{cart.items.length > 0 ? ` · ${cart.items.length}` : ""}</span></Link>
+          <Link className="button-secondary cart-button" href="/cart"><span aria-live="polite" aria-atomic="true">Корзина{cart.items.length > 0 ? ` · ${cart.items.length}` : ""}</span></Link>
           {user ? <Link className="button-primary" href="/account">Личный кабинет</Link> : <SteamLogin />}
         </div>
       </header>

@@ -81,9 +81,7 @@ export function useShop() {
   return context;
 }
 export function SteamLogin({ cart = false }: { cart?: boolean }) {
-  if (isShowcasePreview) return <Link className="button-primary" href={cart ? '/account#cart' : '/account'}>Войти через Steam <span aria-hidden="true">↗</span></Link>;
-  // Authentication happens on Steam; no password is collected by Creeps.
-  return <a className="button-primary" href={publicAsset(`/api/auth/steam${cart ? '?next=cart' : ''}`)}>Войти через Steam <span aria-hidden="true">↗</span></a>;
+  return <Link className="button-primary" href={cart ? '/login?next=cart' : '/login'}>Войти через Steam <span aria-hidden="true">↗</span></Link>;
 }
 export function AddToCart({ productId }: { productId: string }) {
   const shop = useShop();

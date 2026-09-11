@@ -5,8 +5,6 @@ import Link from 'next/link';
 import { useEffect, useState, type ReactNode } from 'react';
 import { ProductPrice } from './product-view';
 import { shopRequest, SteamLogin, useShop, type Account, type HistoryCursor } from './shop-session';
-import { paymentDestination } from '@/lib/payment-navigation';
-import { publicAsset } from '@/lib/public-asset';
 
 function TradeForm({ account }: { account: Account }) {
   const { refresh } = useShop();
@@ -26,38 +24,6 @@ function TradeForm({ account }: { account: Account }) {
     <button className="button-primary" disabled={busy}>{busy ? 'Сохраняем…' : 'Сохранить trade-URL'}</button>
     {message && <p role="status">{message}</p>}{error && <p className="field-error" role="alert">{error}</p>}
   </form>;
-}
-function CartView() {
-  const shop = useShop();
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState('');
-  async function remove(id: string) {
-    setBusy(true); setError('');
-    try { await shop.remove(id); } catch (error) { setError((error as Error).message); } finally { setBusy(false); }
-  }
-  async function checkout() {
-    setBusy(true); setError('');
-    try { const payment = await shopRequest('/checkout', 'POST', {}); window.location.assign(paymentDestination(payment, window.location.origin)); }
-    catch (error) { setError((error as Error).message); }
-    finally { setBusy(false); }
-  }
-  return <section className="panel account-section" id="cart" aria-labelledby="cart-title">
-    <div className="section-kicker"><h2 id="cart-title">Корзина</h2><span>Товаров: {shop.cart.items.length}</span></div>
-    {!shop.cart.items.length ? <div className="account-empty"><p>В корзине пока пусто.</p><Link className="button-secondary" href="/catalog">Выбрать скины</Link></div> : <>
-      <ul className="cart-items">{shop.cart.items.map(item => <li key={item.id}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={publicAsset(item.imageUrl)} alt={item.name} width={120} height={90} />
-        <div><Link href={`/catalog/${item.id}`}>{item.name}</Link><p className="field-hint">{item.condition}</p></div>
-        <ProductPrice amount={item.priceCreeps} />
-        <button className="button-secondary" onClick={() => remove(item.id)} disabled={busy} aria-label={`Удалить ${item.name}`}>Удалить</button>
-      </li>)}</ul>
-      <div className="cart-summary"><div><span className="eyebrow">Итого</span><ProductPrice amount={shop.cart.totalCreeps} rublesAmount={shop.cart.totalRubles} /></div>
-        {shop.user || isShowcasePreview ? <button className="button-primary" onClick={checkout} disabled={busy}>{busy ? 'Проверяем…' : 'Оформить заказ'}</button> : <SteamLogin cart />}
-      </div>
-      <p className="field-hint">Банковская карта · СБП</p>
-    </>}
-    {error && <p role="alert" className="field-error">{error}</p>}
-  </section>;
 }
 function HistorySection<T extends { id: string }>({ title, kind, initialItems, initialCursor, emptyText, render }: {
   title: string; kind: 'operations' | 'orders'; initialItems: T[]; initialCursor: HistoryCursor | null; emptyText: string; render: (item: T) => ReactNode;
@@ -108,7 +74,6 @@ export function AccountView() {
         </section>
         <section className="panel account-section" aria-labelledby="account-balance"><h2 id="account-balance">Баланс Creeps</h2><ProductPrice amount={shop.user.balanceCreeps} /><Link className="button-primary" href="/#balance">Пополнить баланс</Link></section>
       </> : isShowcasePreview ? null : <section className="panel account-empty"><p>Войдите через Steam, чтобы сохранить trade-URL и открыть баланс и историю покупок.</p><SteamLogin /></section>}
-      <CartView />
       {isShowcasePreview && <div className="account-history"><section className="panel account-section"><h2>История операций</h2><p className="field-hint">Операций пока нет.</p></section><section className="panel account-section"><h2>История покупок</h2><p className="field-hint">Покупок пока нет.</p></section></div>}
       {shop.user && <div className="account-history">
         <HistorySection key={`operations:${shop.user.steamId}:${shop.user.operations[0]?.id ?? ''}`} title="История операций" kind="operations" initialItems={shop.user.operations} initialCursor={shop.user.operationCursor} emptyText="Операций пока нет." render={operation => <><span>{operation.kind === 'credit' ? 'Пополнение' : 'Списание'} · {new Date(operation.createdAt).toLocaleDateString('ru-RU')}</span><ProductPrice amount={Math.abs(operation.amountCreeps)} sign={operation.kind === 'debit' ? '−' : '+'} /></>} />

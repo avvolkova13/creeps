@@ -36,8 +36,8 @@ async function fixture(t, fetcher = accepted) {
     for (const value of response.headers.getSetCookie()) { const [key, ...rest] = value.split(';')[0].split('='); cookies.set(key, rest.join('=')); }
     return response;
   }
-  async function login() {
-    const start = await request('/auth/steam');
+  async function login(next = '') {
+    const start = await request('/auth/steam' + (next ? '?next=' + encodeURIComponent(next) : ''));
     const returnTo = new URL(start.headers.get('location')).searchParams.get('openid.return_to');
     const url = new URL(returnTo); const params = assertion(returnTo);
     for (const [key, value] of params) url.searchParams.set(key, value);
@@ -178,4 +178,23 @@ test('authenticated history pagination reaches old records without duplicates an
  assert.equal((await f.request('/account/history?kind=orders&cursor=broken')).status,400);
  await f.request('/auth/logout','POST');await f.request('/session');
  assert.equal((await f.request('/account/history?kind=orders')).status,401);
+});
+
+test('checkout login returns to the standalone cart and preserves the guest selection', async t => {
+  const f = await fixture(t);
+  await f.request('/session');
+  await f.request('/cart/items', 'POST', { productId: 'test-skin' });
+  const response = await f.login('cart');
+  assert.equal(response.status, 303);
+  assert.equal(response.headers.get('location'), '/cart');
+  const session = await (await f.request('/session')).json();
+  assert.equal(session.user.steamId, STEAM_ID);
+  assert.equal(session.cart.items[0].id, 'test-skin');
+  assert.equal(session.user.orders.length, 0);
+});
+test('login ignores arbitrary return destinations', async t => {
+  const f = await fixture(t);
+  await f.request('/session');
+  const response = await f.login('https://example.com');
+  assert.equal(response.headers.get('location'), '/account');
 });
