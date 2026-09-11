@@ -1,29 +1,29 @@
 [
   {
     "name": "AK-47 | X-Ray",
-    "local": "/hero-skins/ak47-xray.webp",
-    "source": "https://cdn.skinswap.com/images/730/01caeb6aa5cbaa5752fc6d66ce448700",
+    "local": "/catalog/dd5df14fb4b74f094b4c.avif",
+    "source": "https://cdn.skinswap.com/images/730/01caeb6aa5cbaa5752fc6d66ce448700/hd",
     "page": "https://skinswap.com/ru",
     "role": "illustrative example only, not inventory or offer"
   },
   {
     "name": "Butterfly Knife | Lore",
-    "local": "/hero-skins/butterfly-lore.webp",
-    "source": "https://cdn.skinswap.com/images/730/00ae8836d8e7ac514a713421c1e7cd25",
+    "local": "/catalog/40b9881f2583342d3477.avif",
+    "source": "https://cdn.skinswap.com/images/730/00ae8836d8e7ac514a713421c1e7cd25/hd",
     "page": "https://skinswap.com/ru",
     "role": "illustrative example only, not inventory or offer"
   },
   {
     "name": "Glock-18 | Gamma Doppler Phase 3",
-    "local": "/hero-skins/glock-gamma.webp",
-    "source": "https://cdn.skinswap.com/images/730/04f890abe6d2c8120961b28315a11933",
+    "local": "/catalog/f4d807133d5bcf19ba5d.avif",
+    "source": "https://cdn.skinswap.com/images/730/04f890abe6d2c8120961b28315a11933/hd",
     "page": "https://skinswap.com/ru",
     "role": "illustrative example only, not inventory or offer"
   },
   {
     "name": "Karambit | Fade",
-    "local": "/hero-skins/karambit-fade.webp",
-    "source": "https://cdn.skinswap.com/images/730/00998977a6d55398fb2902f36ee660b5",
+    "local": "/catalog/7ac891d4055dca1a68de.avif",
+    "source": "https://cdn.skinswap.com/images/730/00998977a6d55398fb2902f36ee660b5/hd",
     "page": "https://skinswap.com/ru",
     "role": "illustrative example only, not inventory or offer"
   }

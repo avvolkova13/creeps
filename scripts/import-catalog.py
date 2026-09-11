@@ -4,19 +4,21 @@ import hashlib
 import json
 import re
 import urllib.request
-from urllib.parse import urljoin
+from urllib.parse import urljoin, quote
 from datetime import datetime, timezone
 from html.parser import HTMLParser
 from pathlib import Path
+from enrich_catalog import enrich
 
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / '.qa' / 'catalog-import'
 CACHE.mkdir(parents=True, exist_ok=True)
 HEADERS = {'User-Agent': 'Mozilla/5.0'}
+IMAGE_OVERRIDES = json.loads((ROOT / 'src/data/product-image-overrides.json').read_text())
 
 
 def fetch(url):
-    request = urllib.request.Request(url, headers=HEADERS)
+    request = urllib.request.Request(quote(url, safe=":/?&=%+;,@!$'()*[]-._~"), headers=HEADERS)
     with urllib.request.urlopen(request, timeout=35) as response:
         return response.read(), response.headers.get_content_type()
 
@@ -160,6 +162,11 @@ def baron_products(html, captured):
             if info.get('collectionName'):
                 extra.append(info['collectionName'] + '.')
             image_url = urljoin('https://skinbaron.de', item['imageUrl'])
+            if '/Marketing/' in image_url:
+                override = IMAGE_OVERRIDES.get(name)
+                if not override:
+                    raise ValueError('Marketing banner requires a verified transparent product image: ' + name)
+                image_url = override['imageUrl']
             products[key] = {'id': 'baron-' + key, 'name': name, 'description': description(name, category, item['localizedExteriorName'], extra), 'imageUrl': image_url, 'categoryId': category, 'condition': item['localizedExteriorName'], 'float': item['wearPercent'] / 100 if 'wearPercent' in item else None, 'source': {'name': 'SkinBaron', 'url': url, 'imageUrl': image_url, 'capturedAt': captured, 'price': item['itemPrice'], 'currency': 'EUR', 'kind': 'offer', 'floatPrecision': 'precise' if item.get('isWearPrecise') else 'rounded'}}
     if not products:
         raise ValueError('SkinBaron returned no eligible offers')
@@ -167,16 +174,28 @@ def baron_products(html, captured):
 
 
 def save_image(product):
+    # SkinSwap's product pages use /hd for the same variant stack ID.
+    # Preserve the exact variant; never upscale the 240px thumbnail.
+    if product['source']['name'] == 'SkinSwap':
+        source_image = product['source']['imageUrl'].rstrip('/')
+        if not source_image.endswith('/hd'):
+            source_image += '/hd'
+        product['imageUrl'] = source_image
+        product['source']['imageUrl'] = source_image
+    if '/Marketing/' in product['imageUrl']:
+        raise ValueError('Marketing banners are not product images: ' + product['id'])
     stem = hashlib.sha256(product['imageUrl'].encode()).hexdigest()[:20]
-    for extension in ['.webp', '.png', '.jpg']:
+    for extension in ['.webp', '.png', '.jpg', '.avif']:
         if (ROOT / 'public' / 'catalog' / (stem + extension)).exists():
             product['imageUrl'] = '/catalog/' + stem + extension
             return product
     raw, mime = fetch(product['imageUrl'])
-    extension = {'image/webp': '.webp', 'image/png': '.png', 'image/jpeg': '.jpg'}.get(mime)
+    extension = {'image/webp': '.webp', 'image/png': '.png', 'image/jpeg': '.jpg', 'image/avif': '.avif'}.get(mime)
     # SkinBaron's public marketing endpoint serves WebP as text/plain.
     if raw[:4] == b'RIFF' and raw[8:12] == b'WEBP':
         extension = '.webp'
+    elif raw.startswith(b'\x89PNG\r\n\x1a\n'):
+        extension = '.png'
     if not extension or len(raw) < 100:
         raise ValueError('Invalid product image: ' + product['id'])
     filename = stem + extension
@@ -189,11 +208,19 @@ def save_image(product):
 
 def enrich_description(product, descriptions):
     name = product['name'].replace('★ ', '').replace('StatTrak™ ', '').replace('Souvenir ', '')
-    entry = descriptions.get(name)
+    entry = descriptions.get(product['name']) or descriptions.get(name)
     if not entry:
         return product
     try:
         html = fetch(entry['url'])[0].decode('utf-8')
+        (CACHE / (entry['url'].rstrip('/').rsplit('/', 1)[-1] + '.html')).write_text(html)
+        if product['source']['name'] == 'SkinBaron':
+            source = angular_state(html).get('products-variant-description-state', {}).get('Descriptions', {})
+            original = source.get('skinDescription') or source.get('weaponDescription', '')
+            if original and hashlib.sha256(original.encode()).hexdigest() == entry['sourceDescriptionHash']:
+                product['description'] = entry['text'] + '\n\n' + product['description']
+                product['source']['descriptionUrl'] = entry['url']
+            return product
         for raw in re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S):
             data = json.loads(raw)
             if data.get('@type') == 'Product' and hashlib.sha256(data.get('description', '').encode()).hexdigest() == entry['sourceDescriptionHash']:
@@ -224,7 +251,9 @@ def main():
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         products = list(pool.map(save_image, products))
         descriptions = json.loads((ROOT / 'src/data/product-descriptions.json').read_text())
+        descriptions.update(json.loads((ROOT / 'src/data/product-descriptions-baron.json').read_text()))
         products = list(pool.map(lambda product: enrich_description(product, descriptions), products))
+    products = enrich(products)
     # Interleave sources and categories without inventing popularity rankings.
     products.sort(key=lambda p: (p['categoryId'], p['source']['name'], p['name']))
     buckets = {}

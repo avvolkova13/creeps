@@ -1,4 +1,4 @@
-name: Verify and deploy GitHub Pages
+name: Verify Creeps and publish configured Pages gateway
 
 on:
   push:
@@ -28,15 +28,19 @@ jobs:
       - run: npm run lint
       - run: npm test
       - run: npm run typecheck
-      - run: npm run build:pages
-      - run: npm run check:pages
+      - run: npm run build
+      - name: Prepare Pages gateway to server
+        if: vars.CREEPS_APP_URL != ''
+        run: npm run build:pages && npm run check:pages
+        env:
+          CREEPS_APP_URL: ${{ vars.CREEPS_APP_URL }}
       - uses: actions/upload-pages-artifact@v3
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && vars.CREEPS_APP_URL != ''
         with:
           path: out
 
   deploy:
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && vars.CREEPS_APP_URL != ''
     needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 10

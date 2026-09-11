@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 import { projectConfig } from "@/config/project";
+import { ShopSession } from "@/components/shop-session";
 import { SiteFooter, SiteHeader } from "@/components/site-shell";
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ru">
-      <body><div className="paper-atmosphere" aria-hidden="true" /><SiteHeader />{children}<SiteFooter /></body>
+      <body><div className="paper-atmosphere" aria-hidden="true" /><ShopSession><SiteHeader />{children}<SiteFooter /></ShopSession></body>
     </html>
   );
 }

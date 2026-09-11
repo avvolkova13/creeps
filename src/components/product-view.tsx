@@ -3,13 +3,17 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { Category, Product } from "@/lib/catalog";
-import { estimateRublesFromCreeps, formatEstimatedAmount } from "@/lib/currency";
+import { formatEstimatedAmount } from "@/lib/currency";
 import { projectConfig } from "@/config/project";
-import { Dialog } from "./dialog";
 import { publicAsset } from "@/lib/public-asset";
+import { ProductCard } from "./product-card";
+import { AddToCart } from "./shop-session";
+import { productQuote } from "@/lib/money";
 
-export function ProductPrice({ amount }: { amount: number }) {
-  return <div className="product-price"><strong>{formatEstimatedAmount(amount, "Creeps", 2)}</strong><span>≈ {formatEstimatedAmount(estimateRublesFromCreeps(amount), "RUB", 2)}</span></div>;
+export function ProductPrice({ amount, rublesAmount, sign = "" }: { amount: number; rublesAmount?: number; sign?: "" | "+" | "−" }) {
+  const quote = productQuote(amount);
+  const value = formatEstimatedAmount(quote.creeps, "Creeps", 2).replace(/\s*Creeps$/, "");
+  return <div className="product-price"><strong><span className="price-value">{sign}{value}</span>{" "}<span className="price-unit">Creeps</span></strong><span>≈ {sign}{formatEstimatedAmount(rublesAmount ?? quote.rubles, "RUB", 2)}</span></div>;
 }
 
 function ProductSource({ product }: { product: Product }) {
@@ -35,37 +39,32 @@ function ProductImage({ product }: { product: Product }) {
   )}</div>;
 }
 
-export function ProductDetails({ product, category, quick = false }: { product: Product; category: Category | undefined; quick?: boolean }) {
+export function ProductDetails({ product, category }: { product: Product; category: Category | undefined }) {
   return <div className="product-details">
     <ProductImage product={product} />
     <div className="product-information">
       <p className="eyebrow">{category?.name ?? "Категория не указана"}</p>
-      {quick ? <h2 id="quick-view-title">{product.name}</h2> : <h1>{product.name}</h1>}
+      <h1>{product.name}</h1>
       <p className="product-description">{product.description || "Описание не предоставлено."}</p>
       <dl className="specifications"><div><dt>Состояние</dt><dd>{product.condition ?? "Не указано"}</dd></div><div><dt>Float</dt><dd>{formatFloat(product)}</dd></div></dl>
       <ProductPrice amount={product.priceCreeps} />
       <ProductSource product={product} />
-      <div className="purchase-area"><button className="button-primary" disabled>Покупка недоступна</button><p className="field-hint">{product.source ? "Справочная карточка из внешней витрины. Покупка и выдача в Creeps пока недоступны." : "Сейчас оформить заказ нельзя. Попробуйте позже."}</p></div>
+      <AddToCart productId={product.id} />
       <div className="payment-methods"><span className="eyebrow">Способы оплаты</span><p>{projectConfig.paymentMethods.map((method) => method.label).join(" · ")}</p></div>
-      {quick && <Link className="text-link" href={`/catalog/${encodeURIComponent(product.id)}`}>Полная карточка товара ↗</Link>}
     </div>
   </div>;
 }
 
 export function ProductGrid({ products, categories }: { products: readonly Product[]; categories: readonly Category[] }) {
-  const [selected, setSelected] = useState<Product | null>(null);
-  return <>
-    <div className="product-grid">{products.map((product) => <article className="product-card" key={product.id}>
-      <Link className="product-image-link" href={`/catalog/${encodeURIComponent(product.id)}`} tabIndex={-1} aria-hidden="true"><ProductImage product={product} /></Link>
+  return <div className="product-grid">{products.map((product) => <ProductCard key={product.id}>
+      <ProductImage product={product} />
       <div className="product-card-body">
         <p className="eyebrow">{categories.find((category) => category.id === product.categoryId)?.name ?? "Категория не указана"}</p>
-        <h3><Link href={`/catalog/${encodeURIComponent(product.id)}`}>{product.name}</Link></h3>
+        <h3><Link className="product-card-link" href={`/catalog/${encodeURIComponent(product.id)}`}>{product.name}</Link></h3>
         {product.condition && <p className="field-hint">{product.condition}</p>}
         {product.source && <p className="product-origin">{product.source.name} · справочная цена</p>}
         <ProductPrice amount={product.priceCreeps} />
-        <button className="button-secondary" onClick={() => setSelected(product)}>Посмотреть товар <span aria-hidden="true">↗</span></button>
+        <AddToCart productId={product.id} />
       </div>
-    </article>)}</div>
-    <Dialog open={selected !== null} onClose={() => setSelected(null)} titleId="quick-view-title">{selected && <ProductDetails product={selected} category={categories.find((category) => category.id === selected.categoryId)} quick />}</Dialog>
-  </>;
+    </ProductCard>)}</div>
 }

@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import snapshot from "../src/data/catalog-snapshot.json" with { type: "json" };
 import { projectConfig } from "../src/config/project.ts";
 import { filterProducts } from "../src/lib/catalog.ts";
+import { productQuote } from "../src/lib/money.ts";
 
 test("imported records retain distinct sources, valid categories and verifiable local images", () => {
   assert.equal(new Set(snapshot.products.map(p => p.id)).size, snapshot.products.length);
@@ -15,10 +16,11 @@ test("imported records retain distinct sources, valid categories and verifiable 
     assert.ok(p.float === null || (p.float >= 0 && p.float <= 1), p.id);
     assert.ok(Number.isFinite(Date.parse(p.source.capturedAt)), p.id);
     assert.ok(["skinswap.com", "skinbaron.de"].includes(new URL(p.source.url).hostname), p.id);
-    assert.match(p.imageUrl, /^\/catalog\/[a-f0-9]+\.(webp|png|jpg)$/);
+    assert.ok(!p.source.imageUrl.includes("/Marketing/"), `Marketing banner in product image: ${p.id}`);
+    assert.match(p.imageUrl, /^\/catalog\/[a-f0-9]+\.(webp|png|jpg|avif)$/);
     const image = readFileSync(new URL(`../public${p.imageUrl}`, import.meta.url));
     assert.ok(image.length > 100, p.id);
-    assert.ok(image.subarray(8, 12).toString() === "WEBP" || image.subarray(1, 4).toString() === "PNG" || image[0] === 0xff, p.id);
+    assert.ok(image.subarray(8, 12).toString() === "WEBP" || image.subarray(1, 4).toString() === "PNG" || image[0] === 0xff || (image.subarray(4, 8).toString() === "ftyp" && image.subarray(8, 12).toString() === "avif"), p.id);
   }
 });
 
@@ -33,7 +35,8 @@ test("prices use the source offer price and stated foreign exchange, not crossed
 
 test("real snapshot supports combined name, category, wear and price filters", () => {
   const p = snapshot.products.find(p => p.source.name === "SkinSwap");
-  const result = filterProducts(snapshot.products, { query: p.name, categoryId: p.categoryId, condition: p.condition, minPrice: p.priceCreeps, maxPrice: p.priceCreeps });
+  const displayedPrice = productQuote(p.priceCreeps).creeps;
+  const result = filterProducts(snapshot.products, { query: p.name, categoryId: p.categoryId, condition: p.condition, minPrice: displayedPrice, maxPrice: displayedPrice });
   assert.ok(result.some(item => item.id === p.id));
-  assert.ok(result.every(item => item.name.includes(p.name) && item.categoryId === p.categoryId && item.condition === p.condition && item.priceCreeps === p.priceCreeps));
+  assert.ok(result.every(item => item.name.includes(p.name) && item.categoryId === p.categoryId && item.condition === p.condition && productQuote(item.priceCreeps).creeps === displayedPrice));
 });

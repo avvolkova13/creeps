@@ -38,14 +38,14 @@
       "id": "swap-64ba82db6655",
       "name": "★ Hydra Gloves | Rattler",
       "description": "Перчатки без пальцев в бежево-коричневой гамме, с кожей, змеиной фактурой и эмблемой Hydra.\n\nПерчатки для Counter-Strike 2: ★ Hydra Gloves | Rattler. Состояние: Поношенное.",
-      "imageUrl": "/catalog/b8ac7e137e7a50afe314.webp",
+      "imageUrl": "/catalog/c79afec279467a19bd42.avif",
       "categoryId": "gloves",
       "condition": "Поношенное",
       "float": 0.39,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/1ebb873a24d2c58964c2257f3a68ff3b",
+        "imageUrl": "https://cdn.skinswap.com/images/730/1ebb873a24d2c58964c2257f3a68ff3b/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 96.41,
         "currency": "USD",
@@ -55,12 +55,25 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/hydra-gloves-rattler"
       },
-      "priceCreeps": 4901.030705882353
+      "priceCreeps": 4901.030705882353,
+      "attributes": {
+        "weapon": "Hydra Gloves",
+        "itemType": "gloves",
+        "colors": [
+          "orange"
+        ],
+        "rarity": "Экстраординарное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.78,
+        "popularityVotes": 58,
+        "evidenceUrl": "https://skinswap.com/skins/hydra-gloves-rattler"
+      }
     },
     {
       "id": "baron-17bc1409-f27e-4b8d-bced-c703c60d054a",
       "name": "StatTrak™ ★ Керамбит | Дамасская сталь",
-      "description": "Нож для Counter-Strike 2: StatTrak™ ★ Керамбит | Дамасская сталь. Состояние: Немного поношенное. Редкость: Тайное.",
+      "description": "Клинок сочетает два вида углеродистой стали.\n\nНож для Counter-Strike 2: StatTrak™ ★ Керамбит | Дамасская сталь. Состояние: Немного поношенное. Редкость: Тайное.",
       "imageUrl": "/catalog/ade5f9b515f545d66836.png",
       "categoryId": "knife",
       "condition": "Немного поношенное",
@@ -75,22 +88,34 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/Karambit/Damascus-Steel"
       },
-      "priceCreeps": 35466.48426812586
+      "priceCreeps": 35466.48426812586,
+      "attributes": {
+        "weapon": "Karambit",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 47.81247281899626,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=17bc1409-f27e-4b8d-bced-c703c60d054a&productName=Karambit-Damascus-Steel&skinName=Damascus-Steel&typeName=Knife",
+        "vanilla": false
+      }
     },
     {
       "id": "swap-a360a2cd8d9d",
       "name": "★ Bayonet | Doppler Phase 3",
       "description": "Глянцевый мраморный узор клинка в глубоких синих, фиолетовых и чёрных оттенках.\n\nНож для Counter-Strike 2: ★ Bayonet | Doppler Phase 3. Состояние: Прямо с завода.",
-      "imageUrl": "/catalog/6afd3c23d62a05cc3249.webp",
+      "imageUrl": "/catalog/f00957bbcfd66f93ee17.avif",
       "categoryId": "knife",
       "condition": "Прямо с завода",
       "float": 0.014,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/3dfcc46f4301b00de15eb003805fe11c",
+        "imageUrl": "https://cdn.skinswap.com/images/730/3dfcc46f4301b00de15eb003805fe11c/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 1012.93,
         "currency": "USD",
@@ -100,42 +125,69 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/bayonet-doppler-phase-3"
       },
-      "priceCreeps": 51492.594470588236
+      "priceCreeps": 51492.594470588236,
+      "attributes": {
+        "weapon": "Bayonet",
+        "itemType": "knife",
+        "colors": [
+          "blue",
+          "green",
+          "yellow"
+        ],
+        "rarity": "Тайное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.69,
+        "popularityVotes": 51,
+        "evidenceUrl": "https://skinswap.com/skins/bayonet-doppler-phase-3",
+        "vanilla": false
+      }
     },
     {
       "id": "baron-2543db74-1727-4fe4-b923-decbc9dd9d1e",
       "name": "Desert Eagle | Механо-пушка",
-      "description": "Пистолет для Counter-Strike 2: Desert Eagle | Механо-пушка. Состояние: После полевых испытаний. Редкость: Засекреченное. Коллекция «Запретная зона».",
-      "imageUrl": "/catalog/c17bcde200cce6ef29ed.webp",
+      "description": "Футуристичная отделка построена на сочетании чёрного и белого цветов.\n\nПистолет для Counter-Strike 2: Desert Eagle | Механо-пушка. Состояние: После полевых испытаний. Редкость: Засекреченное. Коллекция «Запретная зона».",
+      "imageUrl": "/catalog/b5b00fb09b03a6be24dd.png",
       "categoryId": "pistol",
       "condition": "После полевых испытаний",
       "float": 0.2689277231693268,
       "source": {
         "name": "SkinBaron",
         "url": "https://skinbaron.de/ru/offers/show?offerUuid=2543db74-1727-4fe4-b923-decbc9dd9d1e&productName=Desert-Eagle-Mecha-Industries&skinName=Mecha-Industries&typeName=Pistol",
-        "imageUrl": "https://skinbaron.de/api/v2/Marketing/SpecialOffer/Image/1105b8bf-b9d1-4a9a-af8d-9f489472fb63",
+        "imageUrl": "https://cdn.skinbaron.de/menu/csgo/Pistol/Desert-Eagle/Mecha-Industries.png",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 4.25,
         "currency": "EUR",
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Pistol/Desert-Eagle/Mecha-Industries"
       },
-      "priceCreeps": 251.22093023255817
+      "priceCreeps": 251.22093023255817,
+      "attributes": {
+        "weapon": "Desert Eagle",
+        "rarity": "Засекреченное",
+        "stattrak": false,
+        "tradeLocked": true,
+        "stickers": [],
+        "discountPercent": 26.470588235294123,
+        "itemType": "pistol",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=2543db74-1727-4fe4-b923-decbc9dd9d1e&productName=Desert-Eagle-Mecha-Industries&skinName=Mecha-Industries&typeName=Pistol"
+      }
     },
     {
       "id": "swap-8d1c7a992820",
       "name": "Glock-18 | Gamma Doppler Phase 1",
       "description": "Мраморный узор на затворе сочетает глубокий синий, чёрный и ярко-зелёный цвета; рамка остаётся однотонной.\n\nПистолет для Counter-Strike 2: Glock-18 | Gamma Doppler Phase 1. Состояние: Немного поношенное.",
-      "imageUrl": "/catalog/ab36688c477c633b1277.webp",
+      "imageUrl": "/catalog/f34f0e377c914de4fc1a.avif",
       "categoryId": "pistol",
       "condition": "Немного поношенное",
       "float": 0.097,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/02c84b2be5366911ba50980caa702b02",
+        "imageUrl": "https://cdn.skinswap.com/images/730/02c84b2be5366911ba50980caa702b02/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 94.41,
         "currency": "USD",
@@ -145,12 +197,26 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/glock-18-gamma-doppler-phase-1"
       },
-      "priceCreeps": 4799.360117647058
+      "priceCreeps": 4799.360117647058,
+      "attributes": {
+        "weapon": "Glock-18",
+        "itemType": "pistol",
+        "colors": [
+          "yellow",
+          "blue"
+        ],
+        "rarity": "Тайное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.63,
+        "popularityVotes": 51,
+        "evidenceUrl": "https://skinswap.com/skins/glock-18-gamma-doppler-phase-1"
+      }
     },
     {
       "id": "baron-05740431-5c55-488c-9574-ea5b83637a00",
       "name": "AK-47 | Гидропоника",
-      "description": "Винтовка для Counter-Strike 2: AK-47 | Гидропоника. Состояние: Немного поношенное. Редкость: Засекреченное. Коллекция «Рассвет».",
+      "description": "Бамбуковый рисунок выполнен металлизированными красками.\n\nВинтовка для Counter-Strike 2: AK-47 | Гидропоника. Состояние: Немного поношенное. Редкость: Засекреченное. Коллекция «Рассвет».",
       "imageUrl": "/catalog/d6cea4fd5474d782183d.png",
       "categoryId": "rifle",
       "condition": "Немного поношенное",
@@ -165,22 +231,33 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Rifle/AK-47/Hydroponic"
       },
-      "priceCreeps": 82755.12995896033
+      "priceCreeps": 82755.12995896033,
+      "attributes": {
+        "weapon": "AK-47",
+        "rarity": "Засекреченное",
+        "stattrak": false,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 64.59398148265232,
+        "itemType": "rifle",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=05740431-5c55-488c-9574-ea5b83637a00&productName=AK-47-Hydroponic&skinName=Hydroponic&typeName=Rifle"
+      }
     },
     {
       "id": "swap-ba19f94fd9cd",
       "name": "AK-47 | Asiimov",
       "description": "Белые и чёрные панели с яркими оранжевыми вставками образуют футуристический рисунок.\n\nВинтовка для Counter-Strike 2: AK-47 | Asiimov. Состояние: Немного поношенное.",
-      "imageUrl": "/catalog/f9f42ccd6653198b5e0d.webp",
+      "imageUrl": "/catalog/2d6422a8b66d4b9c88de.avif",
       "categoryId": "rifle",
       "condition": "Немного поношенное",
       "float": 0.121,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/13b96e1879592c42fdf8c30d91c84472",
+        "imageUrl": "https://cdn.skinswap.com/images/730/13b96e1879592c42fdf8c30d91c84472/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 89.1,
         "currency": "USD",
@@ -190,12 +267,25 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/ak-47-asiimov"
       },
-      "priceCreeps": 4529.424705882353
+      "priceCreeps": 4529.424705882353,
+      "attributes": {
+        "weapon": "AK-47",
+        "itemType": "rifle",
+        "colors": [
+          "orange"
+        ],
+        "rarity": "Тайное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.57,
+        "popularityVotes": 44,
+        "evidenceUrl": "https://skinswap.com/skins/ak-47-asiimov"
+      }
     },
     {
       "id": "baron-ab472945-c055-4dcc-b394-19e531270b67",
       "name": "MP5-SD | Оксидовый оазис",
-      "description": "ПП для Counter-Strike 2: MP5-SD | Оксидовый оазис. Состояние: Прямо с завода. Редкость: Засекреченное. Коллекция Mirage 2021.",
+      "description": "Бирюзовые и насыщенные оранжевые участки камуфляжа дополнены золотистыми деталями.\n\nПП для Counter-Strike 2: MP5-SD | Оксидовый оазис. Состояние: Прямо с завода. Редкость: Засекреченное. Коллекция Mirage 2021.",
       "imageUrl": "/catalog/f9e9beb0ac7c8668f20f.png",
       "categoryId": "smg",
       "condition": "Прямо с завода",
@@ -210,22 +300,33 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/SMG/MP5-SD/Oxide-Oasis"
       },
-      "priceCreeps": 9951.30437756498
+      "priceCreeps": 9951.30437756498,
+      "attributes": {
+        "weapon": "MP5-SD",
+        "rarity": "Засекреченное",
+        "stattrak": false,
+        "tradeLocked": true,
+        "stickers": [],
+        "discountPercent": 51.68742466854158,
+        "itemType": "smg",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=ab472945-c055-4dcc-b394-19e531270b67&productName=MP5-SD-Oxide-Oasis&skinName=Oxide-Oasis&typeName=SMG"
+      }
     },
     {
       "id": "swap-406db041da5d",
       "name": "Souvenir UMP-45 | Fade",
       "description": "Золотистые, красные, розовые и фиолетовые оттенки плавно переходят друг в друга на хромированной основе.\n\nПП для Counter-Strike 2: Souvenir UMP-45 | Fade. Состояние: Немного поношенное.",
-      "imageUrl": "/catalog/8a46b7e9715a981ba548.webp",
+      "imageUrl": "/catalog/a7d91dc1ae93c211bc63.avif",
       "categoryId": "smg",
       "condition": "Немного поношенное",
       "float": 0.078,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/73fec7f86553e67c70bc044b3cb3668a",
+        "imageUrl": "https://cdn.skinswap.com/images/730/73fec7f86553e67c70bc044b3cb3668a/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 69.5,
         "currency": "USD",
@@ -235,20 +336,35 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/ump-45-fade"
       },
-      "priceCreeps": 3533.052941176471
+      "priceCreeps": 3533.052941176471,
+      "attributes": {
+        "weapon": "UMP-45",
+        "itemType": "smg",
+        "colors": [
+          "orange",
+          "red",
+          "pink"
+        ],
+        "rarity": "Засекреченное",
+        "stattrak": false,
+        "souvenir": true,
+        "popularity": 4.66,
+        "popularityVotes": 44,
+        "evidenceUrl": "https://skinswap.com/skins/ump-45-fade"
+      }
     },
     {
       "id": "swap-01ed2945591c",
       "name": "★ Sport Gloves | Arid",
       "description": "Спортивные перчатки в коричневых оттенках с цифровым камуфляжем и защитными накладками на костяшках.\n\nПерчатки для Counter-Strike 2: ★ Sport Gloves | Arid. Состояние: Немного поношенное.",
-      "imageUrl": "/catalog/6b428fe53e2f43f5d195.webp",
+      "imageUrl": "/catalog/1804715c9b2ac025ebad.avif",
       "categoryId": "gloves",
       "condition": "Немного поношенное",
       "float": 0.144,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/005a6d4b10cab6f48115369b75685137",
+        "imageUrl": "https://cdn.skinswap.com/images/730/005a6d4b10cab6f48115369b75685137/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 1880.88,
         "currency": "USD",
@@ -258,12 +374,26 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/sport-gloves-arid"
       },
-      "priceCreeps": 95615.088
+      "priceCreeps": 95615.088,
+      "attributes": {
+        "weapon": "Sport Gloves",
+        "itemType": "gloves",
+        "colors": [
+          "orange",
+          "yellow"
+        ],
+        "rarity": "Экстраординарное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.7,
+        "popularityVotes": 47,
+        "evidenceUrl": "https://skinswap.com/skins/sport-gloves-arid"
+      }
     },
     {
       "id": "baron-1058eb36-9557-4a3c-bde0-12a4937ea9cd",
       "name": "StatTrak™ ★ Керамбит | Черный глянец",
-      "description": "Нож для Counter-Strike 2: StatTrak™ ★ Керамбит | Черный глянец. Состояние: После полевых испытаний. Редкость: Тайное.",
+      "description": "Матовая поверхность клинка сочетается с рукоятью из чёрного многослойного материала.\n\nНож для Counter-Strike 2: StatTrak™ ★ Керамбит | Черный глянец. Состояние: После полевых испытаний. Редкость: Тайное.",
       "imageUrl": "/catalog/f996473f918ee946a94f.png",
       "categoryId": "knife",
       "condition": "После полевых испытаний",
@@ -278,22 +408,34 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/Karambit/Black-Laminate"
       },
-      "priceCreeps": 33655.3291381669
+      "priceCreeps": 33655.3291381669,
+      "attributes": {
+        "weapon": "Karambit",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 50.227288621581934,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=1058eb36-9557-4a3c-bde0-12a4937ea9cd&productName=Karambit-Black-Laminate&skinName=Black-Laminate&typeName=Knife",
+        "vanilla": false
+      }
     },
     {
       "id": "swap-522f63d89206",
       "name": "★ Bowie Knife | Doppler Phase 1",
       "description": "На широком клинке смешиваются чёрные, тёмно-фиолетовые и ярко-розовые оттенки под глянцевым покрытием.\n\nНож для Counter-Strike 2: ★ Bowie Knife | Doppler Phase 1. Состояние: Прямо с завода.",
-      "imageUrl": "/catalog/22fe0fd2eb02f12fa85e.webp",
+      "imageUrl": "/catalog/ae260a5ede7850214fcd.avif",
       "categoryId": "knife",
       "condition": "Прямо с завода",
       "float": 0.004,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/012f71e936fd5e79b338c4d2e2c7b0a4",
+        "imageUrl": "https://cdn.skinswap.com/images/730/012f71e936fd5e79b338c4d2e2c7b0a4/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 691.28,
         "currency": "USD",
@@ -303,12 +445,27 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/bowie-knife-doppler-phase-1"
       },
-      "priceCreeps": 35141.42211764706
+      "priceCreeps": 35141.42211764706,
+      "attributes": {
+        "weapon": "Bowie Knife",
+        "itemType": "knife",
+        "colors": [
+          "purple",
+          "red"
+        ],
+        "rarity": "Тайное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.75,
+        "popularityVotes": 53,
+        "evidenceUrl": "https://skinswap.com/skins/bowie-knife-doppler-phase-1",
+        "vanilla": false
+      }
     },
     {
       "id": "baron-4d87d012-3437-4ce8-8cdb-510b213f41d7",
       "name": "StatTrak™ Desert Eagle | Ржавый кобальт",
-      "description": "Пистолет для Counter-Strike 2: StatTrak™ Desert Eagle | Ржавый кобальт. Состояние: Прямо с завода. Редкость: Засекреченное. Коллекция «eSports Winter 2013».",
+      "description": "Металлическая отделка с квадратными участками рисунка, напоминающими ржавый металл.\n\nПистолет для Counter-Strike 2: StatTrak™ Desert Eagle | Ржавый кобальт. Состояние: Прямо с завода. Редкость: Засекреченное. Коллекция «eSports Winter 2013».",
       "imageUrl": "/catalog/4665408cc515f3b6f00e.png",
       "categoryId": "pistol",
       "condition": "Прямо с завода",
@@ -323,22 +480,35 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Pistol/Desert-Eagle/Cobalt-Disruption"
       },
-      "priceCreeps": 8787.412585499316
+      "priceCreeps": 8787.412585499316,
+      "attributes": {
+        "weapon": "Desert Eagle",
+        "rarity": "Засекреченное",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [
+          "Cloud9 (Holo) | Rio 2022"
+        ],
+        "discountPercent": 45.34558823529412,
+        "itemType": "pistol",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=4d87d012-3437-4ce8-8cdb-510b213f41d7&productName=Desert-Eagle-Cobalt-Disruption&skinName=Cobalt-Disruption&typeName=Pistol"
+      }
     },
     {
       "id": "swap-f552ddd674fb",
       "name": "Glock-18 | Gamma Doppler Phase 3",
       "description": "Мраморные зелёные, бирюзовые и тёмно-синие переходы на затворе контрастируют с чёрной рамкой.\n\nПистолет для Counter-Strike 2: Glock-18 | Gamma Doppler Phase 3. Состояние: После полевых испытаний.",
-      "imageUrl": "/catalog/151c82e51c23b8f89b51.webp",
+      "imageUrl": "/catalog/f4d807133d5bcf19ba5d.avif",
       "categoryId": "pistol",
       "condition": "После полевых испытаний",
       "float": 0.163,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/04f890abe6d2c8120961b28315a11933",
+        "imageUrl": "https://cdn.skinswap.com/images/730/04f890abe6d2c8120961b28315a11933/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 89.75,
         "currency": "USD",
@@ -348,12 +518,26 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/glock-18-gamma-doppler-phase-3"
       },
-      "priceCreeps": 4562.467647058824
+      "priceCreeps": 4562.467647058824,
+      "attributes": {
+        "weapon": "Glock-18",
+        "itemType": "pistol",
+        "colors": [
+          "green",
+          "blue"
+        ],
+        "rarity": "Тайное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.57,
+        "popularityVotes": 54,
+        "evidenceUrl": "https://skinswap.com/skins/glock-18-gamma-doppler-phase-3"
+      }
     },
     {
       "id": "baron-278fde16-087b-4014-9ca3-3517bff94bce",
       "name": "AUG | Пламенный Ёрмунганд",
-      "description": "Винтовка для Counter-Strike 2: AUG | Пламенный Ёрмунганд. Состояние: После полевых испытаний. Редкость: Запрещённое. Коллекция «Север».",
+      "description": "Оранжевый рисунок изображает Ёрмунганда — Мирового Змея.\n\nВинтовка для Counter-Strike 2: AUG | Пламенный Ёрмунганд. Состояние: После полевых испытаний. Редкость: Запрещённое. Коллекция «Север».",
       "imageUrl": "/catalog/622bbc932c1eb7ccd705.png",
       "categoryId": "rifle",
       "condition": "После полевых испытаний",
@@ -368,22 +552,33 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Rifle/AUG/Flame-Jörmungandr"
       },
-      "priceCreeps": 21257.42845417237
+      "priceCreeps": 21257.42845417237,
+      "attributes": {
+        "weapon": "AUG",
+        "rarity": "Запрещённое",
+        "stattrak": false,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 49.6238810987995,
+        "itemType": "rifle",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=278fde16-087b-4014-9ca3-3517bff94bce&productName=AUG-Flame-J-rmungandr&skinName=Flame-J-rmungandr&typeName=Rifle"
+      }
     },
     {
       "id": "swap-0889d5f8f420",
       "name": "AK-47 | Red Laminate",
       "description": "Чёрный металлический корпус сочетается с красной слоистой древесной отделкой цевья, рукояти и приклада.\n\nВинтовка для Counter-Strike 2: AK-47 | Red Laminate. Состояние: После полевых испытаний.",
-      "imageUrl": "/catalog/1c306a991a25bfdab4ef.webp",
+      "imageUrl": "/catalog/674afe2a8b190b97cfdf.avif",
       "categoryId": "rifle",
       "condition": "После полевых испытаний",
       "float": 0.327,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/a2db82dcfb12c71af789d2cac1f11090",
+        "imageUrl": "https://cdn.skinswap.com/images/730/a2db82dcfb12c71af789d2cac1f11090/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 89.1,
         "currency": "USD",
@@ -393,12 +588,26 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/ak-47-red-laminate"
       },
-      "priceCreeps": 4529.424705882353
+      "priceCreeps": 4529.424705882353,
+      "attributes": {
+        "weapon": "AK-47",
+        "itemType": "rifle",
+        "colors": [
+          "orange",
+          "red"
+        ],
+        "rarity": "Засекреченное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.38,
+        "popularityVotes": 39,
+        "evidenceUrl": "https://skinswap.com/skins/ak-47-red-laminate"
+      }
     },
     {
       "id": "baron-1a32b382-fe9c-41ba-b680-56eae0043d85",
       "name": "StatTrak™ ПП-19 «Бизон» | Антиквариат",
-      "description": "ПП для Counter-Strike 2: StatTrak™ ПП-19 «Бизон» | Антиквариат. Состояние: Прямо с завода. Редкость: Запрещённое. Охотничья коллекция.",
+      "description": "Аквапечать и декоративные элементы воспроизводят древесную отделку и золотую инкрустацию.\n\nПП для Counter-Strike 2: StatTrak™ ПП-19 «Бизон» | Антиквариат. Состояние: Прямо с завода. Редкость: Запрещённое. Охотничья коллекция.",
       "imageUrl": "/catalog/41d1f45b549576789045.png",
       "categoryId": "smg",
       "condition": "Прямо с завода",
@@ -413,22 +622,33 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/SMG/PP-Bizon/Antique"
       },
-      "priceCreeps": 501.2596443228455
+      "priceCreeps": 501.2596443228455,
+      "attributes": {
+        "weapon": "PP-Bizon",
+        "rarity": "Запрещённое",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 44.86345903771131,
+        "itemType": "smg",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=1a32b382-fe9c-41ba-b680-56eae0043d85&productName=PP-Bizon-Antique&skinName=Antique&typeName=SMG"
+      }
     },
     {
       "id": "swap-1d52b0272761",
       "name": "StatTrak™ PP-Bizon | Judgement of Anubis",
       "description": "Египетские мотивы, золотистые детали и изображение Анубиса на фоне тёмно-синих завитков.\n\nПП для Counter-Strike 2: StatTrak™ PP-Bizon | Judgement of Anubis. Состояние: Прямо с завода.",
-      "imageUrl": "/catalog/3a112a979571b214d17e.webp",
+      "imageUrl": "/catalog/a5d8c094e9c68473c0d0.avif",
       "categoryId": "smg",
       "condition": "Прямо с завода",
       "float": 0.052,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/06559cee4856c9870457885eb461c119",
+        "imageUrl": "https://cdn.skinswap.com/images/730/06559cee4856c9870457885eb461c119/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 59.66,
         "currency": "USD",
@@ -438,12 +658,26 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/pp-bizon-judgement-of-anubis"
       },
-      "priceCreeps": 3032.8336470588233
+      "priceCreeps": 3032.8336470588233,
+      "attributes": {
+        "weapon": "PP-Bizon",
+        "itemType": "smg",
+        "colors": [
+          "orange",
+          "blue"
+        ],
+        "rarity": "Тайное",
+        "stattrak": true,
+        "souvenir": false,
+        "popularity": 4.61,
+        "popularityVotes": 51,
+        "evidenceUrl": "https://skinswap.com/skins/pp-bizon-judgement-of-anubis"
+      }
     },
     {
       "id": "baron-dbd7237d-261c-4cbb-b704-1d55fdf0d91e",
       "name": "StatTrak™ ★ Коготь | Поверхностная закалка",
-      "description": "Нож для Counter-Strike 2: StatTrak™ ★ Коготь | Поверхностная закалка. Состояние: Немного поношенное. Редкость: Тайное.",
+      "description": "Отделка получена высокотемпературной закалкой с применением древесного угля.\n\nНож для Counter-Strike 2: StatTrak™ ★ Коготь | Поверхностная закалка. Состояние: Немного поношенное. Редкость: Тайное.",
       "imageUrl": "/catalog/8f629575f11e71ef14b4.png",
       "categoryId": "knife",
       "condition": "Немного поношенное",
@@ -458,22 +692,34 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/Talon-Knife/Case-Hardened"
       },
-      "priceCreeps": 35466.48426812586
+      "priceCreeps": 35466.48426812586,
+      "attributes": {
+        "weapon": "Talon Knife",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 49.4489940349813,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=dbd7237d-261c-4cbb-b704-1d55fdf0d91e&productName=Talon-Knife-Case-Hardened&skinName=Case-Hardened&typeName=Knife",
+        "vanilla": false
+      }
     },
     {
       "id": "swap-792a31fd6da7",
       "name": "★ Butterfly Knife | Blue Steel",
       "description": "Металлическая сине-серая отделка клинка и рукоятей с эффектом воронения.\n\nНож для Counter-Strike 2: ★ Butterfly Knife | Blue Steel. Состояние: Закалённое в боях.",
-      "imageUrl": "/catalog/106a65de7e294f1baf3a.webp",
+      "imageUrl": "/catalog/8dfecab605a0f1c5fe9c.avif",
       "categoryId": "knife",
       "condition": "Закалённое в боях",
       "float": 0.859,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/0affe0033c88702ed9197508bcb5cb8b",
+        "imageUrl": "https://cdn.skinswap.com/images/730/0affe0033c88702ed9197508bcb5cb8b/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 1727.14,
         "currency": "USD",
@@ -483,12 +729,26 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/butterfly-knife-blue-steel"
       },
-      "priceCreeps": 87799.66988235294
+      "priceCreeps": 87799.66988235294,
+      "attributes": {
+        "weapon": "Butterfly Knife",
+        "itemType": "knife",
+        "colors": [
+          "blue"
+        ],
+        "rarity": "Тайное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.7,
+        "popularityVotes": 57,
+        "evidenceUrl": "https://skinswap.com/skins/butterfly-knife-blue-steel",
+        "vanilla": false
+      }
     },
     {
       "id": "baron-a5aba846-7f1c-4445-8afb-9c54f359b385",
       "name": "StatTrak™ Five-SeveN | Разъярённая толпа",
-      "description": "Пистолет для Counter-Strike 2: StatTrak™ Five-SeveN | Разъярённая толпа. Состояние: Немного поношенное. Редкость: Тайное. Коллекция «Призма».",
+      "description": "Яркая композиция на корпусе выполнена в духе уличного искусства.\n\nПистолет для Counter-Strike 2: StatTrak™ Five-SeveN | Разъярённая толпа. Состояние: Немного поношенное. Редкость: Тайное. Коллекция «Призма».",
       "imageUrl": "/catalog/5872b5bae081aecd467d.png",
       "categoryId": "pistol",
       "condition": "Немного поношенное",
@@ -503,22 +763,33 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Pistol/Five-SeveN/Angry-Mob"
       },
-      "priceCreeps": 2482.0627906976742
+      "priceCreeps": 2482.0627906976742,
+      "attributes": {
+        "weapon": "Five-SeveN",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 48.5605782187921,
+        "itemType": "pistol",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=a5aba846-7f1c-4445-8afb-9c54f359b385&productName=Five-SeveN-Angry-Mob&skinName=Angry-Mob&typeName=Pistol"
+      }
     },
     {
       "id": "swap-0a7a560b8522",
       "name": "P250 | Undertow",
       "description": "Серебристый металлический затвор сочетается с синим корпусом и неровными чёрными пятнами.\n\nПистолет для Counter-Strike 2: P250 | Undertow. Состояние: Прямо с завода.",
-      "imageUrl": "/catalog/48a5f2c878df678f67ae.webp",
+      "imageUrl": "/catalog/c287b8916b53ca038e6d.avif",
       "categoryId": "pistol",
       "condition": "Прямо с завода",
       "float": 0.029,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/04a244b4767bb074a9ef597f5f1ffb87",
+        "imageUrl": "https://cdn.skinswap.com/images/730/04a244b4767bb074a9ef597f5f1ffb87/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 58.86,
         "currency": "USD",
@@ -528,12 +799,25 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/p250-undertow"
       },
-      "priceCreeps": 2992.165411764706
+      "priceCreeps": 2992.165411764706,
+      "attributes": {
+        "weapon": "P250",
+        "itemType": "pistol",
+        "colors": [
+          "blue"
+        ],
+        "rarity": "Засекреченное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.24,
+        "popularityVotes": 25,
+        "evidenceUrl": "https://skinswap.com/skins/p250-undertow"
+      }
     },
     {
       "id": "baron-9329f0e9-76fc-4ae9-947e-d4b6d9e405c4",
       "name": "FAMAS | Авария",
-      "description": "Винтовка для Counter-Strike 2: FAMAS | Авария. Состояние: Немного поношенное. Редкость: Засекреченное. Коллекция Train 2021.",
+      "description": "Металлизированное покрытие украшено повторяющимися символами радиации.\n\nВинтовка для Counter-Strike 2: FAMAS | Авария. Состояние: Немного поношенное. Редкость: Засекреченное. Коллекция Train 2021.",
       "imageUrl": "/catalog/d531cd54eb9e67c95bf5.png",
       "categoryId": "rifle",
       "condition": "Немного поношенное",
@@ -548,22 +832,33 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Rifle/FAMAS/Meltdown"
       },
-      "priceCreeps": 1477.7701778385774
+      "priceCreeps": 1477.7701778385774,
+      "attributes": {
+        "weapon": "FAMAS",
+        "rarity": "Засекреченное",
+        "stattrak": false,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 43.794964028776974,
+        "itemType": "rifle",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=9329f0e9-76fc-4ae9-947e-d4b6d9e405c4&productName=FAMAS-Meltdown&skinName=Meltdown&typeName=Rifle"
+      }
     },
     {
       "id": "swap-0282387e3432",
       "name": "AK-47 | X-Ray",
       "description": "Рисунок в красных и жёлто-оранжевых оттенках имитирует рентгеновский снимок внутренних деталей оружия.\n\nВинтовка для Counter-Strike 2: AK-47 | X-Ray. Состояние: Немного поношенное.",
-      "imageUrl": "/catalog/f9508576025a68bac404.webp",
+      "imageUrl": "/catalog/dd5df14fb4b74f094b4c.avif",
       "categoryId": "rifle",
       "condition": "Немного поношенное",
       "float": 0.147,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/01caeb6aa5cbaa5752fc6d66ce448700",
+        "imageUrl": "https://cdn.skinswap.com/images/730/01caeb6aa5cbaa5752fc6d66ce448700/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 1571.88,
         "currency": "USD",
@@ -573,12 +868,26 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/ak-47-x-ray"
       },
-      "priceCreeps": 79906.98211764706
+      "priceCreeps": 79906.98211764706,
+      "attributes": {
+        "weapon": "AK-47",
+        "itemType": "rifle",
+        "colors": [
+          "red",
+          "orange"
+        ],
+        "rarity": "Тайное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.76,
+        "popularityVotes": 58,
+        "evidenceUrl": "https://skinswap.com/skins/ak-47-x-ray"
+      }
     },
     {
       "id": "baron-f95e0fbf-ec8a-4a22-8ee4-cb4a616e3ff4",
       "name": "StatTrak™ ★ Коготь | Убийство",
-      "description": "Нож для Counter-Strike 2: StatTrak™ ★ Коготь | Убийство. Состояние: Немного поношенное. Редкость: Тайное.",
+      "description": "Под красным покрытием виден полосатый узор с металлическим блеском алюминия и хрома.\n\nНож для Counter-Strike 2: StatTrak™ ★ Коготь | Убийство. Состояние: Немного поношенное. Редкость: Тайное.",
       "imageUrl": "/catalog/dd6822cd0df1a27ca8bf.png",
       "categoryId": "knife",
       "condition": "Немного поношенное",
@@ -593,22 +902,34 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/Talon-Knife/Slaughter"
       },
-      "priceCreeps": 31237.10601915185
+      "priceCreeps": 31237.10601915185,
+      "attributes": {
+        "weapon": "Talon Knife",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": true,
+        "stickers": [],
+        "discountPercent": 50.347646340317574,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=f95e0fbf-ec8a-4a22-8ee4-cb4a616e3ff4&productName=Talon-Knife-Slaughter&skinName=Slaughter&typeName=Knife",
+        "vanilla": false
+      }
     },
     {
       "id": "swap-becfeffaab1c",
       "name": "★ Butterfly Knife | Lore",
       "description": "Золотой клинок с орнаментом из переплетённых линий и оливковая рукоять с золотистыми деталями.\n\nНож для Counter-Strike 2: ★ Butterfly Knife | Lore. Состояние: После полевых испытаний.",
-      "imageUrl": "/catalog/5b57ea7388c427217ef5.webp",
+      "imageUrl": "/catalog/40b9881f2583342d3477.avif",
       "categoryId": "knife",
       "condition": "После полевых испытаний",
       "float": 0.164,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/00ae8836d8e7ac514a713421c1e7cd25",
+        "imageUrl": "https://cdn.skinswap.com/images/730/00ae8836d8e7ac514a713421c1e7cd25/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 1908.82,
         "currency": "USD",
@@ -618,12 +939,28 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/butterfly-knife-lore"
       },
-      "priceCreeps": 97035.42611764706
+      "priceCreeps": 97035.42611764706,
+      "attributes": {
+        "weapon": "Butterfly Knife",
+        "itemType": "knife",
+        "colors": [
+          "green",
+          "orange",
+          "yellow"
+        ],
+        "rarity": "Тайное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.59,
+        "popularityVotes": 54,
+        "evidenceUrl": "https://skinswap.com/skins/butterfly-knife-lore",
+        "vanilla": false
+      }
     },
     {
       "id": "baron-17907cee-858f-4926-9668-29fc0cff67b7",
       "name": "StatTrak™ P250 | Прощальный оскал",
-      "description": "Пистолет для Counter-Strike 2: StatTrak™ P250 | Прощальный оскал. Состояние: Закалённое в боях. Редкость: Тайное. Коллекция «Спектр 2».",
+      "description": "Изображение механического крокодила сочетает зелёный цвет с жёлтыми акцентами.\n\nПистолет для Counter-Strike 2: StatTrak™ P250 | Прощальный оскал. Состояние: Закалённое в боях. Редкость: Тайное. Коллекция «Спектр 2».",
       "imageUrl": "/catalog/2eb92913d788ead415d0.png",
       "categoryId": "pistol",
       "condition": "Закалённое в боях",
@@ -638,22 +975,33 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Pistol/P250/See-Ya-Later"
       },
-      "priceCreeps": 5314.061559507524
+      "priceCreeps": 5314.061559507524,
+      "attributes": {
+        "weapon": "P250",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 91.29070071592572,
+        "itemType": "pistol",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=17907cee-858f-4926-9668-29fc0cff67b7&productName=P250-See-Ya-Later&skinName=See-Ya-Later&typeName=Pistol"
+      }
     },
     {
       "id": "swap-1557c8700f3a",
       "name": "USP-S | Whiteout",
       "description": "Белое однотонное покрытие корпуса и глушителя; минималистичная отделка без многоцветного рисунка.\n\nПистолет для Counter-Strike 2: USP-S | Whiteout. Состояние: Немного поношенное.",
-      "imageUrl": "/catalog/9565350154904520a516.webp",
+      "imageUrl": "/catalog/2a9c7d4f4e2da97e83c2.avif",
       "categoryId": "pistol",
       "condition": "Немного поношенное",
       "float": 0.124,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/6e380bbf3140c1812c5980132574f8cd",
+        "imageUrl": "https://cdn.skinswap.com/images/730/6e380bbf3140c1812c5980132574f8cd/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 79.24,
         "currency": "USD",
@@ -663,12 +1011,27 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/usp-s-whiteout"
       },
-      "priceCreeps": 4028.188705882353
+      "priceCreeps": 4028.188705882353,
+      "attributes": {
+        "weapon": "USP-S",
+        "itemType": "pistol",
+        "colors": [
+          "yellow",
+          "orange",
+          "white"
+        ],
+        "rarity": "Засекреченное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.73,
+        "popularityVotes": 52,
+        "evidenceUrl": "https://skinswap.com/skins/usp-s-whiteout"
+      }
     },
     {
       "id": "baron-5c635986-73ca-49e1-88dc-560d526e950f",
       "name": "SG 553 | Странник",
-      "description": "Винтовка для Counter-Strike 2: SG 553 | Странник. Состояние: Закалённое в боях. Редкость: Промышленное качество. Коллекция «Baggage».",
+      "description": "Полосатая отделка напоминает старинный багаж; отдельные элементы оформлены коричневой кожей.\n\nВинтовка для Counter-Strike 2: SG 553 | Странник. Состояние: Закалённое в боях. Редкость: Промышленное качество. Коллекция «Baggage».",
       "imageUrl": "/catalog/44631399a5211a95f6cf.png",
       "categoryId": "rifle",
       "condition": "Закалённое в боях",
@@ -683,22 +1046,33 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Rifle/SG-553/Traveler"
       },
-      "priceCreeps": 319.1983584131328
+      "priceCreeps": 319.1983584131328,
+      "attributes": {
+        "weapon": "SG 553",
+        "rarity": "Промышленное качество",
+        "stattrak": false,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 45.945945945945944,
+        "itemType": "rifle",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=5c635986-73ca-49e1-88dc-560d526e950f&productName=SG-553-Traveler&skinName=Traveler&typeName=Rifle"
+      }
     },
     {
       "id": "swap-6aa7ec4ed3fb",
       "name": "Galil AR | Sugar Rush",
       "description": "Розовые, фиолетовые и голубые геометрические полосы покрывают корпус, магазин и приклад.\n\nВинтовка для Counter-Strike 2: Galil AR | Sugar Rush. Состояние: После полевых испытаний.",
-      "imageUrl": "/catalog/cd29f1a5191b2bbd4a9e.webp",
+      "imageUrl": "/catalog/46cea731a176e7092b53.avif",
       "categoryId": "rifle",
       "condition": "После полевых испытаний",
       "float": 0.229,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/01dccce1d470d6dca53c62141a521df6",
+        "imageUrl": "https://cdn.skinswap.com/images/730/01dccce1d470d6dca53c62141a521df6/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 60.12,
         "currency": "USD",
@@ -708,12 +1082,27 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/galil-ar-sugar-rush"
       },
-      "priceCreeps": 3056.217882352941
+      "priceCreeps": 3056.217882352941,
+      "attributes": {
+        "weapon": "Galil AR",
+        "itemType": "rifle",
+        "colors": [
+          "purple",
+          "blue",
+          "pink"
+        ],
+        "rarity": "Засекреченное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.45,
+        "popularityVotes": 29,
+        "evidenceUrl": "https://skinswap.com/skins/galil-ar-sugar-rush"
+      }
     },
     {
       "id": "baron-116ac83e-d2ea-4804-8170-e13f2ef862b4",
       "name": "StatTrak™ ★ Нож Боуи | Патина",
-      "description": "Нож для Counter-Strike 2: StatTrak™ ★ Нож Боуи | Патина. Состояние: Поношенное. Редкость: Тайное. Коллекция «Дикое пламя».",
+      "description": "Патинированная поверхность сочетает лимонные и горчичные оттенки.\n\nНож для Counter-Strike 2: StatTrak™ ★ Нож Боуи | Патина. Состояние: Поношенное. Редкость: Тайное. Коллекция «Дикое пламя».",
       "imageUrl": "/catalog/15552cc03c5f79aba012.png",
       "categoryId": "knife",
       "condition": "Поношенное",
@@ -728,22 +1117,34 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/Bowie-Knife/Stained"
       },
-      "priceCreeps": 4728.864569083447
+      "priceCreeps": 4728.864569083447,
+      "attributes": {
+        "weapon": "Bowie Knife",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 46.42737561106275,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=116ac83e-d2ea-4804-8170-e13f2ef862b4&productName=Bowie-Knife-Stained&skinName=Stained&typeName=Knife",
+        "vanilla": false
+      }
     },
     {
       "id": "swap-466dad7996bd",
       "name": "★ Falchion Knife | Black Laminate",
       "description": "Тёмный клинок с обработкой stonewash и чёрная рукоять с полосатой фактурой ламината.\n\nНож для Counter-Strike 2: ★ Falchion Knife | Black Laminate. Состояние: Поношенное.",
-      "imageUrl": "/catalog/bbd2a3ff3813cf336a3e.webp",
+      "imageUrl": "/catalog/3a88f9dd8ffff1a8a2e4.avif",
       "categoryId": "knife",
       "condition": "Поношенное",
       "float": 0.415,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/01d5ffca8cbef0f847383060745275d6",
+        "imageUrl": "https://cdn.skinswap.com/images/730/01d5ffca8cbef0f847383060745275d6/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 205.38,
         "currency": "USD",
@@ -753,12 +1154,26 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/falchion-knife-black-laminate"
       },
-      "priceCreeps": 10440.552705882354
+      "priceCreeps": 10440.552705882354,
+      "attributes": {
+        "weapon": "Falchion Knife",
+        "itemType": "knife",
+        "colors": [
+          "gray"
+        ],
+        "rarity": "Тайное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.75,
+        "popularityVotes": 51,
+        "evidenceUrl": "https://skinswap.com/skins/falchion-knife-black-laminate",
+        "vanilla": false
+      }
     },
     {
       "id": "baron-2bc71557-a0a6-42f9-902d-49524c8fb904",
       "name": "StatTrak™ Tec-9 | Опустошитель",
-      "description": "Пистолет для Counter-Strike 2: StatTrak™ Tec-9 | Опустошитель. Состояние: Прямо с завода. Редкость: Засекреченное. Коллекция «Расколотая сеть».",
+      "description": "В отделке корпуса выделены участки синего и розового цветов.\n\nПистолет для Counter-Strike 2: StatTrak™ Tec-9 | Опустошитель. Состояние: Прямо с завода. Редкость: Засекреченное. Коллекция «Расколотая сеть».",
       "imageUrl": "/catalog/775bcd96afb3131e60b5.png",
       "categoryId": "pistol",
       "condition": "Прямо с завода",
@@ -773,14 +1188,25 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Pistol/Tec-9/Decimator"
       },
-      "priceCreeps": 8274.921887824898
+      "priceCreeps": 8274.921887824898,
+      "attributes": {
+        "weapon": "Tec-9",
+        "rarity": "Засекреченное",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 51.2314927712942,
+        "itemType": "pistol",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=2bc71557-a0a6-42f9-902d-49524c8fb904&productName=Tec-9-Decimator&skinName=Decimator&typeName=Pistol"
+      }
     },
     {
       "id": "baron-6144d89b-105c-482a-8dc0-07319aac4e69",
       "name": "StatTrak™ AUG | Аристократ",
-      "description": "Винтовка для Counter-Strike 2: StatTrak™ AUG | Аристократ. Состояние: Прямо с завода. Редкость: Запрещённое. Коллекция «Гамма».",
+      "description": "Серебристый тонкий орнамент нанесён поверх светло-голубого анодированного покрытия.\n\nВинтовка для Counter-Strike 2: StatTrak™ AUG | Аристократ. Состояние: Прямо с завода. Редкость: Запрещённое. Коллекция «Гамма».",
       "imageUrl": "/catalog/86faf18cc31eecb7f7ee.png",
       "categoryId": "rifle",
       "condition": "Прямо с завода",
@@ -795,22 +1221,35 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Rifle/AUG/Aristocrat"
       },
-      "priceCreeps": 295.55403556771546
+      "priceCreeps": 295.55403556771546,
+      "attributes": {
+        "weapon": "AUG",
+        "rarity": "Запрещённое",
+        "stattrak": true,
+        "tradeLocked": true,
+        "stickers": [
+          "Stitch-Loaded"
+        ],
+        "discountPercent": 45.53376906318083,
+        "itemType": "rifle",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=6144d89b-105c-482a-8dc0-07319aac4e69&productName=AUG-Aristocrat&skinName=Aristocrat&typeName=Rifle"
+      }
     },
     {
       "id": "swap-e34d219eeaf3",
       "name": "M4A1-S | Atomic Alloy",
       "description": "Контрастная чёрно-оранжевая анодированная отделка корпуса, ствола и глушителя.\n\nВинтовка для Counter-Strike 2: M4A1-S | Atomic Alloy. Состояние: После полевых испытаний.",
-      "imageUrl": "/catalog/c151184fd1de739a888a.webp",
+      "imageUrl": "/catalog/5c9b643255ba02b0876d.avif",
       "categoryId": "rifle",
       "condition": "После полевых испытаний",
       "float": 0.306,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/07d862e195e4d4fda02e80b9fead9179",
+        "imageUrl": "https://cdn.skinswap.com/images/730/07d862e195e4d4fda02e80b9fead9179/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 58.36,
         "currency": "USD",
@@ -820,12 +1259,25 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/m4a1-s-atomic-alloy"
       },
-      "priceCreeps": 2966.747764705882
+      "priceCreeps": 2966.747764705882,
+      "attributes": {
+        "weapon": "M4A1-S",
+        "itemType": "rifle",
+        "colors": [
+          "red"
+        ],
+        "rarity": "Засекреченное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.39,
+        "popularityVotes": 36,
+        "evidenceUrl": "https://skinswap.com/skins/m4a1-s-atomic-alloy"
+      }
     },
     {
       "id": "baron-8f472a56-a332-4c38-b386-68497a9b9046",
       "name": "StatTrak™ ★ Нож Боуи | Убийство",
-      "description": "Нож для Counter-Strike 2: StatTrak™ ★ Нож Боуи | Убийство. Состояние: После полевых испытаний. Редкость: Тайное. Коллекция «Дикое пламя».",
+      "description": "Под красным покрытием виден полосатый узор с металлическим блеском алюминия и хрома.\n\nНож для Counter-Strike 2: StatTrak™ ★ Нож Боуи | Убийство. Состояние: После полевых испытаний. Редкость: Тайное. Коллекция «Дикое пламя».",
       "imageUrl": "/catalog/f259b0482bcce9bb0b98.png",
       "categoryId": "knife",
       "condition": "После полевых испытаний",
@@ -840,22 +1292,34 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/Bowie-Knife/Slaughter"
       },
-      "priceCreeps": 8866.621067031465
+      "priceCreeps": 8866.621067031465,
+      "attributes": {
+        "weapon": "Bowie Knife",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 43.83284655133678,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=8f472a56-a332-4c38-b386-68497a9b9046&productName=Bowie-Knife-Slaughter&skinName=Slaughter&typeName=Knife",
+        "vanilla": false
+      }
     },
     {
       "id": "swap-d2e14f099361",
       "name": "★ Huntsman Knife | Rust Coat",
       "description": "Широкий клинок покрыт пятнистой коричневой ржавчиной; панели рукояти остаются тёмными.\n\nНож для Counter-Strike 2: ★ Huntsman Knife | Rust Coat. Состояние: Поношенное.",
-      "imageUrl": "/catalog/082bd6b573d8d463eada.webp",
+      "imageUrl": "/catalog/222c343c3eeb39d35685.avif",
       "categoryId": "knife",
       "condition": "Поношенное",
       "float": 0.448,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/000c2c486d0f2750f94fa31d223f2708",
+        "imageUrl": "https://cdn.skinswap.com/images/730/000c2c486d0f2750f94fa31d223f2708/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 216.49,
         "currency": "USD",
@@ -865,12 +1329,26 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/huntsman-knife-rust-coat"
       },
-      "priceCreeps": 11005.332823529412
+      "priceCreeps": 11005.332823529412,
+      "attributes": {
+        "weapon": "Huntsman Knife",
+        "itemType": "knife",
+        "colors": [
+          "gray"
+        ],
+        "rarity": "Тайное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.52,
+        "popularityVotes": 50,
+        "evidenceUrl": "https://skinswap.com/skins/huntsman-knife-rust-coat",
+        "vanilla": false
+      }
     },
     {
       "id": "baron-517011f1-3535-45a3-a94e-e6e33df05785",
       "name": "StatTrak™ Револьвер R8 | Градиент",
-      "description": "Пистолет для Counter-Strike 2: StatTrak™ Револьвер R8 | Градиент. Состояние: После полевых испытаний. Редкость: Тайное. Револьверная коллекция.",
+      "description": "На хромированной основе полупрозрачные цвета плавно переходят один в другой.\n\nПистолет для Counter-Strike 2: StatTrak™ Револьвер R8 | Градиент. Состояние: После полевых испытаний. Редкость: Тайное. Револьверная коллекция.",
       "imageUrl": "/catalog/70843c8a18e3b94fc0f0.png",
       "categoryId": "pistol",
       "condition": "После полевых испытаний",
@@ -885,14 +1363,25 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Pistol/R8-Revolver/Fade"
       },
-      "priceCreeps": 3901.3132694938445
+      "priceCreeps": 3901.3132694938445,
+      "attributes": {
+        "weapon": "R8-Revolver",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 47.32641660015962,
+        "itemType": "pistol",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=517011f1-3535-45a3-a94e-e6e33df05785&productName=R8-Revolver-Fade&skinName=Fade&typeName=Pistol"
+      }
     },
     {
       "id": "baron-6d0c0135-396b-4479-ab70-0a8155b6b541",
       "name": "StatTrak™ AUG | Хамелеон",
-      "description": "Винтовка для Counter-Strike 2: StatTrak™ AUG | Хамелеон. Состояние: Немного поношенное. Редкость: Тайное. Коллекция «Феникс».",
+      "description": "Главный элемент рисунка на корпусе — хамелеон, нанесённый вручную.\n\nВинтовка для Counter-Strike 2: StatTrak™ AUG | Хамелеон. Состояние: Немного поношенное. Редкость: Тайное. Коллекция «Феникс».",
       "imageUrl": "/catalog/b420a96a70689656715b.png",
       "categoryId": "rifle",
       "condition": "Немного поношенное",
@@ -907,22 +1396,38 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Rifle/AUG/Chameleon"
       },
-      "priceCreeps": 3664.2789329685365
+      "priceCreeps": 3664.2789329685365,
+      "attributes": {
+        "weapon": "AUG",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [
+          "PGL (Foil) | Stockholm 2021",
+          "PGL (Foil) | Stockholm 2021",
+          "PGL (Foil) | Stockholm 2021",
+          "PGL (Foil) | Stockholm 2021"
+        ],
+        "discountPercent": 43.691525115814336,
+        "itemType": "rifle",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=6d0c0135-396b-4479-ab70-0a8155b6b541&productName=AUG-Chameleon&skinName=Chameleon&typeName=Rifle"
+      }
     },
     {
       "id": "swap-75bd510204bb",
       "name": "M4A4 | Cyber Security",
       "description": "Диагональные синие, красные и золотистые полосы на чёрной основе дополнены техническими надписями.\n\nВинтовка для Counter-Strike 2: M4A4 | Cyber Security. Состояние: Прямо с завода.",
-      "imageUrl": "/catalog/94f12f87ec1449e4f6d8.webp",
+      "imageUrl": "/catalog/ebce718910c7873f60ee.avif",
       "categoryId": "rifle",
       "condition": "Прямо с завода",
       "float": 0.068,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/041b9d93bf977e96a7281dc2284e68f9",
+        "imageUrl": "https://cdn.skinswap.com/images/730/041b9d93bf977e96a7281dc2284e68f9/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 77.18,
         "currency": "USD",
@@ -932,12 +1437,28 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/m4a4-cyber-security"
       },
-      "priceCreeps": 3923.4680000000008
+      "priceCreeps": 3923.4680000000008,
+      "attributes": {
+        "weapon": "M4A4",
+        "itemType": "rifle",
+        "colors": [
+          "orange",
+          "yellow",
+          "red",
+          "blue"
+        ],
+        "rarity": "Засекреченное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.35,
+        "popularityVotes": 31,
+        "evidenceUrl": "https://skinswap.com/skins/m4a4-cyber-security"
+      }
     },
     {
       "id": "baron-43721b9f-3c8b-46a0-804e-f25990b74c34",
       "name": "StatTrak™ ★ Охотничий нож | Дамасская сталь",
-      "description": "Нож для Counter-Strike 2: StatTrak™ ★ Охотничий нож | Дамасская сталь. Состояние: После полевых испытаний. Редкость: Тайное. Охотничья коллекция.",
+      "description": "Клинок сочетает два вида углеродистой стали.\n\nНож для Counter-Strike 2: StatTrak™ ★ Охотничий нож | Дамасская сталь. Состояние: После полевых испытаний. Редкость: Тайное. Охотничья коллекция.",
       "imageUrl": "/catalog/4953a742b773cd10c429.png",
       "categoryId": "knife",
       "condition": "После полевых испытаний",
@@ -952,22 +1473,34 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/Huntsman-Knife/Damascus-Steel"
       },
-      "priceCreeps": 3783.091655266758
+      "priceCreeps": 3783.091655266758,
+      "attributes": {
+        "weapon": "Huntsman Knife",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": true,
+        "stickers": [],
+        "discountPercent": 53.36636549111047,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=43721b9f-3c8b-46a0-804e-f25990b74c34&productName=Huntsman-Knife-Damascus-Steel&skinName=Damascus-Steel&typeName=Knife",
+        "vanilla": false
+      }
     },
     {
       "id": "swap-118b28a7085c",
       "name": "★ Karambit | Blue Steel",
       "description": "Серо-синий воронёный клинок сочетается с чёрной фактурной рукоятью и кольцом для пальца.\n\nНож для Counter-Strike 2: ★ Karambit | Blue Steel. Состояние: Поношенное.",
-      "imageUrl": "/catalog/32760b4cf9c63ebe4078.webp",
+      "imageUrl": "/catalog/2be6832abb4857e7963c.avif",
       "categoryId": "knife",
       "condition": "Поношенное",
       "float": 0.436,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/ae31d11476c80d016b17ce8c9c357000",
+        "imageUrl": "https://cdn.skinswap.com/images/730/ae31d11476c80d016b17ce8c9c357000/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 1609.69,
         "currency": "USD",
@@ -977,12 +1510,26 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/karambit-blue-steel"
       },
-      "priceCreeps": 81829.0645882353
+      "priceCreeps": 81829.0645882353,
+      "attributes": {
+        "weapon": "Karambit",
+        "itemType": "knife",
+        "colors": [
+          "blue"
+        ],
+        "rarity": "Тайное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.8,
+        "popularityVotes": 55,
+        "evidenceUrl": "https://skinswap.com/skins/karambit-blue-steel",
+        "vanilla": false
+      }
     },
     {
       "id": "baron-9cf542d4-649f-4945-9130-9861306acff1",
       "name": "Tec-9 | Ядерная угроза",
-      "description": "Пистолет для Counter-Strike 2: Tec-9 | Ядерная угроза. Состояние: Прямо с завода. Редкость: Запрещённое. Коллекция «Nuke».",
+      "description": "Трафаретный рисунок показывает символ радиационной опасности.\n\nПистолет для Counter-Strike 2: Tec-9 | Ядерная угроза. Состояние: Прямо с завода. Редкость: Запрещённое. Коллекция «Nuke».",
       "imageUrl": "/catalog/e1808a6e622fedfa59e6.png",
       "categoryId": "pistol",
       "condition": "Прямо с завода",
@@ -997,14 +1544,25 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Pistol/Tec-9/Nuclear-Threat"
       },
-      "priceCreeps": 35466.48426812586
+      "priceCreeps": 35466.48426812586,
+      "attributes": {
+        "weapon": "Tec-9",
+        "rarity": "Запрещённое",
+        "stattrak": false,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 51.73473409860594,
+        "itemType": "pistol",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=9cf542d4-649f-4945-9130-9861306acff1&productName=Tec-9-Nuclear-Threat&skinName=Nuclear-Threat&typeName=Pistol"
+      }
     },
     {
       "id": "baron-d245a0b8-ee63-4e67-9198-409841b76c87",
       "name": "StatTrak™ M4A1-S | Огонь Чантико",
-      "description": "Винтовка для Counter-Strike 2: StatTrak™ M4A1-S | Огонь Чантико. Состояние: Закалённое в боях. Редкость: Тайное. Коллекция из хромированного кейса #3.",
+      "description": "Ручная роспись сочетает яркие цвета; на прикладе изображён смайлик.\n\nВинтовка для Counter-Strike 2: StatTrak™ M4A1-S | Огонь Чантико. Состояние: Закалённое в боях. Редкость: Тайное. Коллекция из хромированного кейса #3.",
       "imageUrl": "/catalog/d4a9727869de7126289c.png",
       "categoryId": "rifle",
       "condition": "Закалённое в боях",
@@ -1019,22 +1577,33 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Rifle/M4A1-S/Chantico's-Fire"
       },
-      "priceCreeps": 5218.3020519835845
+      "priceCreeps": 5218.3020519835845,
+      "attributes": {
+        "weapon": "M4A1-S",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 46.67149933550803,
+        "itemType": "rifle",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=d245a0b8-ee63-4e67-9198-409841b76c87&productName=M4A1-S-Chantico-s-Fire&skinName=Chantico-s-Fire&typeName=Rifle"
+      }
     },
     {
       "id": "swap-abbe2128d6ad",
       "name": "SSG 08 | Death Strike",
       "description": "Чёрно-золотая композиция с изображением скорпиона среди песчаных вихрей.\n\nВинтовка для Counter-Strike 2: SSG 08 | Death Strike. Состояние: После полевых испытаний.",
-      "imageUrl": "/catalog/a507a9b638fcf30c51e6.webp",
+      "imageUrl": "/catalog/2827f12e4fd0b2fd64f2.avif",
       "categoryId": "rifle",
       "condition": "После полевых испытаний",
       "float": 0.346,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/00d34433ad6b6c9d25db6f5424babf61",
+        "imageUrl": "https://cdn.skinswap.com/images/730/00d34433ad6b6c9d25db6f5424babf61/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 597.97,
         "currency": "USD",
@@ -1044,12 +1613,26 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/ssg-08-death-strike"
       },
-      "priceCreeps": 30397.98082352941
+      "priceCreeps": 30397.98082352941,
+      "attributes": {
+        "weapon": "SSG 08",
+        "itemType": "sniper_rifle",
+        "colors": [
+          "orange",
+          "red"
+        ],
+        "rarity": "Засекреченное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.36,
+        "popularityVotes": 33,
+        "evidenceUrl": "https://skinswap.com/skins/ssg-08-death-strike"
+      }
     },
     {
       "id": "baron-11915c97-9913-469f-8a22-27be8897762d",
       "name": "StatTrak™ ★ Скелетный нож | Ночная полоса",
-      "description": "Нож для Counter-Strike 2: StatTrak™ ★ Скелетный нож | Ночная полоса. Состояние: Закалённое в боях. Редкость: Тайное.",
+      "description": "Тёмный узор нанесён распылением по рисунку маскирующей ленты.\n\nНож для Counter-Strike 2: StatTrak™ ★ Скелетный нож | Ночная полоса. Состояние: Закалённое в боях. Редкость: Тайное.",
       "imageUrl": "/catalog/7efd60257b58b0701f28.png",
       "categoryId": "knife",
       "condition": "Закалённое в боях",
@@ -1064,22 +1647,34 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/Skeleton-Knife/Night-Stripe"
       },
-      "priceCreeps": 8275.512995896033
+      "priceCreeps": 8275.512995896033,
+      "attributes": {
+        "weapon": "Skeleton Knife",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 72.90392505999846,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=11915c97-9913-469f-8a22-27be8897762d&productName=Skeleton-Knife-Night-Stripe&skinName=Night-Stripe&typeName=Knife",
+        "vanilla": false
+      }
     },
     {
       "id": "swap-5c3715c0960b",
       "name": "★ Karambit | Fade",
       "description": "На изогнутом клинке — переход розовых, фиолетовых и золотистых оттенков поверх хромированной основы.\n\nНож для Counter-Strike 2: ★ Karambit | Fade. Состояние: Прямо с завода.",
-      "imageUrl": "/catalog/1a7aa84bca87a986569d.webp",
+      "imageUrl": "/catalog/7ac891d4055dca1a68de.avif",
       "categoryId": "knife",
       "condition": "Прямо с завода",
       "float": 0.036,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/00998977a6d55398fb2902f36ee660b5",
+        "imageUrl": "https://cdn.skinswap.com/images/730/00998977a6d55398fb2902f36ee660b5/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 4347.08,
         "currency": "USD",
@@ -1089,12 +1684,27 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/karambit-fade"
       },
-      "priceCreeps": 220985.0903529412
+      "priceCreeps": 220985.0903529412,
+      "attributes": {
+        "weapon": "Karambit",
+        "itemType": "knife",
+        "colors": [
+          "pink",
+          "white"
+        ],
+        "rarity": "Тайное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.56,
+        "popularityVotes": 52,
+        "evidenceUrl": "https://skinswap.com/skins/karambit-fade",
+        "vanilla": false
+      }
     },
     {
       "id": "baron-1a5f3d48-c150-4cf6-ad3a-9e5916c737c3",
       "name": "USP-S | Printstream",
-      "description": "Пистолет для Counter-Strike 2: USP-S | Printstream. Состояние: После полевых испытаний. Редкость: Тайное. Гремучая коллекция.",
+      "description": "Контрастная чёрно-белая отделка дополнена перламутровым эффектом.\n\nПистолет для Counter-Strike 2: USP-S | Printstream. Состояние: После полевых испытаний. Редкость: Тайное. Гремучая коллекция.",
       "imageUrl": "/catalog/392e6b31024c1f9c3288.png",
       "categoryId": "pistol",
       "condition": "После полевых испытаний",
@@ -1109,14 +1719,25 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Pistol/USP-S/Printstream"
       },
-      "priceCreeps": 1477.179069767442
+      "priceCreeps": 1477.179069767442,
+      "attributes": {
+        "weapon": "USP-S",
+        "rarity": "Тайное",
+        "stattrak": false,
+        "tradeLocked": true,
+        "stickers": [],
+        "discountPercent": 44.11896243291593,
+        "itemType": "pistol",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=1a5f3d48-c150-4cf6-ad3a-9e5916c737c3&productName=USP-S-Printstream&skinName=Printstream&typeName=Pistol"
+      }
     },
     {
       "id": "baron-30ad28d4-7656-4129-8f8e-f2040ce207d3",
       "name": "StatTrak™ M4A4 | Азимов",
-      "description": "Винтовка для Counter-Strike 2: StatTrak™ M4A4 | Азимов. Состояние: После полевых испытаний. Редкость: Тайное. Коллекция «Winter Offensive».",
+      "description": "Ручная роспись оружия выполнена в научно-фантастической стилистике.\n\nВинтовка для Counter-Strike 2: StatTrak™ M4A4 | Азимов. Состояние: После полевых испытаний. Редкость: Тайное. Коллекция «Winter Offensive».",
       "imageUrl": "/catalog/b82ee7f3798f31b42e3d.png",
       "categoryId": "rifle",
       "condition": "После полевых испытаний",
@@ -1131,22 +1752,33 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Rifle/M4A4/Asiimov"
       },
-      "priceCreeps": 26540.75239398085
+      "priceCreeps": 26540.75239398085,
+      "attributes": {
+        "weapon": "M4A4",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 47.09431116557477,
+        "itemType": "rifle",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=30ad28d4-7656-4129-8f8e-f2040ce207d3&productName=M4A4-Asiimov&skinName=Asiimov&typeName=Rifle"
+      }
     },
     {
       "id": "swap-c3c3dcbd3587",
       "name": "Souvenir M4A1-S | Master Piece",
       "description": "Оранжевые граффити-надписи нанесены поверх синего полосатого фона.\n\nВинтовка для Counter-Strike 2: Souvenir M4A1-S | Master Piece. Состояние: Немного поношенное.",
-      "imageUrl": "/catalog/b192bc2ff36412ea4950.webp",
+      "imageUrl": "/catalog/7b4b296d0a6a094bfb9e.avif",
       "categoryId": "rifle",
       "condition": "Немного поношенное",
       "float": 0.1,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/0005cc906b3da9b36a9f33593e8344e3",
+        "imageUrl": "https://cdn.skinswap.com/images/730/0005cc906b3da9b36a9f33593e8344e3/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 302.09,
         "currency": "USD",
@@ -1156,12 +1788,26 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/m4a1-s-master-piece"
       },
-      "priceCreeps": 15356.834
+      "priceCreeps": 15356.834,
+      "attributes": {
+        "weapon": "M4A1-S",
+        "itemType": "rifle",
+        "colors": [
+          "orange",
+          "blue"
+        ],
+        "rarity": "Засекреченное",
+        "stattrak": false,
+        "souvenir": true,
+        "popularity": 4.72,
+        "popularityVotes": 53,
+        "evidenceUrl": "https://skinswap.com/skins/m4a1-s-master-piece"
+      }
     },
     {
       "id": "baron-d978599a-2b79-43a4-891c-53b03d01f487",
       "name": "StatTrak™ ★ Складной нож | Поверхностная закалка",
-      "description": "Нож для Counter-Strike 2: StatTrak™ ★ Складной нож | Поверхностная закалка. Состояние: Закалённое в боях. Редкость: Тайное.",
+      "description": "Отделка получена высокотемпературной закалкой с применением древесного угля.\n\nНож для Counter-Strike 2: StatTrak™ ★ Складной нож | Поверхностная закалка. Состояние: Закалённое в боях. Редкость: Тайное.",
       "imageUrl": "/catalog/2c08fcb0a28edd63a86e.png",
       "categoryId": "knife",
       "condition": "Закалённое в боях",
@@ -1176,22 +1822,34 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/Flip-Knife/Case-Hardened"
       },
-      "priceCreeps": 13004.377564979482
+      "priceCreeps": 13004.377564979482,
+      "attributes": {
+        "weapon": "Flip Knife",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": true,
+        "stickers": [],
+        "discountPercent": 46.25757279656049,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=d978599a-2b79-43a4-891c-53b03d01f487&productName=Flip-Knife-Case-Hardened&skinName=Case-Hardened&typeName=Knife",
+        "vanilla": false
+      }
     },
     {
       "id": "swap-35d1bd8ccb42",
       "name": "★ M9 Bayonet | Tiger Tooth",
       "description": "Золотисто-оранжевое покрытие клинка с контрастными тигровыми полосами.\n\nНож для Counter-Strike 2: ★ M9 Bayonet | Tiger Tooth. Состояние: Прямо с завода.",
-      "imageUrl": "/catalog/6ed524955cf11945c0ce.webp",
+      "imageUrl": "/catalog/25f84bd317542a44659c.avif",
       "categoryId": "knife",
       "condition": "Прямо с завода",
       "float": 0.009,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/030e6f0c3739d196df36c18dade574de",
+        "imageUrl": "https://cdn.skinswap.com/images/730/030e6f0c3739d196df36c18dade574de/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 1735.58,
         "currency": "USD",
@@ -1201,12 +1859,26 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/m9-bayonet-tiger-tooth"
       },
-      "priceCreeps": 88228.7197647059
+      "priceCreeps": 88228.7197647059,
+      "attributes": {
+        "weapon": "M9 Bayonet",
+        "itemType": "knife",
+        "colors": [
+          "orange"
+        ],
+        "rarity": "Тайное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.75,
+        "popularityVotes": 53,
+        "evidenceUrl": "https://skinswap.com/skins/m9-bayonet-tiger-tooth",
+        "vanilla": false
+      }
     },
     {
       "id": "baron-83abe985-036c-4fc4-9eae-50dba886f7c5",
       "name": "USP-S | Путеводитель",
-      "description": "Пистолет для Counter-Strike 2: USP-S | Путеводитель. Состояние: Немного поношенное. Редкость: Промышленное качество. Коллекция «Север».",
+      "description": "Трафаретный орнамент напоминает объёмный изометрический лабиринт.\n\nПистолет для Counter-Strike 2: USP-S | Путеводитель. Состояние: Немного поношенное. Редкость: Промышленное качество. Коллекция «Север».",
       "imageUrl": "/catalog/ccadb1fd7eb8d92f5b8d.png",
       "categoryId": "pistol",
       "condition": "Немного поношенное",
@@ -1221,14 +1893,25 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Pistol/USP-S/Pathfinder"
       },
-      "priceCreeps": 584.6058823529412
+      "priceCreeps": 584.6058823529412,
+      "attributes": {
+        "weapon": "USP-S",
+        "rarity": "Промышленное качество",
+        "stattrak": false,
+        "tradeLocked": true,
+        "stickers": [],
+        "discountPercent": 45.74876577070762,
+        "itemType": "pistol",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=83abe985-036c-4fc4-9eae-50dba886f7c5&productName=USP-S-Pathfinder&skinName=Pathfinder&typeName=Pistol"
+      }
     },
     {
       "id": "baron-1334ead5-0b14-4dc7-a5b3-97b79f05490e",
       "name": "StatTrak™ Автомат «Галиль» | Конфетка",
-      "description": "Винтовка для Counter-Strike 2: StatTrak™ Автомат «Галиль» | Конфетка. Состояние: Немного поношенное. Редкость: Засекреченное. Коллекция операции «Гидра».",
+      "description": "На корпусе сочетаются узоры в оттенках сахарной ваты.\n\nВинтовка для Counter-Strike 2: StatTrak™ Автомат «Галиль» | Конфетка. Состояние: Немного поношенное. Редкость: Засекреченное. Коллекция операции «Гидра».",
       "imageUrl": "/catalog/24f276ec1f65741d3f16.png",
       "categoryId": "rifle",
       "condition": "Немного поношенное",
@@ -1243,22 +1926,37 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Rifle/Galil-AR/Sugar-Rush"
       },
-      "priceCreeps": 5615.526675786594
+      "priceCreeps": 5615.526675786594,
+      "attributes": {
+        "weapon": "Galil AR",
+        "rarity": "Засекреченное",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [
+          "Enemy Spotted (Holo)",
+          "Cheongsam (Holo)",
+          "Hippocamp (Holo)"
+        ],
+        "discountPercent": 44.68060327257904,
+        "itemType": "rifle",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=1334ead5-0b14-4dc7-a5b3-97b79f05490e&productName=Galil-AR-Sugar-Rush&skinName=Sugar-Rush&typeName=Rifle"
+      }
     },
     {
       "id": "swap-f5d9ed31bbbb",
       "name": "StatTrak™ AK-47 | Leet Museo",
       "description": "Кубистическая композиция с красными, синими, зелёными и бежевыми фрагментами изображает сцену на Dust II.\n\nВинтовка для Counter-Strike 2: StatTrak™ AK-47 | Leet Museo. Состояние: После полевых испытаний.",
-      "imageUrl": "/catalog/68ac7aa96ebd6f85b7e6.webp",
+      "imageUrl": "/catalog/b742ed8b43066334af33.avif",
       "categoryId": "rifle",
       "condition": "После полевых испытаний",
       "float": 0.363,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/016caf53acf6d7ea10a2bb9e4d9d26cc",
+        "imageUrl": "https://cdn.skinswap.com/images/730/016caf53acf6d7ea10a2bb9e4d9d26cc/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 101.67,
         "currency": "USD",
@@ -1268,12 +1966,28 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/ak-47-leet-museo"
       },
-      "priceCreeps": 5168.424352941177
+      "priceCreeps": 5168.424352941177,
+      "attributes": {
+        "weapon": "AK-47",
+        "itemType": "rifle",
+        "colors": [
+          "green",
+          "orange",
+          "yellow",
+          "blue"
+        ],
+        "rarity": "Тайное",
+        "stattrak": true,
+        "souvenir": false,
+        "popularity": 4.73,
+        "popularityVotes": 52,
+        "evidenceUrl": "https://skinswap.com/skins/ak-47-leet-museo"
+      }
     },
     {
       "id": "baron-b36a2f05-7d66-4125-9728-7a4c8aab8145",
       "name": "StatTrak™ ★ Тычковые ножи | Поверхностная закалка",
-      "description": "Нож для Counter-Strike 2: StatTrak™ ★ Тычковые ножи | Поверхностная закалка. Состояние: Немного поношенное. Редкость: Тайное. Коллекция из тёмного кейса.",
+      "description": "Отделка получена высокотемпературной закалкой с применением древесного угля.\n\nНож для Counter-Strike 2: StatTrak™ ★ Тычковые ножи | Поверхностная закалка. Состояние: Немного поношенное. Редкость: Тайное. Коллекция из тёмного кейса.",
       "imageUrl": "/catalog/49fb50764bf9f35eca7a.png",
       "categoryId": "knife",
       "condition": "Немного поношенное",
@@ -1288,22 +2002,34 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/Shadow-Daggers/Case-Hardened"
       },
-      "priceCreeps": 12413.26949384405
+      "priceCreeps": 12413.26949384405,
+      "attributes": {
+        "weapon": "Shadow Daggers",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": true,
+        "stickers": [],
+        "discountPercent": 57.537154989384284,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=b36a2f05-7d66-4125-9728-7a4c8aab8145&productName=Shadow-Daggers-Case-Hardened&skinName=Case-Hardened&typeName=Knife",
+        "vanilla": false
+      }
     },
     {
       "id": "swap-d4de79734801",
       "name": "★ Survival Knife | Slaughter",
       "description": "Красное глянцевое покрытие клинка с полосами светлого металла контрастирует с чёрной рукоятью.\n\nНож для Counter-Strike 2: ★ Survival Knife | Slaughter. Состояние: Немного поношенное.",
-      "imageUrl": "/catalog/55f52f3d9109f32c2222.webp",
+      "imageUrl": "/catalog/74cd095256add8004a5e.avif",
       "categoryId": "knife",
       "condition": "Немного поношенное",
       "float": 0.11,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/00364bd9992907705105c429c80ee883",
+        "imageUrl": "https://cdn.skinswap.com/images/730/00364bd9992907705105c429c80ee883/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 347.41,
         "currency": "USD",
@@ -1313,20 +2039,34 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/survival-knife-slaughter"
       },
-      "priceCreeps": 17660.689529411768
+      "priceCreeps": 17660.689529411768,
+      "attributes": {
+        "weapon": "Survival Knife",
+        "itemType": "knife",
+        "colors": [
+          "red"
+        ],
+        "rarity": "Тайное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.52,
+        "popularityVotes": 42,
+        "evidenceUrl": "https://skinswap.com/skins/survival-knife-slaughter",
+        "vanilla": false
+      }
     },
     {
       "id": "swap-a36fe80a549b",
       "name": "StatTrak™ M4A1-S | Basilisk",
       "description": "На тёмном металлическом корпусе выгравирован мотив василиска.\n\nВинтовка для Counter-Strike 2: StatTrak™ M4A1-S | Basilisk. Состояние: Прямо с завода.",
-      "imageUrl": "/catalog/11da5fa4966b75339d27.webp",
+      "imageUrl": "/catalog/cfd872da43b9c8f7efde.avif",
       "categoryId": "rifle",
       "condition": "Прямо с завода",
       "float": 0.062,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/05236ab49bff8131fee3004d47028650",
+        "imageUrl": "https://cdn.skinswap.com/images/730/05236ab49bff8131fee3004d47028650/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 62.54,
         "currency": "USD",
@@ -1336,12 +2076,25 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/m4a1-s-basilisk"
       },
-      "priceCreeps": 3179.239294117647
+      "priceCreeps": 3179.239294117647,
+      "attributes": {
+        "weapon": "M4A1-S",
+        "itemType": "rifle",
+        "colors": [
+          "gray"
+        ],
+        "rarity": "Запрещённое",
+        "stattrak": true,
+        "souvenir": false,
+        "popularity": 4.71,
+        "popularityVotes": 51,
+        "evidenceUrl": "https://skinswap.com/skins/m4a1-s-basilisk"
+      }
     },
     {
       "id": "baron-ea5b71ef-436c-4b88-9527-4075708ea963",
       "name": "StatTrak™ ★ Фальшион | Автотроника",
-      "description": "Нож для Counter-Strike 2: StatTrak™ ★ Фальшион | Автотроника. Состояние: Прямо с завода. Редкость: Тайное. Коллекция «Фальшион».",
+      "description": "Красное анодирование сочетается со стальными деталями.\n\nНож для Counter-Strike 2: StatTrak™ ★ Фальшион | Автотроника. Состояние: Прямо с завода. Редкость: Тайное. Коллекция «Фальшион».",
       "imageUrl": "/catalog/3cfe8d5c3bbc2c1e9c12.png",
       "categoryId": "knife",
       "condition": "Прямо с завода",
@@ -1356,22 +2109,34 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/Falchion-Knife/Autotronic"
       },
-      "priceCreeps": 11940.383036935706
+      "priceCreeps": 11940.383036935706,
+      "attributes": {
+        "weapon": "Falchion Knife",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 45.74996642943467,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=ea5b71ef-436c-4b88-9527-4075708ea963&productName=Falchion-Knife-Autotronic&skinName=Autotronic&typeName=Knife",
+        "vanilla": false
+      }
     },
     {
       "id": "swap-978c1533a2f4",
       "name": "★ Ursus Knife | Rust Coat",
       "description": "На угловатом клинке заметна коррозия с коричневыми и серыми пятнами.\n\nНож для Counter-Strike 2: ★ Ursus Knife | Rust Coat. Состояние: Закалённое в боях.",
-      "imageUrl": "/catalog/7379a7d65b4bab7ec919.webp",
+      "imageUrl": "/catalog/96392f698592be5e4640.avif",
       "categoryId": "knife",
       "condition": "Закалённое в боях",
       "float": 0.556,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/008ee79e84590765b49f75a02334fb3d",
+        "imageUrl": "https://cdn.skinswap.com/images/730/008ee79e84590765b49f75a02334fb3d/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 228.58,
         "currency": "USD",
@@ -1381,20 +2146,36 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/ursus-knife-rust-coat"
       },
-      "priceCreeps": 11619.931529411766
+      "priceCreeps": 11619.931529411766,
+      "attributes": {
+        "weapon": "Ursus Knife",
+        "itemType": "knife",
+        "colors": [
+          "orange",
+          "red",
+          "yellow"
+        ],
+        "rarity": "Тайное",
+        "stattrak": false,
+        "souvenir": false,
+        "popularity": 4.73,
+        "popularityVotes": 52,
+        "evidenceUrl": "https://skinswap.com/skins/ursus-knife-rust-coat",
+        "vanilla": false
+      }
     },
     {
       "id": "swap-81a203d41995",
       "name": "StatTrak™ M4A4 | The Emperor",
       "description": "Композиция по мотивам карты таро «Император»: глубокий синий фон, золотистые детали и сложный орнамент.\n\nВинтовка для Counter-Strike 2: StatTrak™ M4A4 | The Emperor. Состояние: Поношенное.",
-      "imageUrl": "/catalog/881e2fa764852a91ff8b.webp",
+      "imageUrl": "/catalog/8d4467c9d1fb5e233745.avif",
       "categoryId": "rifle",
       "condition": "Поношенное",
       "float": 0.418,
       "source": {
         "name": "SkinSwap",
         "url": "https://skinswap.com/ru",
-        "imageUrl": "https://cdn.skinswap.com/images/730/753f756911ef2bff29ae13e118d75450",
+        "imageUrl": "https://cdn.skinswap.com/images/730/753f756911ef2bff29ae13e118d75450/hd",
         "capturedAt": "2026-09-09T10:05:48.071828+00:00",
         "price": 58.31,
         "currency": "USD",
@@ -1404,12 +2185,26 @@
         "exchangeRateUrl": "https://skinswap.com/ru",
         "descriptionUrl": "https://skinswap.com/skins/m4a4-the-emperor"
       },
-      "priceCreeps": 2964.206
+      "priceCreeps": 2964.206,
+      "attributes": {
+        "weapon": "M4A4",
+        "itemType": "rifle",
+        "colors": [
+          "blue",
+          "orange"
+        ],
+        "rarity": "Тайное",
+        "stattrak": true,
+        "souvenir": false,
+        "popularity": 4.34,
+        "popularityVotes": 32,
+        "evidenceUrl": "https://skinswap.com/skins/m4a4-the-emperor"
+      }
     },
     {
       "id": "baron-31bd019d-3af9-49e3-8df6-7ff2918fb067",
       "name": "StatTrak™ ★ Штык-нож",
-      "description": "Нож для Counter-Strike 2: StatTrak™ ★ Штык-нож. Состояние: Без окраски. Редкость: Тайное.",
+      "description": "Форма этого штыка сохраняет классический военный дизайн со времён Второй мировой войны.\n\nНож для Counter-Strike 2: StatTrak™ ★ Штык-нож. Состояние: Без окраски. Редкость: Тайное.",
       "imageUrl": "/catalog/279879b93606bd344633.png",
       "categoryId": "knife",
       "condition": "Без окраски",
@@ -1424,14 +2219,26 @@
         "kind": "offer",
         "floatPrecision": "rounded",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/Bayonet/Bayonet"
       },
-      "priceCreeps": 12638.48166894665
+      "priceCreeps": 12638.48166894665,
+      "attributes": {
+        "weapon": "Bayonet",
+        "rarity": "Тайное",
+        "stattrak": true,
+        "tradeLocked": true,
+        "stickers": [],
+        "discountPercent": 44.90568954854669,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=31bd019d-3af9-49e3-8df6-7ff2918fb067&productName=Bayonet&skinName=Bayonet&typeName=Knife",
+        "vanilla": true
+      }
     },
     {
       "id": "baron-b0695984-55b6-4137-b90e-4e8b272c47fc",
       "name": "Классический нож | Кровавая паутина",
-      "description": "Нож для Counter-Strike 2: Классический нож | Кровавая паутина. Состояние: Немного поношенное. Редкость: Тайное.",
+      "description": "Чёрная паутина нанесена на красное покрытие с полуглянцевой поверхностью.\n\nНож для Counter-Strike 2: Классический нож | Кровавая паутина. Состояние: Немного поношенное. Редкость: Тайное.",
       "imageUrl": "/catalog/595ded8b0f2786dbc283.png",
       "categoryId": "knife",
       "condition": "Немного поношенное",
@@ -1446,14 +2253,26 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/Classic-Knife/Crimson-Web"
       },
-      "priceCreeps": 8571.067031463748
+      "priceCreeps": 8571.067031463748,
+      "attributes": {
+        "weapon": "Classic Knife",
+        "rarity": "Тайное",
+        "stattrak": false,
+        "tradeLocked": true,
+        "stickers": [],
+        "discountPercent": 49.48615223828601,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=b0695984-55b6-4137-b90e-4e8b272c47fc&productName=Classic-Knife-Crimson-Web&skinName=Crimson-Web&typeName=Knife",
+        "vanilla": false
+      }
     },
     {
       "id": "baron-eff4ddf2-5ac7-4a92-b44c-19748c319c39",
       "name": "★ Нож выживания | Кровавая паутина",
-      "description": "Нож для Counter-Strike 2: ★ Нож выживания | Кровавая паутина. Состояние: Прямо с завода. Редкость: Тайное.",
+      "description": "Чёрная паутина нанесена на красное покрытие с полуглянцевой поверхностью.\n\nНож для Counter-Strike 2: ★ Нож выживания | Кровавая паутина. Состояние: Прямо с завода. Редкость: Тайное.",
       "imageUrl": "/catalog/2d10e813326decc503fa.png",
       "categoryId": "knife",
       "condition": "Прямо с завода",
@@ -1468,14 +2287,26 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/Survival-Knife/Crimson-Web"
       },
-      "priceCreeps": 25122.093023255817
+      "priceCreeps": 25122.093023255817,
+      "attributes": {
+        "weapon": "Survival Knife",
+        "rarity": "Тайное",
+        "stattrak": false,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 56.18918027379185,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=eff4ddf2-5ac7-4a92-b44c-19748c319c39&productName=Survival-Knife-Crimson-Web&skinName=Crimson-Web&typeName=Knife",
+        "vanilla": false
+      }
     },
     {
       "id": "baron-e2bb2026-1a2b-4172-bb1b-96632dbfbeb9",
       "name": "★ Нож выживания | Северный лес",
-      "description": "Нож для Counter-Strike 2: ★ Нож выживания | Северный лес. Состояние: Прямо с завода. Редкость: Тайное. Коллекция «Расколотая сеть».",
+      "description": "Отделка воспроизводит лесной камуфляж, нанесённый водостойкой краской.\n\nНож для Counter-Strike 2: ★ Нож выживания | Северный лес. Состояние: Прямо с завода. Редкость: Тайное. Коллекция «Расколотая сеть».",
       "imageUrl": "/catalog/dab4f17470cff827a109.png",
       "categoryId": "knife",
       "condition": "Прямо с завода",
@@ -1490,14 +2321,26 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/Survival-Knife/Boreal-Forest"
       },
-      "priceCreeps": 5910.489603283174
+      "priceCreeps": 5910.489603283174,
+      "attributes": {
+        "weapon": "Survival Knife",
+        "rarity": "Тайное",
+        "stattrak": false,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 57.08583690987125,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=e2bb2026-1a2b-4172-bb1b-96632dbfbeb9&productName=Survival-Knife-Boreal-Forest&skinName=Boreal-Forest&typeName=Knife",
+        "vanilla": false
+      }
     },
     {
       "id": "baron-0e4fd888-26a4-4e5a-a122-161eb5d87e8d",
       "name": "★ Нож-бабочка | Дамасская сталь",
-      "description": "Нож для Counter-Strike 2: ★ Нож-бабочка | Дамасская сталь. Состояние: Поношенное. Редкость: Тайное. Коллекция «Прорыв».",
+      "description": "Клинок сочетает два вида углеродистой стали.\n\nНож для Counter-Strike 2: ★ Нож-бабочка | Дамасская сталь. Состояние: Поношенное. Редкость: Тайное. Коллекция «Прорыв».",
       "imageUrl": "/catalog/01408f1676b5c4a22e19.png",
       "categoryId": "knife",
       "condition": "Поношенное",
@@ -1512,14 +2355,26 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/Butterfly-Knife/Damascus-Steel"
       },
-      "priceCreeps": 38290.20752393981
+      "priceCreeps": 38290.20752393981,
+      "attributes": {
+        "weapon": "Butterfly Knife",
+        "rarity": "Тайное",
+        "stattrak": false,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 49.940881446047555,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=0e4fd888-26a4-4e5a-a122-161eb5d87e8d&productName=Butterfly-Knife-Damascus-Steel&skinName=Damascus-Steel&typeName=Knife",
+        "vanilla": false
+      }
     },
     {
       "id": "baron-a2688596-7a1d-48bf-898c-779ad97102f5",
       "name": "★ Штык-нож M9 | Поверхностная закалка",
-      "description": "Нож для Counter-Strike 2: ★ Штык-нож M9 | Поверхностная закалка. Состояние: Поношенное. Редкость: Тайное.",
+      "description": "Отделка получена высокотемпературной закалкой с применением древесного угля.\n\nНож для Counter-Strike 2: ★ Штык-нож M9 | Поверхностная закалка. Состояние: Поношенное. Редкость: Тайное.",
       "imageUrl": "/catalog/202ce4cfa1f3dc3f295b.png",
       "categoryId": "knife",
       "condition": "Поношенное",
@@ -1534,14 +2389,26 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/M9-Bayonet/Case-Hardened"
       },
-      "priceCreeps": 25890.533515731877
+      "priceCreeps": 25890.533515731877,
+      "attributes": {
+        "weapon": "M9 Bayonet",
+        "rarity": "Тайное",
+        "stattrak": false,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 49.431975616514265,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=a2688596-7a1d-48bf-898c-779ad97102f5&productName=M9-Bayonet-Case-Hardened&skinName=Case-Hardened&typeName=Knife",
+        "vanilla": false
+      }
     },
     {
       "id": "baron-765cbc04-26de-413a-97c4-27ad9bfb150c",
       "name": "★ Штык-нож M9 | Черный глянец",
-      "description": "Нож для Counter-Strike 2: ★ Штык-нож M9 | Черный глянец. Состояние: Поношенное. Редкость: Тайное.",
+      "description": "Матовая поверхность клинка сочетается с рукоятью из чёрного многослойного материала.\n\nНож для Counter-Strike 2: ★ Штык-нож M9 | Черный глянец. Состояние: Поношенное. Редкость: Тайное.",
       "imageUrl": "/catalog/74328d8cf8207f300e70.png",
       "categoryId": "knife",
       "condition": "Поношенное",
@@ -1556,9 +2423,21 @@
         "kind": "offer",
         "floatPrecision": "precise",
         "rublesPerUnit": 100.48837209302326,
-        "exchangeRateUrl": "https://skinswap.com/ru"
+        "exchangeRateUrl": "https://skinswap.com/ru",
+        "descriptionUrl": "https://skinbaron.de/ru/csgo/Knife/M9-Bayonet/Black-Laminate"
       },
-      "priceCreeps": 24530.39384404925
+      "priceCreeps": 24530.39384404925,
+      "attributes": {
+        "weapon": "M9 Bayonet",
+        "rarity": "Тайное",
+        "stattrak": false,
+        "tradeLocked": false,
+        "stickers": [],
+        "discountPercent": 49.43524509266367,
+        "itemType": "knife",
+        "evidenceUrl": "https://skinbaron.de/ru/offers/show?offerUuid=765cbc04-26de-413a-97c4-27ad9bfb150c&productName=M9-Bayonet-Black-Laminate&skinName=Black-Laminate&typeName=Knife",
+        "vanilla": false
+      }
     }
   ]
 }

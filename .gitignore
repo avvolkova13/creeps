@@ -10,3 +10,8 @@ coverage/
 !.env.example
 .vercel/
 .qa/
+
+.data/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
