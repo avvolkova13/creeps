@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { projectConfig } from "@/config/project";
+import { legalDocuments } from "@/config/legal";
 import { SteamLogin, useShop } from "./shop-session";
 
 export function SiteHeader() {
@@ -31,9 +32,12 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="site-footer page-width">
-      <div><span className="eyebrow">Поддержка</span><a className="support-link" href={`mailto:${projectConfig.supportEmail}`}>{projectConfig.supportEmail}</a></div>
-      <nav aria-label="Навигация в подвале"><Link href="/catalog">Каталог</Link><Link href="/#faq">Вопросы и ответы</Link></nav>
-      <p className="footer-rate">1 Creeps = 1,7 ₽<span>Рубли у цен — справочно</span></p>
+      <div className="footer-main">
+        <div><Link className="site-name" href="/"><span>Creeps</span></Link><p className="eyebrow">Поддержка</p><a className="support-link" href={`mailto:${projectConfig.supportEmail}`}>{projectConfig.supportEmail}</a></div>
+        <nav aria-label="Навигация в подвале"><span className="eyebrow">Магазин</span><Link href="/catalog">Каталог</Link><Link href="/cart">Корзина</Link><Link href="/#faq">Вопросы и ответы</Link></nav>
+        <nav aria-label="Юридические документы"><span className="eyebrow">Документы</span>{Object.entries(legalDocuments).map(([id, doc]) => <Link key={id} href={`/legal/${id}`}>{doc.title}</Link>)}</nav>
+      </div>
+      <div className="footer-bottom"><p>© 2026 Creeps<span>Steam и названия игр — товарные знаки их правообладателей.</span></p><p className="footer-rate">1 Creeps = 1,7 ₽<span>Рубли у цен — справочно</span></p></div>
     </footer>
   );
 }

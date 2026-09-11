@@ -3,7 +3,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import snapshot from '../src/data/catalog-snapshot.json' with { type: 'json' };
 const manifest = JSON.parse(readFileSync('out/pages-build.json', 'utf8'));
 if (manifest.mode === 'visual-preview') {
-  assert.equal(manifest.routes.length, snapshot.products.length + 5);
+  assert.equal(manifest.routes.length, snapshot.products.length + 8);
   for (const route of manifest.routes) {
     const html = readFileSync(`out/${route}/index.html`, 'utf8');
     assert.ok(!/Версия для показа|Предпросмотр кабинета|без реальных оплат|заглушка|демонстрационн/i.test(html), route);
@@ -23,7 +23,7 @@ if (manifest.mode === 'visual-preview') {
   process.exit(0);
 }
 assert.equal(manifest.mode, 'server-gateway');
-assert.equal(manifest.routes.length, snapshot.products.length + 5);
+assert.equal(manifest.routes.length, snapshot.products.length + 8);
 for (const route of manifest.routes) {
   const html = readFileSync(`out/${route}/index.html`, 'utf8');
   const destination = new URL(route, manifest.destination + '/').href;

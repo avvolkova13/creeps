@@ -432,3 +432,27 @@ dialog::backdrop { background: rgba(12, 20, 36, .72); backdrop-filter: blur(4px)
 .steam-payment-summary dd { margin: 0; font-variant-numeric: tabular-nums; text-align: right; }
 .steam-payment-total { border-top: 1px solid var(--line); padding-top: 12px; font-weight: 700; }
 @media (max-width: 400px) { .steam-payment-summary > div { flex-wrap: wrap; gap: 4px 12px; } }
+
+/* Footer document navigation follows the approved Locker structure. */
+.site-footer { display: block; }
+.footer-main { display: grid; grid-template-columns: 1.2fr .7fr 1.1fr; gap: 36px; }
+.site-footer .footer-main nav { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; border: 0; padding: 0; }
+.footer-main .eyebrow { margin-bottom: 8px; }
+.footer-main .site-name { display: inline-block; margin-bottom: 20px; }
+.footer-main .support-link { font-size: 18px; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: end; gap: 24px; border-top: 1px solid var(--line); margin-top: 28px; padding-top: 20px; }
+.footer-bottom p { margin: 0; font-size: 14px; }
+.footer-bottom p > span { display: block; color: var(--muted); font-size: 12px; margin-top: 6px; }
+.legal-page { padding-top: 40px; padding-bottom: 64px; }
+.legal-heading { padding: 32px; margin-bottom: 24px; }
+.legal-heading h1 { font-size: clamp(26px, 3.6vw, 46px); line-height: 1.25; overflow-wrap: anywhere; }
+.legal-heading > p:last-child { max-width: 72ch; color: var(--muted); line-height: 1.7; }
+.legal-body { padding: 32px; }
+.legal-body section { max-width: 82ch; margin-bottom: 32px; }
+.legal-body h2 { font-size: clamp(19px, 2vw, 25px); line-height: 1.4; }
+.legal-body p { line-height: 1.8; overflow-wrap: anywhere; }
+.legal-body nav { border-top: 1px solid var(--line); padding-top: 24px; display: flex; flex-wrap: wrap; gap: 16px 32px; }
+.legal-body nav a { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 900px) { .footer-main { grid-template-columns: 1fr 1fr; gap: 28px; } .footer-main > div { grid-column: 1 / -1; } }
+@media (max-width: 600px) { .footer-main { grid-template-columns: 1fr; gap: 24px; } .footer-bottom { flex-direction: column; align-items: start; gap: 16px; } .legal-heading, .legal-body { padding: 20px; } .legal-page { padding-top: 24px; } }
+@media (max-width: 600px) { .legal-heading h1 { font-family: var(--font-interface); font-size: 22px; text-transform: none; letter-spacing: -.025em; } }
