@@ -147,14 +147,15 @@ legend { margin-bottom: 12px; padding: 0; }
 .catalog-status p { max-width: 410px; margin-top: 8px; font-size: 16px; color: var(--muted); }
 .status-mark { width: 64px; height: 64px; flex-shrink: 0; border: 1px solid var(--line); border-radius: var(--radius-control); display: grid; place-items: center; font-size: 32px; background: var(--control); }
 
-.topup-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.topup-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: stretch; }
 .topup-panel { padding: var(--panel-padding); border: 1px solid var(--line); border-top-width: 1px; display: flex; flex-direction: column; }
 .topup-panel h2 { margin-top: 12px; }
 .topup-panel .section-description { color: var(--muted); margin-top: 8px; max-width: 60ch; }
 .index-tag { font-size: 12px; border: 1px solid var(--line); padding: 4px 8px; line-height: 16px; background: var(--mint); }
 .steam-panel .index-tag { background: var(--mint); }
-.topup-panel form { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+.topup-panel form { display: flex; flex: 1; flex-direction: column; gap: 16px; margin-top: 24px; }
 .topup-panel .button-primary { margin-top: 8px; justify-content: space-between; width: 100%; min-height: 48px; }
+.topup-panel form > .button-primary:last-child { margin-top: auto; }
 .steam-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .steam-fields .input-wrap input { padding-right: 32px; }
 .capabilities-section { padding: var(--panel-padding); }
@@ -241,6 +242,7 @@ legend { margin-bottom: 12px; padding: 0; }
 .product-details > .product-image { border: 1px solid var(--line); border-radius: var(--radius-control); align-self: start; }
 .product-information { min-width: 0; }
 .product-information h1, .product-information h2 { margin: 12px 0 16px; overflow-wrap: anywhere; }
+.product-information h1 { font-size: var(--section-title); line-height: var(--section-title-line); font-weight: 650; letter-spacing: -.035em; text-wrap: balance; hyphens: none; }
 .product-description { max-width: 65ch; color: var(--muted); white-space: pre-line; overflow-wrap: anywhere; }
 .product-origin { font-size: 12px; line-height: 1.65; color: var(--muted); }
 .product-source a { text-decoration: underline; text-underline-offset: 3px; }
@@ -384,7 +386,7 @@ dialog::backdrop { background: rgba(12, 20, 36, .72); backdrop-filter: blur(4px)
 
 /* Account uses the approved navy panels and lime actions. */
 .account-record-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-.account-overview { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.account-overview { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
 .account-overview > *, .account-history > *, .account-order-item > div { min-width: 0; }
 .account-balance-card .product-price strong { font-size: 32px; line-height: 40px; }
 .account-order-item { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 16px; align-items: start; padding-block: 12px; }
@@ -402,7 +404,7 @@ dialog::backdrop { background: rgba(12, 20, 36, .72); backdrop-filter: blur(4px)
 .account-form .button-primary, .account-section > .button-primary { justify-self: start; }
 .account-empty { display: grid; justify-items: start; gap: 20px; }
 .account-steam-id, .account-form input { overflow-wrap: anywhere; }
-.account-history { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.account-history { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
 .cart-items, .history-list { list-style: none; margin: 0; padding: 0; }
 .cart-items li { display: grid; grid-template-columns: 120px minmax(0, 1fr) auto auto; gap: 24px; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line); }
 .cart-items img { max-width: 100%; object-fit: contain; }
@@ -503,6 +505,20 @@ dialog::backdrop { background: rgba(12, 20, 36, .72); backdrop-filter: blur(4px)
 .account-form > label { font-size: 14px; font-weight: 600; }
 .account-empty { gap: 16px; }
 .account-section > p { max-width: 65ch; }
+
+.cart-notice { position: fixed; z-index: 80; right: max(24px, env(safe-area-inset-right)); bottom: max(24px, env(safe-area-inset-bottom)); width: min(520px, calc(100vw - 48px)); display: grid; grid-template-columns: 64px minmax(0, 1fr) 44px; gap: 16px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius-panel); background: #202c42; box-shadow: 0 8px 32px rgba(0,0,0,.24); }
+.cart-notice > img { width: 64px; height: 64px; object-fit: contain; }
+.cart-notice-copy { min-width: 0; }
+.cart-notice-copy strong { display: flex; align-items: flex-start; gap: 8px; font-size: 16px; line-height: 24px; }
+.cart-notice-copy strong svg { flex: 0 0 20px; margin-top: 2px; color: var(--accent); }
+.cart-notice-copy p { margin-top: 8px; font-size: 14px; line-height: 20px; color: var(--muted); overflow-wrap: anywhere; }
+.cart-notice-close { width: 44px; height: 44px; min-height: 44px; padding: 0; align-self: start; }
+.cart-notice-link { grid-column: 2 / 4; gap: 16px; justify-content: space-between; }
+@media (max-width: 600px) {
+  .cart-notice { left: 16px; right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); width: auto; padding: 16px; grid-template-columns: minmax(0, 1fr) 44px; gap: 16px; }
+  .cart-notice > img { display: none; }
+  .cart-notice-link { grid-column: 1 / -1; }
+}
 .account-record-heading + .field-hint { margin-top: -4px; }
 .history-list li { padding-block: 24px; gap: 8px; }
 .history-list li:first-child { padding-top: 0; }

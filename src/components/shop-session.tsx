@@ -7,6 +7,7 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState, ty
 import type { Product } from '@/lib/catalog';
 import { publicAsset } from '@/lib/public-asset';
 import { createTaskQueue } from '@/lib/async-queue';
+import { CartNotice } from './cart-notice';
 
 export type HistoryCursor = { createdAt: number; id: string };
 export type Account = {
@@ -48,6 +49,8 @@ export function ShopSession({ children }: { children: ReactNode }) {
   const [data, setData] = useState<Session>({ user: null, cart: emptyCart });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [addedProduct, setAddedProduct] = useState<Product | null>(null);
+  const closeNotice = useCallback(() => setAddedProduct(null), []);
   const refresh = useCallback(() => queue.current.run(async () => {
     try { setData(await shopRequest<Session>('/session')); setError(''); }
     catch (error) { setError((error as Error).message); }
@@ -62,19 +65,23 @@ export function ShopSession({ children }: { children: ReactNode }) {
     return () => { active = false; };
   }, []);
   const add = (id: string) => queue.current.run(async () => {
+    setAddedProduct(null);
     const cart = await shopRequest<Cart>('/cart/items', 'POST', { productId: id });
     setData(current => ({ ...current, cart }));
+    setAddedProduct(cart.items.find(item => item.id === id) ?? null);
   });
   const remove = (id: string) => queue.current.run(async () => {
     const cart = await shopRequest<Cart>('/cart/items', 'DELETE', { productId: id });
     setData(current => ({ ...current, cart }));
+    setAddedProduct(current => current?.id === id ? null : current);
   });
   const logout = () => queue.current.run(async () => {
     await shopRequest('/auth/logout', 'POST', {});
+    setAddedProduct(null);
     setData({ user: null, cart: emptyCart });
     setData(await shopRequest<Session>('/session'));
   });
-  return <ShopContext.Provider value={{ ...data, loading, error, refresh, add, remove, logout }}>{children}</ShopContext.Provider>;
+  return <ShopContext.Provider value={{ ...data, loading, error, refresh, add, remove, logout }}>{children}{addedProduct && <CartNotice product={addedProduct} onClose={closeNotice} />}</ShopContext.Provider>;
 }
 export function useShop() {
   const context = useContext(ShopContext);
