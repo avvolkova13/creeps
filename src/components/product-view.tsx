@@ -53,7 +53,7 @@ export function ProductGrid({ products, categories }: { products: readonly Produ
         <h3><Link className="product-card-link" href={`/catalog/${encodeURIComponent(product.id)}`}>{product.name}</Link></h3>
         {product.condition && <p className="field-hint">{product.condition}</p>}
         <ProductPrice amount={product.priceCreeps} />
-        <AddToCart productId={product.id} />
+        <AddToCart productId={product.id} tone="secondary" />
       </div>
     </ProductCard>)}</div>
 }

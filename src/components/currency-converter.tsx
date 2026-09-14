@@ -1,5 +1,6 @@
 "use client";
 
+import { UiIcon } from "@/components/ui-icon";
 import { useState } from "react";
 import { projectConfig } from "@/config/project";
 import { parseAmountInput } from "@/lib/amount-input";
@@ -57,10 +58,15 @@ export function CurrencyConverter() {
 
   return (
     <section className="panel converter" aria-labelledby="converter-heading">
-      <p className="eyebrow">Справочный расчёт</p>
+      <div className="converter-intro">
       <h2 className="panel-heading" id="converter-heading">
         Калькулятор Creeps
       </h2>
+      <p className="field-hint" id="converter-hint">
+        Можно вводить целые и дробные значения через точку или запятую. Результат
+        отображается справочно, до 2 знаков после запятой.
+      </p>
+      </div>
 
       <div className="converter-fields">
         <label className="field" htmlFor="converter-creeps">
@@ -84,7 +90,7 @@ export function CurrencyConverter() {
           </span>
         </label>
 
-        <span aria-hidden="true">↔</span>
+        <span aria-hidden="true"><UiIcon name="swap" /></span>
 
         <label className="field" htmlFor="converter-rubles">
           <span>Рубли</span>
@@ -108,10 +114,6 @@ export function CurrencyConverter() {
         </label>
       </div>
 
-      <p className="field-hint" id="converter-hint">
-        Можно вводить целые и дробные значения через точку или запятую. Результат
-        отображается справочно, до 2 знаков после запятой.
-      </p>
       {errorMessage ? (
         <p
           className="field-error"

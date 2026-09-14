@@ -1,5 +1,6 @@
 "use client";
 
+import { UiIcon } from "@/components/ui-icon";
 import { useEffect, useRef, type ReactNode } from "react";
 
 export function Dialog({ open, onClose, titleId, children }: {
@@ -22,7 +23,7 @@ export function Dialog({ open, onClose, titleId, children }: {
     <dialog ref={ref} aria-labelledby={titleId} onCancel={onClose} onClose={onClose}
       onClick={(event) => { if (event.target === event.currentTarget) onClose(); }}>
       <div className="dialog-content">
-        <button className="dialog-close button-secondary" type="button" onClick={onClose} aria-label="Закрыть окно">Закрыть <span aria-hidden="true">×</span></button>
+        <button className="dialog-close button-secondary" type="button" onClick={onClose} aria-label="Закрыть окно">Закрыть <UiIcon name="close" /></button>
         {children}
       </div>
     </dialog>

@@ -7,6 +7,7 @@ import { ProductPrice } from './product-view';
 import { shopRequest, useShop } from './shop-session';
 import { paymentDestination } from '@/lib/payment-navigation';
 import { publicAsset } from '@/lib/public-asset';
+import { UiIcon } from './ui-icon';
 
 export function CartView() {
   const shop = useShop();
@@ -25,14 +26,14 @@ export function CartView() {
     finally { setBusy(false); }
   }
   return <section className="panel account-section" id="cart" aria-labelledby="cart-title">
-    <div className="section-kicker"><h2 id="cart-title">Ваши товары</h2><span>Товаров: {shop.cart.items.length}</span></div>
+    <div className="section-kicker"><h2 id="cart-title">Товары в корзине</h2><span>Товаров: {shop.cart.items.length}</span></div>
     {!shop.cart.items.length ? <div className="account-empty"><p>В корзине пока пусто.</p><Link className="button-secondary" href="/catalog">Выбрать скины</Link></div> : <>
       <ul className="cart-items">{shop.cart.items.map(item => <li key={item.id}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={publicAsset(item.imageUrl)} alt={item.name} width={120} height={90} />
         <div><Link href={`/catalog/${item.id}`}>{item.name}</Link><p className="field-hint">{item.condition}</p></div>
         <ProductPrice amount={item.priceCreeps} />
-        <button className="button-secondary" onClick={() => remove(item.id)} disabled={busy} aria-label={`Удалить ${item.name}`}>Удалить</button>
+        <button className="button-secondary" onClick={() => remove(item.id)} disabled={busy} aria-label={`Удалить ${item.name}`}><UiIcon name="trash" /><span className="cart-remove-label">Удалить</span></button>
       </li>)}</ul>
       <div className="cart-summary"><div><span className="eyebrow">Итого</span><ProductPrice amount={shop.cart.totalCreeps} rublesAmount={shop.cart.totalRubles} /></div>
         <button className="button-primary" onClick={checkout} disabled={busy}>{busy ? 'Проверяем…' : 'Оформить заказ'}</button>

@@ -13,7 +13,8 @@ test('presentation account uses existing products and reconciles balance, debits
   assert.equal(sample.balanceCreeps * 100, net);
   const debits = -sample.operations.filter(operation => operation.amountMinor < 0).reduce((sum, operation) => sum + operation.amountMinor, 0);
   assert.equal(debits, sample.orders.reduce((sum, order) => sum + order.totalMinor, 0));
-  assert.equal(sample.steamId, '00000000000000000');
+  assert.equal(validatePresentationTradeUrl(sample.tradeUrl), true);
+  assert.equal(BigInt(sample.steamId) - 76561197960265728n, BigInt(new URL(sample.tradeUrl).searchParams.get('partner')));
 });
 
 test('local trade URL editing only accepts the Steam trade-offer URL shape', () => {

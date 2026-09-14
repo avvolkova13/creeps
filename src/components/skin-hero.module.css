@@ -1,40 +1,40 @@
 .hero { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; padding: 0; overflow: hidden; border-color: var(--line); }
-.copy { position: relative; z-index: 1; padding: 44px 0 40px 40px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
-.copy > p:first-child { display: flex; align-items: center; gap: 10px; }
-.statusDot { width: 7px; height: 7px; background: var(--accent); box-shadow: 0 0 12px var(--accent-glow); }
-.copy h1 { margin: 32px 0 24px; font-size: clamp(44px, 5vw, 68px); letter-spacing: -.065em; }
-.description { font-size: 20px; line-height: 1.6; }
-.cta { margin-top: 32px; min-height: 52px; padding-inline: 24px; min-width: 240px; justify-content: space-between; box-shadow: 0 0 32px rgba(170, 255, 67, .1); }
-.heroNote { display: flex; gap: 16px; align-items: stretch; margin-top: 40px; }
+.copy { position: relative; z-index: 1; padding: 40px 0 40px 24px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+.copy > p:first-child { display: flex; align-items: center; gap: 8px; }
+.statusDot { width: 8px; height: 8px; background: var(--accent); box-shadow: 0 0 12px var(--accent-glow); }
+.copy h1 { margin: 24px 0 16px; font-size: 64px; line-height: 72px; font-weight: 800; letter-spacing: -.05em; }
+.description { font-size: 20px; line-height: 28px; }
+.cta { margin-top: 32px; min-height: 48px; padding-inline: 24px; min-width: 240px; justify-content: space-between;  }
+.heroNote { display: flex; gap: 16px; align-items: stretch; margin-top: 24px; }
 .heroNote p { font-size: 14px; color: var(--muted); }
 .noteRule { width: 2px; flex-shrink: 0; background: var(--line); }
 .showcase { min-width: 0; display: flex; flex-direction: column; }
 .stage { position: relative; height: 480px; overflow: hidden; perspective: 900px; mask-image: linear-gradient(transparent, #000 10%, #000 86%, transparent); }
-.perspective { display: flex; justify-content: center; gap: 18px; transform: translateY(-45px) translateZ(-60px) rotateX(20deg) rotateY(-10deg) rotateZ(15deg); transform-style: preserve-3d; }
-.lane { --gap: 18px; --duration: 26s; width: 248px; flex: 0 0 248px; display: flex; flex-direction: column; gap: var(--gap); }
+.perspective { display: flex; justify-content: center; gap: 16px; transform: translateY(-45px) translateZ(-60px) rotateX(20deg) rotateY(-10deg) rotateZ(15deg); transform-style: preserve-3d; }
+.lane { --gap: 16px; --duration: 26s; width: 248px; flex: 0 0 248px; display: flex; flex-direction: column; gap: var(--gap); }
 .track { flex: 0 0 auto; display: flex; flex-direction: column; gap: var(--gap); animation: skin-marquee var(--duration) linear infinite; }
 .reverse .track { animation-direction: reverse; }
 .card { display: flex; flex-direction: column; margin: 0; min-height: 252px; padding: 16px; border: 1px solid rgba(192,223,229,.28); border-radius: 8px; background: #273650; box-shadow: 0 12px 30px rgba(10,19,35,.18); }
-.cardMeta { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 11px; letter-spacing: .06em; }
+.cardMeta { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 12px; letter-spacing: .06em; }
 .cardMeta > span:last-child { color: var(--accent); }
-.card img { display: block; width: 100%; height: 154px; object-fit: contain; }
+.card img { display: block; width: 100%; height: 152px; object-fit: contain; }
 .card figcaption { border-top: 1px solid var(--line); padding-top: 12px; display: grid; gap: 4px; }
 .card strong { font-size: 16px; font-weight: 650; }
-.card figcaption > span { font-size: 13px; color: var(--muted); }
+.card figcaption > span { font-size: 14px; color: var(--muted); }
 .stage[data-paused="true"] .track, .stage:hover .track { animation-play-state: paused; }
 @keyframes skin-marquee { to { transform: translateY(calc(-100% - var(--gap))); } }
 @media (max-width: 1100px) {
   .copy { padding-left: 24px; }
-  .copy h1 { font-size: 48px; }
-  .description { font-size: 18px; }
+  .copy h1 { font-size: 48px; line-height: 56px; }
+  .description { font-size: 20px; line-height: 28px; }
   .lane { width: 212px; flex-basis: 212px; }
-  .stage { height: 450px; }
+  .stage { height: 448px; }
 }
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; gap: 0; }
-  .copy { padding: 28px 24px 8px; }
-  .copy h1 { margin-block: 24px 16px; font-size: clamp(36px, 11.8vw, 46px); }
-  .description { font-size: 16px; }
+  .copy { padding: 24px 16px 8px; }
+  .copy h1 { margin-block: 16px; font-size: 40px; line-height: 48px; }
+  .description { font-size: 16px; line-height: 24px; }
   .cta { margin-top: 24px; min-width: 0; width: min(240px, 100%); padding-inline: 16px; }
   .heroNote { margin-top: 24px; }
   .stage { height: 340px; perspective: 800px; }

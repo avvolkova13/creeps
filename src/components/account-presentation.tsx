@@ -6,35 +6,28 @@ import snapshot from '@/data/catalog-snapshot.json';
 import { accountPresentation, validatePresentationTradeUrl } from '@/lib/account-presentation';
 import { publicAsset } from '@/lib/public-asset';
 import { ProductPrice } from './product-view';
-import { CartView } from './cart-view';
-import { shopRequest, useShop } from './shop-session';
 
 const sample = accountPresentation(snapshot.products);
 const tradeStorageKey = 'creeps-presentation-trade-url';
 const closedStorageKey = 'creeps-presentation-account-closed';
 
 export function AccountPresentation() {
-  const shop = useShop();
-  const refresh = shop.refresh;
   const [closed, setClosed] = useState(false);
   const [tradeUrl, setTradeUrl] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-  const [cartError, setCartError] = useState('');
   useEffect(() => {
     let active = true;
     queueMicrotask(() => {
       if (!active) return;
       try {
-        setTradeUrl(sessionStorage.getItem(tradeStorageKey) ?? 'https://steamcommunity.com/tradeoffer/new/?partner=0&token=EXAMPLE0');
+        const savedTradeUrl = sessionStorage.getItem(tradeStorageKey);
+        setTradeUrl(!savedTradeUrl || savedTradeUrl.includes('token=EXAMPLE0') ? sample.tradeUrl : savedTradeUrl);
         setClosed(sessionStorage.getItem(closedStorageKey) === '1');
       } catch { /* Editable fields still work without browser storage. */ }
     });
-    shopRequest('/presentation/cart', 'POST').then(() => refresh()).catch(() => {
-      if (active) setCartError('Не удалось загрузить корзину. Обновите страницу.');
-    });
     return () => { active = false; };
-  }, [refresh]);
+  }, []);
 
   function toggleAccount(value: boolean) {
     setClosed(value);
@@ -42,27 +35,26 @@ export function AccountPresentation() {
   }
 
   return <main id="main-content" className="page-width account-page">
-    <div className="account-heading"><h1>Личный кабинет</h1><span className="account-example-label">Пример заполнения</span></div>
-    <p className="field-hint account-example-note">Профиль, баланс и история — примеры для показа интерфейса. Платежи и выдача не выполнялись.</p>
-    {closed ? <section className="panel account-empty"><h2>Вы вышли из кабинета</h2><p>Пример профиля закрыт. Корзина сохранена в этой вкладке.</p><button className="button-primary" onClick={() => toggleAccount(false)}>Открыть пример кабинета</button></section> : <>
+    <h1>Личный кабинет</h1>
+    {closed ? <section className="panel account-empty"><h2>Вы вышли из кабинета</h2><p>Товары сохранены в корзине.</p><button className="button-primary" onClick={() => toggleAccount(false)}>Вернуться в кабинет</button></section> : <>
       <div className="account-overview">
         <section className="panel account-section" aria-labelledby="presentation-profile">
           <div className="section-kicker"><h2 id="presentation-profile">Мой Steam</h2><button className="button-secondary" onClick={() => toggleAccount(true)}>Выйти</button></div>
-          <div><p className="eyebrow">Steam ID пользователя</p><p className="account-steam-id">{sample.steamId}</p><p className="field-hint">Пример ID · аккаунт Steam не подключён</p></div>
+          <div><p className="eyebrow">Steam ID пользователя</p><p className="account-steam-id">{sample.steamId}</p></div>
           <form className="account-form" onSubmit={event => {
             event.preventDefault(); setMessage(''); setError('');
             if (!validatePresentationTradeUrl(tradeUrl.trim())) { setError('Введите ссылку Steam вида https://steamcommunity.com/tradeoffer/new/?partner=…&token=…'); return; }
-            try { sessionStorage.setItem(tradeStorageKey, tradeUrl.trim()); setMessage('Ссылка сохранена в этой вкладке для показа.'); }
-            catch { setMessage('Ссылка изменена для текущего просмотра. Браузер не разрешил сохранение.'); }
+            try { sessionStorage.setItem(tradeStorageKey, tradeUrl.trim()); setMessage('Trade-URL сохранён.'); }
+            catch { setError('Не удалось сохранить ссылку. Разрешите сохранение данных в браузере и попробуйте ещё раз.'); }
           }}>
             <label htmlFor="presentation-trade">Trade-URL для получения скинов</label>
             <input id="presentation-trade" type="url" required maxLength={512} value={tradeUrl} onChange={event => { setTradeUrl(event.target.value); setMessage(''); setError(''); }} aria-invalid={Boolean(error)} aria-describedby="presentation-trade-hint presentation-trade-error" />
-            <p className="field-hint" id="presentation-trade-hint">Можно изменить ссылку и сохранить пример. Принадлежность Steam-аккаунту здесь не проверяется.</p>
-            <button className="button-primary">Сохранить trade-URL</button>
+            <p className="field-hint" id="presentation-trade-hint">По этой ссылке вы получите купленные скины.</p>
+            <button className="button-secondary">Сохранить trade-URL</button>
             {message && <p className="field-hint" role="status">{message}</p>}<p id="presentation-trade-error" className="field-error" role={error ? 'alert' : undefined}>{error}</p>
           </form>
         </section>
-        <section className="panel account-section account-balance-card" aria-labelledby="presentation-balance"><p className="eyebrow">Баланс сайта</p><h2 id="presentation-balance">Баланс Creeps</h2><ProductPrice amount={sample.balanceCreeps} /><Link className="button-primary" href="/#balance">Пополнить баланс</Link><p className="field-hint">Пример остатка после операций, показанных ниже.</p><a className="text-link" href="#cart">Корзина · {shop.cart.items.length} товара</a></section>
+        <section className="panel account-section account-balance-card" aria-labelledby="presentation-balance"><h2 id="presentation-balance">Баланс Creeps</h2><ProductPrice amount={sample.balanceCreeps} /><Link className="button-primary" href="/#balance">Пополнить баланс</Link></section>
       </div>
       <div className="account-history">
         <section className="panel account-section" aria-labelledby="presentation-operations"><h2 id="presentation-operations">История операций</h2><ul className="history-list">{sample.operations.map(operation => <li key={operation.id}>
@@ -77,6 +69,5 @@ export function AccountPresentation() {
         </li>)}</ul></section>
       </div>
     </>}
-    {shop.loading ? <p className="panel" role="status">Загружаем корзину…</p> : shop.error || cartError ? <p className="panel field-error" role="alert">{shop.error || cartError}</p> : <CartView />}
   </main>;
 }

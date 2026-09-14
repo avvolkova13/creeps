@@ -1,3 +1,4 @@
+import { UiIcon } from "@/components/ui-icon";
 import Link from "next/link";
 import { getCatalog } from "@/lib/catalog-source";
 import { CurrencyConverter } from "@/components/currency-converter";
@@ -19,10 +20,10 @@ export default async function Home() {
   return <main id="main-content" className="page-width home-page">
     <SkinHero />
     <div className="hero-converter"><CurrencyConverter /></div>
-    <section className="panel categories-section" aria-labelledby="categories-title"><div className="section-kicker"><h2 id="categories-title">Категории</h2><span className="eyebrow">Навигация по товарам</span></div>
-      {catalog.status === "ready" && catalog.categories.length > 0 ? <div className="category-list">{catalog.categories.map((category) => <Link key={category.id} href={`/catalog?category=${encodeURIComponent(category.id)}`}><strong>{category.name} <span aria-hidden="true">↗</span></strong><span>{category.description}</span></Link>)}</div> : <p className="field-hint category-unavailable">{catalog.status === "ready" ? "Категории пока не добавлены." : "Список категорий временно недоступен. Он появится вместе с ассортиментом."}</p>}
+    <section className="panel categories-section" aria-labelledby="categories-title"><div className="section-kicker"><h2 id="categories-title">Категории</h2></div>
+      {catalog.status === "ready" && catalog.categories.length > 0 ? <div className="category-list">{catalog.categories.map((category) => <Link key={category.id} href={`/catalog?category=${encodeURIComponent(category.id)}`}><strong>{category.name} <UiIcon name="arrow" /></strong><span>{category.description}</span></Link>)}</div> : <p className="field-hint category-unavailable">{catalog.status === "ready" ? "Категории пока не добавлены." : "Список категорий временно недоступен. Он появится вместе с ассортиментом."}</p>}
     </section>
-    <section className="showcase" aria-labelledby="showcase-title"><div className="section-heading panel"><div><span className="eyebrow">Витрина</span><h2 id="showcase-title">Товары</h2></div><Link href="/catalog" className="text-link text-link-with-icon"><span className="text-link-label">Весь каталог</span><span aria-hidden="true">↗</span></Link></div>
+    <section className="showcase" aria-labelledby="showcase-title"><div className="section-heading panel"><div><h2 id="showcase-title">Товары</h2></div><Link href="/catalog" className="text-link text-link-with-icon"><span className="text-link-label">Весь каталог</span><UiIcon name="arrow" /></Link></div>
       {catalog.status === "ready" && catalog.products.length > 0 ? <ProductGrid products={catalog.products.slice(0, 12)} categories={catalog.categories} /> : <div className="panel showcase-unavailable"><CatalogStatus status={catalog.status === "ready" ? "empty" : catalog.status} /></div>}
     </section>
     <TopupPanels />
@@ -34,6 +35,6 @@ export default async function Home() {
         <li><span className="capability-index" aria-hidden="true">03</span><h3>Характеристики перед выбором</h3><p>Изображение, описание, состояние и доступный float — в карточке товара.</p></li>
       </ul>
     </section>
-    <section className="panel faq-section" id="faq" aria-labelledby="faq-title"><div className="faq-heading"><span className="eyebrow">FAQ</span><h2 id="faq-title">Вопросы{" "}<br />и ответы</h2></div><div className="faq-items">{questions.map(([question, answer], index) => <details key={question}><summary><span className="faq-index" aria-hidden="true">0{index + 1}</span><span>{question}</span><span className="faq-toggle" aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div></section>
+    <section className="panel faq-section" id="faq" aria-labelledby="faq-title"><div className="faq-heading"><h2 id="faq-title">Вопросы и ответы</h2></div><div className="faq-items">{questions.map(([question, answer], index) => <details key={question}><summary><span className="faq-index" aria-hidden="true">0{index + 1}</span><span>{question}</span><span className="faq-toggle"><UiIcon name="plus" /></span></summary><p>{answer}</p></details>)}</div></section>
   </main>;
 }

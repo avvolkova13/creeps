@@ -1,5 +1,6 @@
 "use client";
 
+import { UiIcon } from "@/components/ui-icon";
 import { isShowcasePreview } from '@/config/runtime';
 import { useState } from 'react';
 import { parsePaymentMinor, paymentAmountError, steamTopupQuote, rublesMinorFromCreepsMinor } from '@/lib/money';
@@ -54,7 +55,7 @@ export function TopupPanels() {
         <div className="field"><label htmlFor="balance-amount">Сумма в Creeps</label><div className="input-wrap"><input id="balance-amount" inputMode="decimal" required value={balanceAmount} disabled={balanceBusy} onChange={event => { setBalanceAmount(event.target.value); setBalanceError(''); }} aria-invalid={invalidBalance} aria-describedby="balance-equivalent balance-error" placeholder="Введите сумму" /><span className="input-unit">Creeps</span></div><p id="balance-equivalent" className="field-hint" aria-live="polite">{equivalent ? `≈ ${equivalent} · справочно` : '1 Creeps = 1,7 ₽'}</p><p id="balance-error" className="field-error">{invalidBalance ? paymentAmountError : ''}</p></div>
         {balanceError && <p className="field-error" role="alert">{balanceError}</p>}
         {loginNeeded && !shop.user && <div className="account-empty"><p className="field-hint">Войдите, чтобы пополнить свой баланс.</p><SteamLogin /></div>}
-        <button className="button-primary" type="submit" disabled={balanceBusy || shop.loading}>{balanceBusy ? 'Проверяем…' : 'Пополнить баланс'} <span aria-hidden="true">↗</span></button>
+        <button className="button-primary" type="submit" disabled={balanceBusy || shop.loading}>{balanceBusy ? 'Проверяем…' : 'Пополнить баланс'} <UiIcon name="arrow" /></button>
       </form>
     </section>
     <section className="panel topup-panel steam-panel" id="steam" aria-labelledby="steam-title">
@@ -71,7 +72,7 @@ export function TopupPanels() {
         </dl>
         {profile ? <div className="steam-verified" role="status" id="steam-check-hint"><p>Аккаунт найден: {profile.name}</p><a className="text-link" href={profile.profileUrl} target="_blank" rel="noreferrer">Посмотреть профиль Steam</a></div> : <p className="field-hint" id="steam-check-hint">Проверьте аккаунт перед переходом к оплате.</p>}
         {steamError && <p className="field-error" role="alert">{steamError}</p>}
-        <button className="button-primary" type="submit" disabled={steamBusy || shop.loading}>{steamBusy ? 'Проверяем…' : profile ? 'Перейти к оплате' : 'Проверить Steam ID'} <span aria-hidden="true">↗</span></button>
+        <button className="button-primary" type="submit" disabled={steamBusy || shop.loading}>{steamBusy ? 'Проверяем…' : profile ? 'Перейти к оплате' : 'Проверить Steam ID'} <UiIcon name="arrow" /></button>
       </form>
     </section>
   </div>;

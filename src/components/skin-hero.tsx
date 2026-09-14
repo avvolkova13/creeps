@@ -1,5 +1,6 @@
 "use client";
 
+import { UiIcon } from "@/components/ui-icon";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -51,12 +52,12 @@ export function SkinHero() {
     <div className={styles.copy}>
       <p className="eyebrow"><span className={styles.statusDot} aria-hidden="true" />Скины и цифровые товары</p>
       <h1 id="page-title">{projectConfig.siteName}</h1>
-      <p className={styles.description}>Выбирайте в витрине.<br />Получайте на свой trade-URL.</p>
-      <Link className={`button-primary ${styles.cta}`} href="/catalog">Перейти в каталог <span aria-hidden="true">↗</span></Link>
+      <p className={styles.description}>Выбирайте скины.<br />Получайте на свой trade-URL.</p>
+      <Link className={`button-primary ${styles.cta}`} href="/catalog">Перейти в каталог <UiIcon name="arrow" /></Link>
       <div className={styles.heroNote}><span className={styles.noteRule} aria-hidden="true" /><p>Вход через Steam.<br />Цены в Creeps — с эквивалентом в рублях.</p></div>
     </div>
     <div className={styles.showcase}>
-      <div className={styles.stage} ref={sceneRef} data-paused={!visible || !tabVisible} aria-label="Примеры скинов CS2">
+      <div className={styles.stage} ref={sceneRef} data-paused={!visible || !tabVisible} aria-label="Скины CS2">
         <div className={styles.perspective}>
           <SkinLane items={[examples[1], examples[0]]} />
           <SkinLane items={[examples[3], examples[2]]} reverse />

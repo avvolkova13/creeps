@@ -1,5 +1,6 @@
 "use client";
 
+import { UiIcon } from "@/components/ui-icon";
 import Link from 'next/link';
 import { isShowcasePreview } from '@/config/runtime';
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
@@ -81,9 +82,9 @@ export function useShop() {
   return context;
 }
 export function SteamLogin({ cart = false }: { cart?: boolean }) {
-  return <Link className="button-primary" href={cart ? '/login?next=cart' : '/login'}>Войти через Steam <span aria-hidden="true">↗</span></Link>;
+  return <Link className="button-primary" href={cart ? '/login?next=cart' : '/login'}>Войти через Steam <UiIcon name="arrow" /></Link>;
 }
-export function AddToCart({ productId }: { productId: string }) {
+export function AddToCart({ productId, tone = "primary" }: { productId: string; tone?: "primary" | "secondary" }) {
   const shop = useShop();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
@@ -110,11 +111,11 @@ export function AddToCart({ productId }: { productId: string }) {
   }
   return <div className="purchase-area">
     {item ? <div className="cart-selection">
-      <span className="cart-selected" role="status"><span aria-hidden="true">✓</span> В корзине</span>
+      <span className="cart-selected" role="status"><UiIcon name="check" /> В корзине</span>
       <button ref={removeButton} className="button-secondary cart-remove" type="button" disabled={busy || shop.loading} onClick={remove} aria-label={`Удалить из корзины: ${item.name}`} title="Удалить из корзины" aria-busy={busy}>
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v5M14 11v5" /></svg>
+        <UiIcon name="trash" />
       </button>
-    </div> : <button ref={addButton} className="button-primary" type="button" disabled={busy || shop.loading} onClick={add}>{busy ? 'Добавляем…' : 'В корзину'}</button>}
+    </div> : <button ref={addButton} className={`button-${tone}`} type="button" disabled={busy || shop.loading} onClick={add}>{busy ? 'Добавляем…' : 'В корзину'}</button>}
     {error && <p className="field-error" role="alert">{error}</p>}
   </div>;
 }

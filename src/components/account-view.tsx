@@ -21,7 +21,7 @@ function TradeForm({ account }: { account: Account }) {
     <label htmlFor="trade-url">Trade-URL для получения скинов</label>
     <input id="trade-url" type="url" value={url} onChange={event => { setUrl(event.target.value); setMessage(''); }} required maxLength={512} placeholder="Вставьте ссылку для обмена из Steam" autoComplete="off" spellCheck={false} aria-describedby="trade-hint" />
     <p className="field-hint" id="trade-hint">Ссылка должна принадлежать вашему Steam-аккаунту. <a className="text-link" href="https://steamcommunity.com/my/tradeoffers/privacy" target="_blank" rel="noreferrer">Найти свою ссылку в Steam</a></p>
-    <button className="button-primary" disabled={busy}>{busy ? 'Сохраняем…' : 'Сохранить trade-URL'}</button>
+    <button className="button-secondary" disabled={busy}>{busy ? 'Сохраняем…' : 'Сохранить trade-URL'}</button>
     {message && <p role="status">{message}</p>}{error && <p className="field-error" role="alert">{error}</p>}
   </form>;
 }

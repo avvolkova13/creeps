@@ -1,5 +1,6 @@
 "use client";
 
+import { UiIcon } from "@/components/ui-icon";
 import { useState } from "react";
 import { useCatalogSearch, setCatalogParam, clearCatalogFilters } from "./use-catalog-search";
 import type { CatalogState, CatalogSort } from "@/lib/catalog";
@@ -22,7 +23,7 @@ function Choices({title, choices, selected, onChange, open = false, searchable =
   const [search, setSearch] = useState("");
   const visible = choices.filter(choice => choice.label.toLocaleLowerCase("ru").includes(search.toLocaleLowerCase("ru")));
   return <details className="filter-group" open={open || undefined}>
-    <summary>{title}<span>{selected.length || ""}</span></summary>
+    <summary>{title}<span>{selected.length || ""}</span><UiIcon name="plus" className="filter-expander" /></summary>
     {searchable && <input className="weapon-search" type="search" aria-label={`Поиск: ${title}`} placeholder="Найти оружие" value={search} onChange={event => setSearch(event.target.value)} />}
     <div className="filter-options">{visible.map(choice => <label className="filter-choice" key={choice.id}>
       <input type="checkbox" checked={selected.includes(choice.id)} onChange={() => onChange(selected.includes(choice.id) ? selected.filter(id => id !== choice.id) : [...selected, choice.id])} />
@@ -113,23 +114,23 @@ export function CatalogView({state, initialSearch = ""}: {state: CatalogState; i
           <div className="field"><label htmlFor="price-max">До</label><input id="price-max" inputMode="decimal" value={max} onChange={event => setMax(event.target.value)} aria-invalid={Boolean(priceError)} aria-describedby="max-rubles price-error" /><span id="max-rubles" className="field-hint">{rubleHint(max)}</span></div>
         </div><p id="price-error" className="field-error" aria-live="polite">{priceError}</p></fieldset>
         <Choices title="Состояние" open choices={CONDITION_ORDER.filter(id => inventory.some(product => product.condition === id)).map(id => ({id,label:id,count:inventory.filter(product => product.condition === id).length}))} selected={conditions} onChange={setConditions} />
-        <details className="filter-group"><summary>Float<span>{floatMin || floatMax ? "1" : ""}</span></summary><div className="range-fields">
+        <details className="filter-group"><summary>Float<span>{floatMin || floatMax ? "1" : ""}</span><UiIcon name="plus" className="filter-expander" /></summary><div className="range-fields">
           <div className="field"><label htmlFor="float-min">От</label><input id="float-min" inputMode="decimal" placeholder="0" value={floatMin} onChange={event => setFloatMin(event.target.value)} aria-invalid={Boolean(floatError)} aria-describedby="float-error" /></div>
           <div className="field"><label htmlFor="float-max">До</label><input id="float-max" inputMode="decimal" placeholder="1" value={floatMax} onChange={event => setFloatMax(event.target.value)} aria-invalid={Boolean(floatError)} aria-describedby="float-error" /></div>
         </div><p className="field-hint">Меньше float — меньше износ</p><p id="float-error" className="field-error" aria-live="polite">{floatError}</p></details>
         <Choices title="Редкость" choices={attributeChoices("rarity")} selected={rarities} onChange={setRarities} />
-        <details className="filter-group"><summary>Цвет<span>{colors.length || ""}</span></summary><div className="color-options">{unique(inventory.flatMap(product => [...(product.attributes?.colors ?? [])])).map(color => <button key={color} className="color-choice" type="button" aria-label={COLORS[color]?.[0] ?? color} title={COLORS[color]?.[0] ?? color} aria-pressed={colors.includes(color)} onClick={() => setColors(colors.includes(color) ? colors.filter(value => value !== color) : [...colors,color])}><span style={{backgroundColor:COLORS[color]?.[1] ?? color}} />{colors.includes(color) && <b aria-hidden="true">✓</b>}</button>)}</div></details>
+        <details className="filter-group"><summary>Цвет<span>{colors.length || ""}</span><UiIcon name="plus" className="filter-expander" /></summary><div className="color-options">{unique(inventory.flatMap(product => [...(product.attributes?.colors ?? [])])).map(color => <button key={color} className="color-choice" type="button" aria-label={COLORS[color]?.[0] ?? color} title={COLORS[color]?.[0] ?? color} aria-pressed={colors.includes(color)} onClick={() => setColors(colors.includes(color) ? colors.filter(value => value !== color) : [...colors,color])}><span style={{backgroundColor:COLORS[color]?.[1] ?? color}} />{colors.includes(color) && <b><UiIcon name="check" /></b>}</button>)}</div></details>
         <Choices title="Особенности" choices={EDITIONS} selected={editions} onChange={setEditions} />
-        <details className="filter-group"><summary>Наклейки и брелоки<span>{hasStickers || stickerQuery ? "1" : ""}</span></summary><label className="filter-choice"><input type="checkbox" checked={hasStickers} onChange={event => setHasStickers(event.target.checked)} /><span>Только с наклейками / брелоками</span></label><label className="field" htmlFor="sticker-search">Название<input id="sticker-search" type="search" placeholder="Например, Cloud9" value={stickerQuery} onChange={event => setStickerQuery(event.target.value)} /></label></details>
+        <details className="filter-group"><summary>Наклейки и брелоки<span>{hasStickers || stickerQuery ? "1" : ""}</span><UiIcon name="plus" className="filter-expander" /></summary><label className="filter-choice"><input type="checkbox" checked={hasStickers} onChange={event => setHasStickers(event.target.checked)} /><span>Только с наклейками / брелоками</span></label><label className="field" htmlFor="sticker-search">Название<input id="sticker-search" type="search" placeholder="Например, Cloud9" value={stickerQuery} onChange={event => setStickerQuery(event.target.value)} /></label></details>
         <div className="field"><label htmlFor="trade-lock">Трейдлок у источника</label><select id="trade-lock" value={tradeLock} onChange={event => setTradeLock(event.target.value)}><option value="">Любой</option><option value="unlocked">Без трейдлока</option><option value="locked">С трейдлоком</option></select></div>
-        <button className="button-secondary reset-filters" type="button" onClick={reset} disabled={!chips.length}>Сбросить фильтры <span aria-hidden="true">×</span></button>
+        <button className="button-secondary reset-filters" type="button" onClick={reset} disabled={!chips.length}>Сбросить фильтры <UiIcon name="close" /></button>
       </div>
     </aside>
     <section className="catalog-results" aria-label="Товары">
       <div className="results-heading panel"><div><h2>Товары</h2><span aria-live="polite" className="field-hint">{ready ? `Найдено: ${products.length}` : "Нет данных о наличии"}</span></div><div className="catalog-sort field"><label htmlFor="catalog-sort">Сортировка</label><select id="catalog-sort" value={sort} onChange={event => setSort(event.target.value as CatalogSort)}>{SORTS.filter(option => option.id !== "popularity" || inventory.some(product => product.attributes?.popularity != null)).filter(option => option.id !== "discount" || inventory.some(product => product.attributes?.discountPercent != null)).map(option => <option key={option.id} value={option.id}>{option.label}</option>)}</select></div></div>
       {sort === "popularity" && <p className="sort-explanation">По оценкам SkinSwap. Товары без оценки — в конце.</p>}
       {sort === "discount" && <p className="sort-explanation">По разнице цены SkinBaron и Steam в данных источника. Товары без сравнения — в конце.</p>}
-      {chips.length > 0 && <div className="filter-chips" aria-label="Выбранные фильтры">{chips.map((chip,index) => <button type="button" key={`${index}-${chip.label}`} onClick={chip.remove} aria-label={`Убрать фильтр: ${chip.label}`}>{chip.label}<span aria-hidden="true">×</span></button>)}<button className="clear-all" type="button" onClick={reset}>Сбросить всё</button></div>}
+      {chips.length > 0 && <div className="filter-chips" aria-label="Выбранные фильтры">{chips.map((chip,index) => <button type="button" key={`${index}-${chip.label}`} onClick={chip.remove} aria-label={`Убрать фильтр: ${chip.label}`}>{chip.label}<UiIcon name="close" /></button>)}<button className="clear-all" type="button" onClick={reset}>Сбросить всё</button></div>}
       {state.status !== "ready" ? <div className="panel"><CatalogStatus status={state.status} /></div> : products.length > 0 ? <ProductGrid products={products} categories={categories} /> : chips.length ? <div className="panel empty-search" role="status"><h3>По вашему запросу ничего не найдено</h3><p>Попробуйте другое название или измените фильтры.</p><button className="button-secondary" onClick={reset}>Сбросить поиск и фильтры</button></div> : <div className="panel"><CatalogStatus status="empty" /></div>}
     </section>
   </div>;
