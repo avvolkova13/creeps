@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { projectConfig } from "@/config/project";
 import { legalDocuments } from "@/config/legal";
+import { isShowcasePreview } from "@/config/runtime";
 import { SteamLogin, useShop } from "./shop-session";
 
 export function SiteHeader() {
@@ -21,7 +22,7 @@ export function SiteHeader() {
         </nav>
         <div className="header-actions">
           <Link className="button-secondary cart-button" href="/cart"><span aria-live="polite" aria-atomic="true">Корзина{cart.items.length > 0 ? ` · ${cart.items.length}` : ""}</span></Link>
-          {user ? <Link className="button-primary" href="/account">Личный кабинет</Link> : <SteamLogin />}
+          {user || isShowcasePreview ? <Link className="button-primary" href="/account">Личный кабинет</Link> : <SteamLogin />}
         </div>
       </header>
 

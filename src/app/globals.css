@@ -359,6 +359,20 @@ dialog::backdrop { background: rgba(12, 20, 36, .72); backdrop-filter: blur(4px)
 }
 
 /* Account uses the approved navy panels and lime actions. */
+.account-heading, .account-record-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.account-example-label { font-size: 12px; color: var(--accent); border: 1px solid var(--line); padding: 7px 10px; }
+.account-example-note { max-width: 760px; margin-top: -12px; }
+.account-overview { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.account-overview > *, .account-history > *, .account-order-item > div { min-width: 0; }
+.account-balance-card .product-price strong { font-size: 36px; }
+.account-order-item { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 16px; align-items: start; padding-block: 12px; }
+.account-order-item img { width: 88px; height: 70px; object-fit: contain; }
+.account-order-item a { overflow-wrap: anywhere; }
+.account-order-item .product-price { margin-top: 8px; }
+.account-order-item .product-price strong { font-size: 18px; }
+.order-status { font-size: 12px; border: 1px solid var(--line); padding: 5px 8px; white-space: nowrap; }
+.order-status-delivered { color: var(--accent); background: rgba(178,255,89,.06); }
+.order-status-pending { color: var(--ink); background: var(--control); }
 .account-page { padding-block: 48px 64px; display: grid; gap: 24px; }
 .account-section { display: grid; gap: 24px; align-content: start; }
 .account-form { display: grid; gap: 14px; max-width: 840px; }
@@ -381,6 +395,7 @@ dialog::backdrop { background: rgba(12, 20, 36, .72); backdrop-filter: blur(4px)
 .cart-remove:disabled { cursor: wait; }
 .steam-verified { display: grid; gap: 8px; border-left: 2px solid var(--accent); padding-left: 12px; }
 @media (max-width: 900px) {
+  .account-overview { grid-template-columns: 1fr; }
   .account-history { grid-template-columns: 1fr; }
   .cart-items li { grid-template-columns: 90px minmax(0, 1fr); gap: 16px; }
   .cart-items li .product-price { grid-column: 1 / -1; }
