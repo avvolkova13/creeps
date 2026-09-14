@@ -51,7 +51,6 @@ function HistorySection<T extends { id: string }>({ title, kind, initialItems, i
 export function AccountView() {
   const shop = useShop();
   const [authMessage, setAuthMessage] = useState('');
-  const [logoutError, setLogoutError] = useState('');
   useEffect(() => {
     const status = new URLSearchParams(window.location.search).get('auth');
     // Read the callback status after hydration; never accept a user identity from the URL.
@@ -67,9 +66,8 @@ export function AccountView() {
       </>}
       {shop.user ? <>
         <section className="panel account-section" aria-labelledby="profile-title">
-          <div className="section-kicker"><h2 id="profile-title">Мой Steam</h2><button className="button-secondary" onClick={async () => { setLogoutError(''); try { await shop.logout(); } catch (error) { setLogoutError((error as Error).message); } }}>Выйти</button></div>
+          <h2 id="profile-title">Мой Steam</h2>
           <p className="account-steam-id">Steam ID: <a href={`https://steamcommunity.com/profiles/${shop.user.steamId}`} target="_blank" rel="noreferrer">{shop.user.steamId}</a></p>
-          {logoutError && <p role="alert">{logoutError}</p>}
           <TradeForm account={shop.user} key={shop.user.steamId} />
         </section>
         <section className="panel account-section" aria-labelledby="account-balance"><h2 id="account-balance">Баланс Creeps</h2><ProductPrice amount={shop.user.balanceCreeps} /><Link className="button-primary" href="/#balance">Пополнить баланс</Link></section>

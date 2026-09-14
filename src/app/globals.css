@@ -149,7 +149,7 @@ legend { margin-bottom: 12px; padding: 0; }
 
 .topup-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: stretch; }
 .topup-panel { padding: var(--panel-padding); border: 1px solid var(--line); border-top-width: 1px; display: flex; flex-direction: column; }
-.topup-panel h2 { margin-top: 12px; }
+.topup-panel h2 { margin: 0; }
 .topup-panel .section-description { color: var(--muted); margin-top: 8px; max-width: 60ch; }
 .index-tag { font-size: 12px; border: 1px solid var(--line); padding: 4px 8px; line-height: 16px; background: var(--mint); }
 .steam-panel .index-tag { background: var(--mint); }
@@ -266,9 +266,16 @@ dialog { width: min(960px, calc(100vw - 48px)); max-height: calc(100svh - 48px);
 dialog::backdrop { background: rgba(12, 20, 36, .72); backdrop-filter: blur(4px); }
 .dialog-content { padding: var(--panel-padding); }
 .dialog-close { display: flex; margin-left: auto; margin-bottom: 24px; }
+.dialog-close.button-secondary { border-color: transparent; background: transparent; box-shadow: none; }
+.dialog-close.button-secondary:hover:not(:disabled) { border-color: transparent; box-shadow: none; color: var(--accent); }
 .dialog-close span { font-size: 24px; }
 .dialog-content > h2 { margin: 16px 0; }
 .dialog-content > p { max-width: 580px; }
+dialog.logout-dialog { width: min(480px, calc(100vw - 32px)); }
+.logout-dialog h2 { font-size: 24px; line-height: 32px; }
+.logout-dialog h2 + p { margin-top: 12px; color: var(--muted); }
+.logout-dialog .field-error { margin-top: 16px; }
+.logout-dialog-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
 .dialog-content > .text-link { margin-top: 24px; }
 @keyframes atmosphere-shift { to { transform: translateY(6vh); } }
 @keyframes panel-reveal { from { opacity: .2; } to { opacity: 1; } }

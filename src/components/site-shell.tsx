@@ -2,14 +2,26 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { projectConfig } from "@/config/project";
 import { legalDocuments } from "@/config/legal";
 import { isShowcasePreview } from "@/config/runtime";
-import { SteamLogin, useShop } from "./shop-session";
+import { useShop } from "./shop-session";
+import { Dialog } from "./dialog";
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const { user, cart } = useShop();
+  const { user, cart, loading, presentationSignedIn, logout } = useShop();
+  const signedIn = Boolean(user) || (isShowcasePreview && presentationSignedIn);
+  const [busy, setBusy] = useState(false);
+  const [logoutOpen, setLogoutOpen] = useState(false);
+  const [logoutError, setLogoutError] = useState('');
+  async function signOut() {
+    if (busy) return;
+    setBusy(true); setLogoutError('');
+    try { await logout(); setLogoutOpen(false); } catch (error) { setLogoutError((error as Error).message); }
+    finally { setBusy(false); }
+  }
   return (
     <>
       <a className="skip-link" href="#main-content">К содержимому</a>
@@ -22,9 +34,21 @@ export function SiteHeader() {
         </nav>
         <div className="header-actions">
           <Link className="button-secondary cart-button" href="/cart"><span aria-live="polite" aria-atomic="true">Корзина{cart.items.length > 0 ? ` · ${cart.items.length}` : ""}</span></Link>
-          {user || isShowcasePreview ? <Link className="button-secondary" href="/account" aria-label="Личный кабинет" aria-current={pathname === "/account" ? "page" : undefined}><span className="account-nav-full">Личный кабинет</span><span className="account-nav-short">Кабинет</span></Link> : <SteamLogin />}
+          {loading ? <button className="button-secondary" disabled aria-label="Загрузка профиля">…</button> : signedIn ? <>
+            <Link className="button-secondary" href="/account" aria-label="Личный кабинет" aria-current={pathname === "/account" ? "page" : undefined}><span className="account-nav-full">Личный кабинет</span><span className="account-nav-short">Кабинет</span></Link>
+            <button className="button-secondary" type="button" disabled={busy} onClick={() => { setLogoutError(''); setLogoutOpen(true); }}>Выйти</button>
+          </> : <Link className="button-secondary" href="/login">Войти</Link>}
         </div>
       </header>
+      <Dialog open={logoutOpen} onClose={() => { if (!busy) setLogoutOpen(false); }} titleId="logout-confirm-title" className="logout-dialog" dismissible={!busy}>
+        <h2 id="logout-confirm-title">Вы действительно хотите выйти?</h2>
+        <p>Для доступа к личному кабинету потребуется войти снова.</p>
+        {logoutError && <p className="field-error" role="alert">{logoutError}</p>}
+        <div className="logout-dialog-actions">
+          <button className="button-secondary" type="button" data-dialog-initial-focus disabled={busy} onClick={() => setLogoutOpen(false)}>Остаться</button>
+          <button className="button-primary" type="button" disabled={busy} onClick={() => void signOut()}>{busy ? 'Выходим…' : 'Выйти'}</button>
+        </div>
+      </Dialog>
 
     </>
   );

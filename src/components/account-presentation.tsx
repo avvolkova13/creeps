@@ -6,13 +6,13 @@ import snapshot from '@/data/catalog-snapshot.json';
 import { accountPresentation, validatePresentationTradeUrl } from '@/lib/account-presentation';
 import { publicAsset } from '@/lib/public-asset';
 import { ProductPrice } from './product-view';
+import { SteamLogin, useShop } from './shop-session';
 
 const sample = accountPresentation(snapshot.products);
 const tradeStorageKey = 'creeps-presentation-trade-url';
-const closedStorageKey = 'creeps-presentation-account-closed';
 
 export function AccountPresentation() {
-  const [closed, setClosed] = useState(false);
+  const shop = useShop();
   const [tradeUrl, setTradeUrl] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
@@ -23,23 +23,17 @@ export function AccountPresentation() {
       try {
         const savedTradeUrl = sessionStorage.getItem(tradeStorageKey);
         setTradeUrl(!savedTradeUrl || savedTradeUrl.includes('token=EXAMPLE0') ? sample.tradeUrl : savedTradeUrl);
-        setClosed(sessionStorage.getItem(closedStorageKey) === '1');
       } catch { /* Editable fields still work without browser storage. */ }
     });
     return () => { active = false; };
   }, []);
 
-  function toggleAccount(value: boolean) {
-    setClosed(value);
-    try { sessionStorage.setItem(closedStorageKey, value ? '1' : '0'); } catch { /* Current view remains usable. */ }
-  }
-
   return <main id="main-content" className="page-width account-page">
     <h1>Личный кабинет</h1>
-    {closed ? <section className="panel account-empty"><h2>Вы вышли из кабинета</h2><p>Товары сохранены в корзине.</p><button className="button-primary" onClick={() => toggleAccount(false)}>Вернуться в кабинет</button></section> : <>
+    {shop.loading ? <p className="panel" role="status">Загружаем кабинет…</p> : !shop.presentationSignedIn ? <section className="panel account-empty"><h2>Войдите в личный кабинет</h2><p>Профиль, баланс и история покупок доступны после входа.</p><SteamLogin /></section> : <>
       <div className="account-overview">
         <section className="panel account-section" aria-labelledby="presentation-profile">
-          <div className="section-kicker"><h2 id="presentation-profile">Мой Steam</h2><button className="button-secondary" onClick={() => toggleAccount(true)}>Выйти</button></div>
+          <h2 id="presentation-profile">Мой Steam</h2>
           <div><p className="eyebrow">Steam ID пользователя</p><p className="account-steam-id">{sample.steamId}</p></div>
           <form className="account-form" onSubmit={event => {
             event.preventDefault(); setMessage(''); setError('');

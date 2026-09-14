@@ -41,13 +41,16 @@ export async function shopRequest<T>(path: string, method = 'GET', body?: unknow
 }
 const ShopContext = createContext<{
   user: Account | null; cart: Cart; loading: boolean; error: string;
+  presentationSignedIn: boolean; openPresentationAccount: () => void;
   refresh: () => Promise<void>; add: (id: string) => Promise<void>; remove: (id: string) => Promise<void>; logout: () => Promise<void>;
 } | null>(null);
 const emptyCart: Cart = { items: [], totalCreeps: 0, totalRubles: 0 };
+const presentationClosedKey = 'creeps-presentation-account-closed';
 export function ShopSession({ children }: { children: ReactNode }) {
   const queue = useRef(createTaskQueue());
   const [data, setData] = useState<Session>({ user: null, cart: emptyCart });
   const [loading, setLoading] = useState(true);
+  const [presentationSignedIn, setPresentationSignedIn] = useState(false);
   const [error, setError] = useState('');
   const [addedProduct, setAddedProduct] = useState<Product | null>(null);
   const closeNotice = useCallback(() => setAddedProduct(null), []);
@@ -59,7 +62,13 @@ export function ShopSession({ children }: { children: ReactNode }) {
   useEffect(() => {
     let active = true;
     queue.current.run(() => shopRequest<Session>('/session')).then(session => {
-      if (active) { setData(session); setError(''); }
+      if (active) {
+        setData(session); setError('');
+        if (isShowcasePreview) {
+          try { setPresentationSignedIn(sessionStorage.getItem(presentationClosedKey) !== '1'); }
+          catch { setPresentationSignedIn(true); }
+        }
+      }
     }).catch(error => { if (active) setError((error as Error).message); })
       .finally(() => { if (active) setLoading(false); });
     return () => { active = false; };
@@ -76,12 +85,23 @@ export function ShopSession({ children }: { children: ReactNode }) {
     setAddedProduct(current => current?.id === id ? null : current);
   });
   const logout = () => queue.current.run(async () => {
+    if (isShowcasePreview) {
+      setPresentationSignedIn(false);
+      setAddedProduct(null);
+      try { sessionStorage.setItem(presentationClosedKey, '1'); } catch { /* Current tab state still updates. */ }
+      return;
+    }
     await shopRequest('/auth/logout', 'POST', {});
     setAddedProduct(null);
     setData({ user: null, cart: emptyCart });
     setData(await shopRequest<Session>('/session'));
   });
-  return <ShopContext.Provider value={{ ...data, loading, error, refresh, add, remove, logout }}>{children}{addedProduct && <CartNotice product={addedProduct} onClose={closeNotice} />}</ShopContext.Provider>;
+  const openPresentationAccount = () => {
+    if (!isShowcasePreview) return;
+    setPresentationSignedIn(true);
+    try { sessionStorage.setItem(presentationClosedKey, '0'); } catch { /* Current tab state still updates. */ }
+  };
+  return <ShopContext.Provider value={{ ...data, loading, error, presentationSignedIn, openPresentationAccount, refresh, add, remove, logout }}>{children}{addedProduct && <CartNotice product={addedProduct} onClose={closeNotice} />}</ShopContext.Provider>;
 }
 export function useShop() {
   const context = useContext(ShopContext);

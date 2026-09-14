@@ -11,7 +11,6 @@ export function LoginView() {
   const shop = useShop();
   const router = useRouter();
   const [destination, setDestination] = useState<'cart' | 'account' | null>(null);
-  const [error, setError] = useState('');
   useEffect(() => {
     const next = new URLSearchParams(window.location.search).get('next');
     queueMicrotask(() => setDestination(next === 'cart' ? 'cart' : 'account'));
@@ -23,8 +22,7 @@ export function LoginView() {
     <section className="panel account-section">
       <h1>Вход через Steam</h1>
       <p>{destination === 'cart' ? 'Войдите через Steam, чтобы продолжить оформление заказа. Товары сохранятся в корзине.' : 'Войдите через Steam, чтобы открыть свой профиль, баланс и историю покупок.'}</p>
-      {isShowcasePreview ? <button className="button-primary" onClick={() => setError('Не удалось начать вход. Обратитесь в поддержку: support@shop-skin.com.')}>Продолжить через Steam</button> : <a className="button-primary" href={publicAsset(`/api/auth/steam${destination === 'cart' ? '?next=cart' : ''}`)}>Продолжить через Steam</a>}
-      {error && <p className="field-error" role="alert">{error}</p>}
+      {isShowcasePreview ? <button className="button-primary" disabled={!destination || shop.loading} onClick={() => { shop.openPresentationAccount(); router.replace(destination === 'cart' ? '/cart' : '/account'); }}>Продолжить через Steam</button> : <a className="button-primary" href={publicAsset(`/api/auth/steam${destination === 'cart' ? '?next=cart' : ''}`)}>Продолжить через Steam</a>}
       {destination === 'cart' && <p><Link className="text-link" href="/cart">Вернуться в корзину</Link></p>}
     </section>
   </main>;

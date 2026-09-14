@@ -49,8 +49,7 @@ export function TopupPanels() {
   }
   return <div className="topup-grid">
     <section className="panel topup-panel" id="balance" aria-labelledby="balance-title">
-      <div className="section-kicker"><span className="eyebrow">Баланс сайта</span><span className="index-tag" aria-hidden="true">01</span></div>
-      <h2 id="balance-title">Пополнить Creeps</h2><p className="section-description">Внутренняя валюта магазина.<br />1 Creeps = 1,7 ₽.</p>
+      <div className="section-kicker"><h2 id="balance-title">Пополнить Creeps</h2><span className="index-tag" aria-hidden="true">01</span></div><p className="section-description">Внутренняя валюта магазина.<br />1 Creeps = 1,7 ₽.</p>
       <form onSubmit={event => { event.preventDefault(); void topupBalance(); }}>
         <div className="field"><label htmlFor="balance-amount">Сумма в Creeps</label><div className="input-wrap"><input id="balance-amount" inputMode="decimal" required value={balanceAmount} disabled={balanceBusy} onChange={event => { setBalanceAmount(event.target.value); setBalanceError(''); }} aria-invalid={invalidBalance} aria-describedby="balance-equivalent balance-error" placeholder="Введите сумму" /><span className="input-unit">Creeps</span></div><p id="balance-equivalent" className="field-hint" aria-live="polite">{equivalent ? `≈ ${equivalent} · справочно` : '1 Creeps = 1,7 ₽'}</p><p id="balance-error" className="field-error">{invalidBalance ? paymentAmountError : ''}</p></div>
         {balanceError && <p className="field-error" role="alert">{balanceError}</p>}
@@ -59,8 +58,7 @@ export function TopupPanels() {
       </form>
     </section>
     <section className="panel topup-panel steam-panel" id="steam" aria-labelledby="steam-title">
-      <div className="section-kicker"><span className="eyebrow">Напрямую в Steam</span><span className="index-tag" aria-hidden="true">02</span></div>
-      <h2 id="steam-title">Пополнить Steam</h2><p className="section-description">По Steam ID, сразу к оплате.<br />Без внутреннего баланса и корзины.</p>
+      <div className="section-kicker"><h2 id="steam-title">Пополнить Steam</h2><span className="index-tag" aria-hidden="true">02</span></div><p className="section-description">По Steam ID, сразу к оплате.<br />Без внутреннего баланса и корзины.</p>
       <form onSubmit={event => { event.preventDefault(); void topupSteam(); }}><div className="steam-fields">
         <div className="field"><label htmlFor="steam-amount">Сумма в рублях</label><div className="input-wrap"><input id="steam-amount" inputMode="decimal" required placeholder="Введите сумму" value={steamAmount} disabled={steamBusy} onChange={event => { setSteamAmount(event.target.value); setSteamError(''); }} aria-invalid={invalidSteam} aria-describedby="steam-amount-error steam-quote" /><span className="input-unit">₽</span></div><p id="steam-amount-error" className="field-error">{invalidSteam ? paymentAmountError : ''}</p></div>
         <div className="field"><label htmlFor="steam-id">Steam ID</label><input id="steam-id" type="text" inputMode="numeric" required maxLength={17} pattern="[0-9]{17}" title="Steam ID из 17 цифр" placeholder="Введите Steam ID" autoComplete="off" spellCheck={false} value={steamId} disabled={steamBusy} onChange={event => { setSteamId(event.target.value); setProfile(null); setSteamError(''); }} aria-describedby="steam-check-hint" /></div>
